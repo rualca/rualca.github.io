@@ -37,11 +37,32 @@ export default function Navbar() {
             About
           </a>
           <a
+            href="#skills"
+            onClick={e => handleNavClick(e, 'skills')}
+            className="transition hover:text-white"
+          >
+            Skills
+          </a>
+          <a
+            href="#education"
+            onClick={e => handleNavClick(e, 'education')}
+            className="transition hover:text-white"
+          >
+            Education
+          </a>
+          <a
             href="#projects"
             onClick={e => handleNavClick(e, 'projects')}
             className="transition hover:text-white"
           >
             Projects
+          </a>
+          <a
+            href="#publications"
+            onClick={e => handleNavClick(e, 'publications')}
+            className="transition hover:text-white"
+          >
+            Publications
           </a>
           <a
             href="#contact"

@@ -11,6 +11,7 @@ import ProjectsMobile from './components/ProjectsMobile';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
 import SocialMagnet from './components/SocialMagnet';
+import Publications from './components/Publications';
 import ContactForm from './components/ContactForm';
 import { SmoothCursor } from './components/ui/smooth-cursor';
 
@@ -62,6 +63,7 @@ function App() {
         <Skills />
         <Education />
         {isMobile ? <ProjectsMobile /> : <Projects />}
+        <Publications />
         {/* <Certifications /> */}
         <ContactForm />
         <SocialMagnet />
