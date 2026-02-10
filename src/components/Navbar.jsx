@@ -65,6 +65,13 @@ export default function Navbar() {
             Publications
           </a>
           <a
+            href="#readings"
+            onClick={e => handleNavClick(e, 'readings')}
+            className="transition hover:text-white"
+          >
+            Readings
+          </a>
+          <a
             href="#contact"
             onClick={e => handleNavClick(e, 'contact')}
             className="transition hover:text-white"
