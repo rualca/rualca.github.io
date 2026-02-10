@@ -15,6 +15,13 @@ import { Truck } from 'lucide-react';
 // --- Data for the projects ---
 const projectData = [
     {
+        title: 'Role Playing',
+        description: 'Hiring and workplace conversation simulator with AI candidates and employees. Practice interviews, difficult conversations, and get feedback without real-world consequences.',
+        imageUrl: githubRepoLogo,
+        repoUrl: 'https://github.com/rualca/role-playing',
+        tags: ['Python', 'TypeScript', 'AI', 'FastAPI', 'React'],
+    },
+    {
         title: 'Multiagent CrewAI',
         description: 'A framework for developing and testing multi-agent systems using artificial intelligence with CrewAI.',
         imageUrl: githubRepoLogo,
