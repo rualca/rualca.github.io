@@ -39,6 +39,14 @@ describe('fractional CTO data', () => {
     expect(text).toMatch(/not a full-time CTO/i)
   })
 
+  it('still declares availability for a full-time role while ruling the fraction out', () => {
+    // Declining the five-day engagement must not read as declining employment.
+    // A founder who could hire him outright should not infer he only sells
+    // fractions of himself.
+    const text = fractional.notThis.join(' ')
+    expect(text).toMatch(/open to full-time engineering leadership roles/i)
+  })
+
   it('offers engagement shapes with an explicit cadence', () => {
     expect(fractional.engagements.length).toBeGreaterThanOrEqual(3)
     for (const engagement of fractional.engagements) {

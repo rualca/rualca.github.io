@@ -49,7 +49,7 @@ export const fractional = {
   notThis: [
     'Not a consultant. I do not hand over a deck and leave; I am accountable for what the team ships.',
     'Not a staffing agency. I hire your engineers, I do not rent you mine.',
-    'Not a full-time CTO. If you need someone five days a week, you need to hire one — and I will help you define the role and interview for it.',
+    'Not a full-time CTO — this is two days a week, not five. If five is what you actually need, say so: I am open to full-time engineering leadership roles as well, and I would rather point you at the right shape than sell you a fraction of the wrong one.',
   ],
 
   availability:
