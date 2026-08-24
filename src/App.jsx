@@ -6,6 +6,7 @@ import { MotionConfig } from 'framer-motion';
 import Hero from './components/hero';
 import Navbar from './components/Navbar';
 import Experience from './components/Experience';
+import Fractional from './components/Fractional';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -63,6 +64,7 @@ function App() {
       <main>
         <Hero />
         <Experience />
+        <Fractional />
         <About />
         <Skills />
         <Education />
