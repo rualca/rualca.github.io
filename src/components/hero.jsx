@@ -57,6 +57,10 @@ export default function Hero() {
             I scale engineering organisations and the architectures they ship.
           </p>
 
+          <p className="mt-3 text-sm text-white/80 md:text-base [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
+            Open to Head of Engineering roles &amp; fractional CTO engagements.
+          </p>
+
           {/* Call-to-action buttons */}
           <div className="flex justify-center gap-4 mt-8">
             <a

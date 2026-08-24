@@ -30,6 +30,20 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="flex items-center gap-4 text-sm font-medium text-white/90 sm:gap-6">
           <a
+            href="#experience"
+            onClick={e => handleNavClick(e, 'experience')}
+            className="transition hover:text-white"
+          >
+            Experience
+          </a>
+          <a
+            href="#fractional"
+            onClick={e => handleNavClick(e, 'fractional')}
+            className="transition hover:text-white"
+          >
+            Fractional CTO
+          </a>
+          <a
             href="#about"
             onClick={e => handleNavClick(e, 'about')}
             className="transition hover:text-white"
