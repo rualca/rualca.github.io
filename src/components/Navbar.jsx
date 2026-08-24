@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav className="container flex items-center justify-between mx-auto">
         {/* Logo */}
         <a href="#">
-          <img src={logo} alt="Logo" className="w-28 h-6" /> {/* Adjust size as needed */}
+          <img src={logo} alt="Rubén Alapont — Head of Engineering & CTO" className="w-28 h-6" /> {/* Adjust size as needed */}
         </a>
         
         {/* Navigation Links */}
