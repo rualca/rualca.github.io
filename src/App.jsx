@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MotionConfig } from 'framer-motion';
 import Hero from './components/hero';
 import Navbar from './components/Navbar';
+import Experience from './components/Experience';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -15,18 +17,19 @@ import Publications from './components/Publications';
 import Readings from './components/Readings';
 import ContactForm from './components/ContactForm';
 import { SmoothCursor } from './components/ui/smooth-cursor';
+import { useReducedMotion } from './hooks/useReducedMotion';
+import { useIsMobile } from './hooks/useIsMobile';
 
 import './App.css'
 
 function App() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isMobile = useIsMobile();
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
+    if (reduceMotion) {
+      return undefined;
+    }
 
     // 1. Initialize Lenis with custom settings for scroll speed
     const lenis = new Lenis({
@@ -47,19 +50,19 @@ function App() {
 
     // 4. Cleanup on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
       lenis.destroy();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       gsap.ticker.remove(lenis.raf);
     };
-  }, []);
+  }, [reduceMotion]);
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       {!isMobile && <SmoothCursor />}
       <Navbar />
       <main>
         <Hero />
+        <Experience />
         <About />
         <Skills />
         <Education />
@@ -70,7 +73,7 @@ function App() {
         <ContactForm />
         <SocialMagnet />
       </main>
-    </>
+    </MotionConfig>
   )
 }
 
