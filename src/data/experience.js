@@ -1,5 +1,17 @@
 export const experience = [
   {
+    company: 'Aimira',
+    role: 'CTO',
+    period: 'Feb 2026 – Present',
+    location: 'Valencia',
+    highlights: [
+      'Technology ownership of an AI quality-control platform for textile manufacturing, deployed on the factory floor rather than in a demo environment.',
+      'The platform inspects fabric in line with computer vision, detecting defects at production speed and holding up across colour and design changes.',
+      'Roll-level traceability by QR scan and centralised production data, so a defect map is something you can query instead of something you argue about.',
+      'Real-time inference, industrial data pipelines and on-site deployment treated as production subsystems, with the latency and reliability budgets that implies.',
+    ],
+  },
+  {
     company: 'Loomee',
     role: 'CTO',
     period: 'Mar 2025 – Feb 2026',

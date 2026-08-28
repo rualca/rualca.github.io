@@ -13,9 +13,29 @@ function allStringFields(entries) {
 }
 
 describe('experience data', () => {
-  it('contains entries for Loomee, Fourvenues, Cubicup, and Avantio', () => {
+  it('contains entries for Aimira, Loomee, Fourvenues, Cubicup, and Avantio', () => {
     const companies = experience.map((e) => e.company)
-    expect(companies).toEqual(['Loomee', 'Fourvenues', 'Cubicup', 'Avantio'])
+    expect(companies).toEqual([
+      'Aimira',
+      'Loomee',
+      'Fourvenues',
+      'Cubicup',
+      'Avantio',
+    ])
+  })
+
+  it('lists the current role first and marks it as ongoing', () => {
+    // A recruiter reads top-down and stops early. The seat he holds today has
+    // to be the first thing in the list, and it has to say it is still his.
+    const [current] = experience
+    expect(current.company).toBe('Aimira')
+    expect(current.role).toBe('CTO')
+    expect(current.period).toMatch(/Present$/)
+  })
+
+  it('has exactly one ongoing entry, so the record cannot read as two current jobs', () => {
+    const ongoing = experience.filter((e) => /Present/.test(e.period))
+    expect(ongoing).toHaveLength(1)
   })
 
   it('never contains a percentage or forbidden metric pattern in any string field', () => {
