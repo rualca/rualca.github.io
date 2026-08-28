@@ -13,4 +13,14 @@ describe('ProjectsMobile', () => {
     }
     expect(screen.getAllByText('View Code').length).toBeGreaterThan(0)
   })
+
+  it('defers below-the-fold project image fetches with loading="lazy"', () => {
+    const { container } = render(<ProjectsMobile />)
+    const images = container.querySelectorAll('img')
+    expect(images.length).toBeGreaterThan(0)
+    for (const img of images) {
+      expect(img).toHaveAttribute('loading', 'lazy')
+      expect(img).toHaveAttribute('decoding', 'async')
+    }
+  })
 })

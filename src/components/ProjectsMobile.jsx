@@ -33,6 +33,8 @@ export default function ProjectsMobile() {
                                 <img
                                     src={project.imageUrl}
                                     alt={project.title}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-full object-cover"
                                 />
                             )}
