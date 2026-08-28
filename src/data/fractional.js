@@ -19,7 +19,7 @@ export const fractional = {
     },
     {
       title: 'You want LLM features in production and nobody knows what that costs',
-      body: 'Retrieval, evaluation and cost per query, treated like any other subsystem rather than a demo. At Loomee I designed and shipped an LLM retrieval layer on LangChain and Qdrant into a live product.',
+      body: 'Retrieval, evaluation and cost per query, treated like any other subsystem rather than a demo. At Loomee I shipped an LLM retrieval layer on LangChain and Qdrant into a live product — in regulated mental health, where it had to cite its sources, defer to the clinician and survive an audit.',
     },
     {
       title: 'The AI feature has to run where the product is, not in a notebook',
