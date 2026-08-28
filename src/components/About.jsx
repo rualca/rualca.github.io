@@ -22,7 +22,7 @@ export default function About({ scrollContainerRef }) {
           containerClassName="my-12"
           textClassName="font-sans text-base sm:text-lg md:text-xl"
         >
-         Engineering leader with over 12 years of experience scaling tech teams and building innovative platforms. I specialize in creating cloud-native architectures, driving AI-powered solutions, and fostering high-performing engineering cultures. From strategic planning to hands-on development, I focus on building scalable, resilient systems that deliver real business value. Passionate about hexagonal architecture, event-driven systems, and leveraging cutting-edge technologies to solve complex problems.
+         I am CTO at Aimira, where an AI quality-control platform inspects fabric on the production line: computer vision catching defects in real time, roll-level traceability, and the production data that makes both of them mean something. It is industrial software, which is to say the factory does not care how elegant the model is if the line has to stop. Over 12 years I have scaled engineering organisations and the architectures they ship — from six engineers to around forty at Fourvenues, from MVP to production platform at Loomee, and through migrations at Cubicup and Avantio that taught me as much about when not to split a system as about how. I care about hexagonal architecture, event-driven systems, and delivery you can measure instead of argue about. And about the unglamorous half of the job: building a team that outlives any single decision I make.
         </ScrollReveal>
       </div>
     </section>

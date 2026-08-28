@@ -39,12 +39,13 @@ describe('fractional CTO data', () => {
     expect(text).toMatch(/not a full-time CTO/i)
   })
 
-  it('still declares availability for a full-time role while ruling the fraction out', () => {
-    // Declining the five-day engagement must not read as declining employment.
-    // A founder who could hire him outright should not infer he only sells
-    // fractions of himself.
-    const text = fractional.notThis.join(' ')
-    expect(text).toMatch(/open to full-time engineering leadership roles/i)
+  it('names the CTO seat he already holds instead of advertising for employment', () => {
+    // He is a sitting CTO. Offering himself for full-time roles on the same
+    // page would read as a man shopping his current job around, and it would
+    // be false: the five days are already spoken for.
+    const text = allStringFields(fractional).join(' ')
+    expect(text).toMatch(/Aimira/)
+    expect(text).not.toMatch(/open to full-time engineering leadership roles/i)
   })
 
   it('offers engagement shapes with an explicit cadence', () => {
@@ -59,7 +60,10 @@ describe('fractional CTO data', () => {
     // the offer cannot drift into claiming engagements that never happened.
     const worked = experience.map((e) => e.company)
     const named = fractional.triggers
-      .flatMap((t) => t.body.match(/\b(Loomee|Fourvenues|Cubicup|Avantio|Bdeo)\b/g) ?? [])
+      .flatMap(
+        (t) =>
+          t.body.match(/\b(Aimira|Loomee|Fourvenues|Cubicup|Avantio|Bdeo)\b/g) ?? [],
+      )
     expect(named.length).toBeGreaterThan(0)
     for (const company of named) {
       expect(worked).toContain(company)
