@@ -62,6 +62,17 @@ describe('experience data', () => {
     expect(text).not.toMatch(/founding/i)
   })
 
+  it('does not claim the Fourvenues work that was somebody else\u2019s', () => {
+    // Offline door scanning and the weekend on-call rota were not his, even
+    // though both are the obvious things to claim about nightlife software.
+    // Naming payments as a domain boundary is fine; owning the correctness of
+    // the money flows is a different claim and is not made.
+    const fourvenues = experience.find((e) => e.company === 'Fourvenues')
+    const text = fourvenues.highlights.join(' ')
+    expect(text).not.toMatch(/offline/i)
+    expect(text).not.toMatch(/on-call/i)
+  })
+
   it('does not claim the medical-device quality standards he did not own', () => {
     // Loomee was on an MDR pathway, but the 62304 software lifecycle and the
     // 14971 risk file were somebody else's. Working near a standard is not the

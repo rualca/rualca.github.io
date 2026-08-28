@@ -37,8 +37,13 @@ export const experience = [
     location: 'Valencia',
     highlights: [
       'Engineering grew from 6 to around 40 people across 7 squads over this 26-month tenure.',
-      'Introduced DORA metrics as the delivery baseline and ran the engineering OKR cycle.',
-      'Mentored 12 engineers from junior to senior.',
+      'As Product Owner, prioritised against what a venue actually earns rather than whichever client pushed hardest, ran discovery with the door staff and promoter teams instead of only the venue owner, and fed the platform\u2019s own real-time analytics back into what got built next.',
+      'As Technical Lead Manager, set the domain boundaries — ticketing, access control, tables, payments, CRM — and the contracts between them, so adding squads divided the work instead of multiplying the coupling.',
+      'Designed for the peak rather than the average: queueing, idempotency and concurrency control on finite-capacity ticket sales, where selling the same spot twice stops being a race condition and becomes a queue on the street.',
+      'Built engineers rather than only software — code review as teaching, knowledge spread deliberately to lower the bus factor — mentoring 12 of them from junior to senior.',
+      'As Head of Engineering, treated org design as the expensive architecture decision it is: squad boundaries drawn on domains, a hiring bar and an interview process that held while headcount multiplied, and onboarding that made the thirtieth engineer productive as fast as the second.',
+      'Introduced DORA metrics as the delivery baseline shared with product and commercial, ran the engineering OKR cycle, and built a leadership layer of leads and managers with parallel technical and management career tracks.',
+      'Defended platform investment against the feature roadmap, owned infrastructure cost for a workload of violent peaks and long troughs, and ran reliability as a programme against the events calendar, with blameless post-mortems.',
     ],
   },
   {
