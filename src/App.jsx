@@ -28,7 +28,7 @@ function App() {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion) {
+    if (reduceMotion || isMobile) {
       return undefined;
     }
 
@@ -43,19 +43,23 @@ function App() {
     lenis.on('scroll', ScrollTrigger.update);
 
     // 3. Use GSAP's ticker to drive Lenis's animation loop
-    gsap.ticker.add((time) => {
+    const lenisTick = (time) => {
       lenis.raf(time * 1000);
-    });
+    };
+    gsap.ticker.add(lenisTick);
 
     gsap.ticker.lagSmoothing(0);
 
     // 4. Cleanup on component unmount
     return () => {
       lenis.destroy();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.ticker.remove(lenis.raf);
+      // App owns no ScrollTriggers — they belong to ScrollReveal. Refresh
+      // recomputes positions against the native scroller instead of
+      // killing triggers this component does not own.
+      ScrollTrigger.refresh();
+      gsap.ticker.remove(lenisTick);
     };
-  }, [reduceMotion]);
+  }, [reduceMotion, isMobile]);
 
   return (
     <MotionConfig reducedMotion="user">
