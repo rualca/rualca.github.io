@@ -43,14 +43,13 @@ describe('SkillLogos', () => {
     expect(Object.keys(skillLogoComponents)).toHaveLength(16)
   })
 
-  it.each(Object.entries(skillLogoComponents))(
-    '%s renders an <img> with loading="lazy" and decoding="async"',
-    (_name, Component) => {
+  for (const [name, Component] of Object.entries(skillLogoComponents)) {
+    it(`${name} renders an <img> with loading="lazy" and decoding="async"`, () => {
       const { container } = render(<Component />)
       const img = container.querySelector('img')
       expect(img).not.toBeNull()
       expect(img).toHaveAttribute('loading', 'lazy')
       expect(img).toHaveAttribute('decoding', 'async')
-    },
-  )
+    })
+  }
 })
