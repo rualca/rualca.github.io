@@ -51,15 +51,15 @@ describe('experience data', () => {
     expect(ongoing).toHaveLength(1)
   })
 
-  it('does not attribute the founding-team hire to Loomee, where it did not happen', () => {
-    // He did not hire the founding engineering team at Loomee. The claim sat
-    // on that entry across several revisions and shipped before he caught it,
-    // which is exactly why it is pinned down by a test now rather than left
-    // to whoever edits this file next.
+  it('states the Loomee hire in plain terms, not as \u201cfounding team\u201d', () => {
+    // He did hire the first engineers there \u2014 confirmed with him directly.
+    // The wording is what caused the confusion: \u201cfounding engineering team\u201d
+    // reads to some people as hiring the founders themselves. Say what
+    // happened instead.
     const loomee = experience.find((e) => e.company === 'Loomee')
     const text = loomee.highlights.join(' ')
+    expect(text).toMatch(/hired the first engineers/i)
     expect(text).not.toMatch(/founding/i)
-    expect(text).not.toMatch(/\bhired\b/i)
   })
 
   it('does not claim the medical-device quality standards he did not own', () => {
