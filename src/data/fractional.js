@@ -1,7 +1,7 @@
 export const fractional = {
   headline: 'Fractional CTO',
   summary:
-    'Some companies need a CTO before they can justify one. I take on technology ownership two days a week — embedded in the team, in the standups and in the pull requests, accountable for what ships. Not a slide deck.',
+    'Some companies need a CTO before they can justify one. I already hold that seat at Aimira, and I take on a small number of engagements alongside it — a day a week, embedded in the team, in the standups and in the pull requests, accountable for what ships. Not a slide deck.',
 
   // Client situations, matched to work I have actually done.
   triggers: [
@@ -22,6 +22,10 @@ export const fractional = {
       body: 'Retrieval, evaluation and cost per query, treated like any other subsystem rather than a demo. At Loomee I designed and shipped an LLM retrieval layer on LangChain and Qdrant into a live product.',
     },
     {
+      title: 'The AI feature has to run where the product is, not in a notebook',
+      body: 'Real-time inference carries latency, cost and failure modes a demo never shows, and the further it sits from a data centre the more that is true. At Aimira I own a computer-vision platform that inspects fabric in line, at production speed, on the factory floor.',
+    },
+    {
       title: 'The product is buckling under its own growth',
       body: 'Architecture that made sense at ten thousand requests stops making sense at a million. I have led that migration in both directions — into microservices at Cubicup, and back toward a well-bounded core where splitting was the wrong answer.',
     },
@@ -31,12 +35,12 @@ export const fractional = {
     {
       name: 'Advisory',
       cadence: 'One day a week',
-      body: 'Architecture and hiring decisions, code and design review, a weekly session with the founders. For teams that are shipping but flying blind.',
+      body: 'Architecture and hiring decisions, code and design review, a weekly session with the founders. For teams that are shipping but flying blind. This is the usual shape while the CTO seat at Aimira has my week.',
     },
     {
       name: 'Embedded',
-      cadence: 'Two days a week',
-      body: 'I own the technical roadmap and the engineering process. In the standups, in the pull requests, in the hiring loop. The usual shape, and the one where I am most useful.',
+      cadence: 'Two days a week, subject to capacity',
+      body: 'I own the technical roadmap and the engineering process. In the standups, in the pull requests, in the hiring loop. The shape where I am most useful, and the one I can least often free up — ask before you plan around it.',
     },
     {
       name: 'Scoped',
@@ -49,11 +53,11 @@ export const fractional = {
   notThis: [
     'Not a consultant. I do not hand over a deck and leave; I am accountable for what the team ships.',
     'Not a staffing agency. I hire your engineers, I do not rent you mine.',
-    'Not a full-time CTO — this is two days a week, not five. If five is what you actually need, say so: I am open to full-time engineering leadership roles as well, and I would rather point you at the right shape than sell you a fraction of the wrong one.',
+    'Not a full-time CTO for your company — I already hold that seat at Aimira. This is a day or two a week alongside it. If five is what you actually need, say so early: I would rather tell you the scope is bigger than my calendar than sell you a fraction of the wrong thing.',
   ],
 
   availability:
-    'Working in Spanish or English, remote across the EU, or on site in Valencia and Madrid.',
+    'A small number of engagements at a time, alongside the CTO role at Aimira. Working in Spanish or English, remote across the EU, or on site in Valencia and Madrid.',
 
   cta: {
     label: 'Talk about an engagement',

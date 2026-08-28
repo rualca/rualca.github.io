@@ -13,9 +13,42 @@ function allStringFields(entries) {
 }
 
 describe('experience data', () => {
-  it('contains entries for Loomee, Fourvenues, Cubicup, and Avantio', () => {
+  it('contains entries for Aimira, Loomee, Fourvenues, Cubicup, and Avantio', () => {
     const companies = experience.map((e) => e.company)
-    expect(companies).toEqual(['Loomee', 'Fourvenues', 'Cubicup', 'Avantio'])
+    expect(companies).toEqual([
+      'Aimira',
+      'Loomee',
+      'Fourvenues',
+      'Cubicup',
+      'Avantio',
+    ])
+  })
+
+  it('lists the current role first and marks it as ongoing', () => {
+    // A recruiter reads top-down and stops early. The seat he holds today has
+    // to be the first thing in the list, and it has to say it is still his.
+    const [current] = experience
+    expect(current.company).toBe('Aimira')
+    expect(current.role).toBe('CTO')
+    expect(current.period).toMatch(/Present$/)
+  })
+
+  it('describes the current role by what he owns, not by the employer\u2019s marketing counters', () => {
+    // The company publishes headline figures (documents reviewed, defects
+    // detected, sites deployed). Those belong to the platform and its
+    // customers, not to him. Borrowing them would be the same inflated claim
+    // the rest of this suite exists to prevent.
+    const [current] = experience
+    const text = current.highlights.join(' ')
+    expect(text).not.toMatch(/\b\d+\s*[KM]\+/)
+    expect(text).not.toMatch(/defects detected/i)
+    expect(text).not.toMatch(/\bimplementations\b/i)
+    expect(current.highlights.length).toBeGreaterThanOrEqual(4)
+  })
+
+  it('has exactly one ongoing entry, so the record cannot read as two current jobs', () => {
+    const ongoing = experience.filter((e) => /Present/.test(e.period))
+    expect(ongoing).toHaveLength(1)
   })
 
   it('never contains a percentage or forbidden metric pattern in any string field', () => {

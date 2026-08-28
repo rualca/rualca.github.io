@@ -50,7 +50,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-4 text-lg text-white/90 md:text-xl lg:text-2xl [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
-            Head of Engineering &amp; CTO · Valencia, Spain
+            CTO at Aimira · Valencia, Spain
           </p>
 
           <p className="mt-2 text-sm text-white/80 md:text-base [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
@@ -58,7 +58,7 @@ export default function Hero() {
           </p>
 
           <p className="mt-3 text-sm text-white/80 md:text-base [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
-            Open to Head of Engineering roles &amp; fractional CTO engagements.
+            Also available for fractional CTO engagements and technical advisory.
           </p>
 
           {/* Call-to-action buttons */}
