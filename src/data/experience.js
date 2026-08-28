@@ -52,9 +52,13 @@ export const experience = [
     period: 'Apr 2019 – Jun 2022',
     location: 'Valencia',
     highlights: [
-      'Guided architecture for a microservices platform.',
-      'Established coding standards.',
-      'Mentored and coached developers.',
+      'Technical lead at a construtech that did not merely introduce customers to builders but planned, designed and coordinated the work, so the platform had to model a renovation as a long-lived project with states rather than a transaction.',
+      'Owned the automated quoting engine as the commercial commitment it is — versioned, tested and traceable — so when a site drifted from its estimate it was possible to reconstruct what had been promised and on which assumptions.',
+      'Instrumented cost deviation and margin per project, the figure this kind of business lives or dies on, instead of learning it once the job had closed.',
+      'Built the tooling for site coordinators to the same standard as the customer-facing product: in a business that executes the work itself, the internal tool is the product.',
+      'Designed for the site rather than the office — progress updates, photographs and documentation captured inside a home under renovation, on poor connectivity.',
+      'Integrated BIM 360 behind an anti-corruption layer, and kept city-specific pricing, trades and regulation as configuration, so expanding across six cities did not fork the system.',
+      'Guided the move into microservices and, later, the move back toward a well-bounded core where splitting had been the wrong answer. Established coding standards and mentored the team throughout.',
     ],
   },
   {
@@ -63,9 +67,13 @@ export const experience = [
     period: 'May 2017 – Apr 2019',
     location: 'Valencia',
     highlights: [
-      'Led a team of 20 engineers.',
-      'Built RESTful APIs handling over 1M daily requests.',
-      'Mentored 5 junior engineers to mid-level within 12 months.',
+      'Worked on the channel manager of a vacation-rental platform, synchronising availability, rates and restrictions against more than sixty booking channels in real time. No transaction is possible across systems you do not control — only idempotency, retries and reconciliation.',
+      'Treated overbooking as the failure that defines the product: two channels selling the same night is a consistency bug that ends with a guest standing at a door.',
+      'Isolated every channel behind its own adapter and an anti-corruption layer, so sixty partner APIs with their own quirks, rate limits and versions could not leak their models into the core.',
+      'Built per-channel observability — which integration is failing, how far behind synchronisation is running — so “the calendar did not update” became a diagnosable problem rather than an unanswerable ticket.',
+      'Built RESTful APIs handling over 1M daily requests, with pagination, caching, backpressure and per-tenant quotas.',
+      'Held the technical side of the OTA partner certifications, which are passed and then sustained on connection-quality metrics rather than awarded as a logo, and kept the calendar as the single source of truth across currencies, languages and per-market regulation.',
+      'Led a team of 20 engineers, and mentored 5 junior engineers to mid-level within 12 months.',
     ],
   },
 ]
