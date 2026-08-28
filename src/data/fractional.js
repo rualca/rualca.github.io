@@ -7,7 +7,7 @@ export const fractional = {
   triggers: [
     {
       title: 'There is no technical co-founder',
-      body: 'Either one left, or there never was one, and every technical decision now lands on a founder who should be selling. At Loomee I owned technology through a restructuring and took the platform from MVP to production.',
+      body: 'Either one left, or there never was one, and every technical decision now lands on a founder who should be selling. At Loomee I owned technology through a restructuring, took the platform from MVP to production and hired the first engineers on the team.',
     },
     {
       title: 'The team grew past five people and nobody designed the org',

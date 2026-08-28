@@ -20,7 +20,7 @@ export const experience = [
     period: 'Mar 2025 – Feb 2026',
     location: 'Madrid',
     highlights: [
-      'Owned technology strategy through a company restructuring and took the clinical practice platform from MVP to production.',
+      'Owned technology strategy through a company restructuring, took the clinical practice platform from MVP to production, and hired the first engineers on the team.',
       'Regulated mental-health software: owned the intended-use boundary, deciding which features stayed inside practice management and which crossed into medical-device territory, since scope is where certification cost is actually decided.',
       'Built the human-oversight obligation of the EU AI Act high-risk regime into the architecture — the system surfaces evidence with its provenance and the clinician decides, with an audit trail that shows who decided what.',
       'Handled special-category health data, including therapy session audio and transcripts: encryption and key management, tenant isolation, EU residency, real retention and deletion, and an explicit written position on training with customer data.',
