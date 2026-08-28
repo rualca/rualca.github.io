@@ -51,6 +51,18 @@ describe('experience data', () => {
     expect(ongoing).toHaveLength(1)
   })
 
+  it('does not claim the medical-device quality standards he did not own', () => {
+    // Loomee was on an MDR pathway, but the 62304 software lifecycle and the
+    // 14971 risk file were somebody else's. Working near a standard is not the
+    // same as having run it, and an auditor-facing claim is the worst possible
+    // place to blur that.
+    const text = allStringFields(experience).join(' ')
+    expect(text).not.toMatch(/62304/)
+    expect(text).not.toMatch(/14971/)
+    expect(text).not.toMatch(/13485/)
+    expect(text).not.toMatch(/ISO\s*\d/)
+  })
+
   it('never contains a percentage or forbidden metric pattern in any string field', () => {
     const fields = allStringFields(experience)
     for (const field of fields) {
