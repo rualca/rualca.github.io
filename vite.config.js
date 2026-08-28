@@ -30,7 +30,6 @@ export default defineConfig({
           // of the entry chunk and out of the initial mobile/reduced-motion render.
 
           if (
-            id.includes('framer-motion') ||
             id.includes('/motion/') ||
             id.includes('gsap') ||
             id.includes('@gsap/react') ||

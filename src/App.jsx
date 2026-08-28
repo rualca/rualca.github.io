@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MotionConfig } from 'framer-motion';
+import { MotionConfig } from 'motion/react';
 import Hero from './components/hero';
 import Navbar from './components/Navbar';
 import Experience from './components/Experience';
