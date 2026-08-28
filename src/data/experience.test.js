@@ -33,6 +33,19 @@ describe('experience data', () => {
     expect(current.period).toMatch(/Present$/)
   })
 
+  it('describes the current role by what he owns, not by the employer\u2019s marketing counters', () => {
+    // The company publishes headline figures (documents reviewed, defects
+    // detected, sites deployed). Those belong to the platform and its
+    // customers, not to him. Borrowing them would be the same inflated claim
+    // the rest of this suite exists to prevent.
+    const [current] = experience
+    const text = current.highlights.join(' ')
+    expect(text).not.toMatch(/\b\d+\s*[KM]\+/)
+    expect(text).not.toMatch(/defects detected/i)
+    expect(text).not.toMatch(/\bimplementations\b/i)
+    expect(current.highlights.length).toBeGreaterThanOrEqual(4)
+  })
+
   it('has exactly one ongoing entry, so the record cannot read as two current jobs', () => {
     const ongoing = experience.filter((e) => /Present/.test(e.period))
     expect(ongoing).toHaveLength(1)
