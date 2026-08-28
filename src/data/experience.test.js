@@ -51,6 +51,17 @@ describe('experience data', () => {
     expect(ongoing).toHaveLength(1)
   })
 
+  it('does not attribute the founding-team hire to Loomee, where it did not happen', () => {
+    // He did not hire the founding engineering team at Loomee. The claim sat
+    // on that entry across several revisions and shipped before he caught it,
+    // which is exactly why it is pinned down by a test now rather than left
+    // to whoever edits this file next.
+    const loomee = experience.find((e) => e.company === 'Loomee')
+    const text = loomee.highlights.join(' ')
+    expect(text).not.toMatch(/founding/i)
+    expect(text).not.toMatch(/\bhired\b/i)
+  })
+
   it('does not claim the medical-device quality standards he did not own', () => {
     // Loomee was on an MDR pathway, but the 62304 software lifecycle and the
     // 14971 risk file were somebody else's. Working near a standard is not the
