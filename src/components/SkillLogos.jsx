@@ -24,6 +24,8 @@ const Logo = ({ src, alt }) => (
     src={src}
     alt={alt}
     className="w-full h-full object-contain"
+    loading="lazy"
+    decoding="async"
   />
 );
 

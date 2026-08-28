@@ -43,6 +43,8 @@ const ProjectCard = ({ project }) => (
                     <img
                         src={project.imageUrl}
                         alt={project.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-1/2 object-cover"
                     />
                 )}

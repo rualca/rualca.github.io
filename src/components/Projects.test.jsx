@@ -10,4 +10,14 @@ describe('Projects', () => {
     const link = screen.getByRole('link', { name: new RegExp(firstProject.title) })
     expect(link).toHaveAttribute('href', firstProject.repoUrl)
   })
+
+  it('defers below-the-fold project image fetches with loading="lazy"', () => {
+    const { container } = render(<Projects />)
+    const images = container.querySelectorAll('img')
+    expect(images.length).toBeGreaterThan(0)
+    for (const img of images) {
+      expect(img).toHaveAttribute('loading', 'lazy')
+      expect(img).toHaveAttribute('decoding', 'async')
+    }
+  })
 })
