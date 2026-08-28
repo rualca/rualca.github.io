@@ -34,8 +34,7 @@ export default defineConfig({
             id.includes('/motion/') ||
             id.includes('gsap') ||
             id.includes('@gsap/react') ||
-            id.includes('lenis') ||
-            id.includes('@studio-freight/lenis')
+            id.includes('lenis')
           ) {
             return 'motion-vendor'
           }
