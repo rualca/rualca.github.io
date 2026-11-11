@@ -1,0 +1,144 @@
+import { describe, it, expect } from 'vitest'
+import { experience } from './experience'
+
+function allStringFields(entries) {
+  const fields = []
+  for (const entry of entries) {
+    fields.push(entry.company, entry.role, entry.period, entry.location)
+    fields.push(...entry.highlights)
+  }
+  return fields
+}
+
+describe('experience data', () => {
+  it('contains entries for Aimira, Loomee, Fourvenues, Cubicup, and Avantio', () => {
+    const companies = experience.map((e) => e.company)
+    expect(companies).toEqual([
+      'Aimira',
+      'Loomee',
+      'Fourvenues',
+      'Cubicup',
+      'Avantio',
+    ])
+  })
+
+  it('lists the current role first and marks it as ongoing', () => {
+    // A recruiter reads top-down and stops early. The seat he holds today has
+    // to be the first thing in the list, and it has to say it is still his.
+    const [current] = experience
+    expect(current.company).toBe('Aimira')
+    expect(current.role).toBe('CTO')
+    expect(current.period).toMatch(/Present$/)
+  })
+
+  it('describes the current role by what he owns, not by the employer\u2019s marketing counters', () => {
+    // The company publishes headline figures (documents reviewed, defects
+    // detected, sites deployed). Those belong to the platform and its
+    // customers, not to him. Borrowing them would be the same inflated claim
+    // the rest of this suite exists to prevent.
+    const [current] = experience
+    const text = current.highlights.join(' ')
+    expect(text).not.toMatch(/\b\d+\s*[KM]\+/)
+    expect(text).not.toMatch(/defects detected/i)
+    expect(text).not.toMatch(/\bimplementations\b/i)
+    expect(current.highlights.length).toBeGreaterThanOrEqual(4)
+  })
+
+  it('has exactly one ongoing entry, so the record cannot read as two current jobs', () => {
+    const ongoing = experience.filter((e) => /Present/.test(e.period))
+    expect(ongoing).toHaveLength(1)
+  })
+
+  it('states how Loomee engineering was built in plain terms, without claiming a team he did not hire', () => {
+    // He started with no engineers, made one in-house hire and delivered the
+    // MVP with an external agency \u2014 corrected by him directly (2026-11-09).
+    // The earlier wording, \u201chired the first engineers\u201d, overstated it, and
+    // \u201cfounding engineering team\u201d reads as hiring the founders. Say what
+    // happened instead.
+    const loomee = experience.find((e) => e.company === 'Loomee')
+    const text = loomee.highlights.join(' ')
+    expect(text).toMatch(/first in-house hire/i)
+    expect(text).toMatch(/external development agency/i)
+    expect(text).not.toMatch(/hired the first engineers/i)
+    expect(text).not.toMatch(/founding/i)
+  })
+
+  it('does not claim Loomee bought components, because everything there was built', () => {
+    // Corrected by him directly (2026-11-09): nothing was bought at Loomee.
+    const loomee = experience.find((e) => e.company === 'Loomee')
+    const text = loomee.highlights.join(' ')
+    expect(text).not.toMatch(/\bbought\b|\bbuying\b|rather than building/i)
+  })
+
+  it('shows people, budget and roadmap ownership for the current role', () => {
+    const [current] = experience
+    const text = current.highlights.join(' ')
+    expect(text).toMatch(/people management/i)
+    expect(text).toMatch(/budget/i)
+    expect(text).toMatch(/roadmap/i)
+  })
+
+  it('does not claim the Fourvenues work that was somebody else\u2019s', () => {
+    // Offline door scanning and the weekend on-call rota were not his, even
+    // though both are the obvious things to claim about nightlife software.
+    // Naming payments as a domain boundary is fine; owning the correctness of
+    // the money flows is a different claim and is not made.
+    const fourvenues = experience.find((e) => e.company === 'Fourvenues')
+    const text = fourvenues.highlights.join(' ')
+    expect(text).not.toMatch(/offline/i)
+    expect(text).not.toMatch(/on-call/i)
+  })
+
+  it('does not claim the medical-device quality standards he did not own', () => {
+    // Loomee was on an MDR pathway, but the 62304 software lifecycle and the
+    // 14971 risk file were somebody else's. Working near a standard is not the
+    // same as having run it, and an auditor-facing claim is the worst possible
+    // place to blur that.
+    const text = allStringFields(experience).join(' ')
+    expect(text).not.toMatch(/62304/)
+    expect(text).not.toMatch(/14971/)
+    expect(text).not.toMatch(/13485/)
+    expect(text).not.toMatch(/ISO\s*\d/)
+  })
+
+  it('never contains any of the explicitly forbidden metric claims', () => {
+    const fields = allStringFields(experience).join(' ')
+    const forbidden = [
+      'lead time −50%',
+      'MTTR −65%',
+      'deployment time −60%',
+      'OKR attainment 85%',
+      'incidents −40%',
+      'sprint velocity +40%',
+      'load time −30%',
+    ]
+    for (const claim of forbidden) {
+      expect(fields).not.toContain(claim)
+    }
+  })
+
+  it('attributes the 6-to-40 growth claim to the 26-month Fourvenues tenure, not the 6-month Head of Engineering role', () => {
+    const fourvenues = experience.find((e) => e.company === 'Fourvenues')
+    expect(fourvenues.period).toBe('Jan 2023 – Mar 2025')
+    const growthHighlight = fourvenues.highlights.find((h) =>
+      h.includes('6 to around 40'),
+    )
+    expect(growthHighlight).toBeTruthy()
+    // the growth claim lives on the single Fourvenues entry whose period
+    // spans the full 26-month tenure, never a narrower 6-month sub-period
+    expect(fourvenues.role).not.toMatch(/^Head of Engineering$/)
+  })
+
+  it('Fourvenues is a single entry showing progression, not three separate roles', () => {
+    const fourvenuesEntries = experience.filter((e) => e.company === 'Fourvenues')
+    expect(fourvenuesEntries).toHaveLength(1)
+    expect(fourvenuesEntries[0].role).toBe(
+      'Product Owner → Technical Lead Manager → Head of Engineering',
+    )
+  })
+
+  it('Avantio is a single merged entry, not two overlapping rows', () => {
+    const avantioEntries = experience.filter((e) => e.company === 'Avantio')
+    expect(avantioEntries).toHaveLength(1)
+  })
+})

@@ -1,0 +1,44 @@
+# Rubén Alapont
+
+> CTO with 12 years scaling engineering teams and shipping production AI and regulated software. Based in Valencia, Spain. Open to fractional CTO engagements and technical advisory in Spain and the EU.
+
+## About
+
+I am CTO at Aimira, where an AI quality-control platform inspects fabric on the production line: computer vision catching defects in real time, with roll-level traceability. The factory does not care how elegant the model is if the line has to stop, so I own the unglamorous half: the retraining loop, edge deployment that survives losing the network, and installations you can reproduce.
+
+Over 12 years I have scaled engineering organisations, from six engineers to around forty at Fourvenues, and through migrations at Loomee, Cubicup and Avantio. It is the same problem each time: systems where a consistency failure has real-world consequences for the business and the people who depend on it.
+
+I measure my work by what the business gets: dates it can plan around, cost it can predict, and risk it can explain to the people who fund it. Hexagonal architecture, event-driven systems and delivery you can measure are how I get there, alongside a team that outlives any single decision I make.
+
+## Experience
+
+- Aimira: CTO (Feb 2026 – Present), Valencia
+- Loomee: CTO (Mar 2025 – Feb 2026), Madrid
+- Fourvenues: Product Owner → Technical Lead Manager → Head of Engineering (Jan 2023 – Mar 2025), Valencia
+- Cubicup: Technical Lead (Apr 2019 – Jun 2022), Valencia
+- Avantio: Full Stack Developer → Technical Lead (May 2017 – Apr 2019), Valencia
+
+## Fractional CTO and technical advisory
+
+Some companies need senior technical leadership before they can justify a full-time CTO. I already hold that seat at Aimira, so I take on a small number of engagements alongside it: mostly scoped pieces of work and advisory, and occasionally a deeper embedded role. I stay accountable for what ships. Not a slide deck.
+
+- Scoped (Fixed scope, fixed end date): An architecture assessment, a delivery-metrics baseline, or one LLM feature taken from idea to production. Ends with something running, not a document. The easiest place to start.
+- Advisory (One day a week): Architecture and hiring decisions, code and design review, a weekly session with the founders. For teams that are shipping but flying blind. This is the usual ongoing shape while the CTO seat at Aimira has my week.
+- Embedded (Two days a week, subject to capacity): I own the technical roadmap and the engineering process, in the standups, in the pull requests and in the hiring loop. Availability is limited and depends on my other commitments, so ask before you plan around it.
+
+## Case studies
+
+Case studies are anonymised and described at a high level. I don't name the company or share confidential details, out of respect for confidentiality commitments.
+
+- Turning a burned-out team into predictable delivery
+- From a fragile prototype to production in about 2 months
+- From developer to technical lead of 20 engineers in 18 months
+- Replacing an email-based process with a SaaS platform, built from scratch
+
+## Contact and profiles
+
+- Site: https://rualca.github.io/
+- Email: rruben.alapont@gmail.com
+- LinkedIn: https://www.linkedin.com/in/rubenalapont
+- GitHub: https://github.com/rualca
+- Medium: https://medium.com/@ruben.alapont
