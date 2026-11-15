@@ -4,7 +4,7 @@ Rewrite the prose of the articles whose expressions read as machine-written, so 
 
 ## Specs
 
-**S1 — Alcance.** Se reescriben los 7 artículos de la banda fuerte del scoring de expresiones (score ≥ 40, densidades por 1000 palabras): `leadership-in-tech-an-introduction`, `strategic-thinking-in-tech-leadership`, `the-role-of-emotional-intelligence-in-tech-leadership`, `mongodb-security-essentials-protecting-your-data`, `getting-started-with-npm-an-introductory-guide`, `versioning-explained-semantic-versioning-in-npm-packages`, `indexing-in-mongodb-speeding-up-your-searches`. La banda media (22 artículos) queda **pendiente de decisión del usuario** y no se toca.
+**S1 — Alcance.** Se reescriben los 7 artículos de la banda fuerte del scoring de expresiones (score ≥ 40, densidades por 1000 palabras): `leadership-in-tech-an-introduction`, `strategic-thinking-in-tech-leadership`, `the-role-of-emotional-intelligence-in-tech-leadership`, `mongodb-security-essentials-protecting-your-data`, `getting-started-with-npm-an-introductory-guide`, `versioning-explained-semantic-versioning-in-npm-packages`, `indexing-in-mongodb-speeding-up-your-searches`. La banda media (22 artículos, T8–T29) se reescribe con el mismo criterio por pedido explícito del usuario.
 
 **S2 — Qué tiene que desaparecer (por expresión, no por idea).**
 - El léxico marcado: `delve`, `realm`, `landscape`, `fast-paced`, `in the world of`, `in today's`, `let's dive into`, `let's delve`, `treasure trove`, `ever-evolving`, `seamless(ly)`, `unlock`, `elevate`, `robust`, `testament`, `navigate the`, `harness the power`, `game-chang*`, `cutting-edge`, `at the end of the day`, `it's important to note`, `buckle up`.
@@ -13,7 +13,7 @@ Rewrite the prose of the articles whose expressions read as machine-written, so 
 - El hedging blando (`may`, `might`, `could`, `often`, `typically`, `generally`, `tend to`, `usually`) se reduce a lo que el contenido técnico exige; una afirmación verdadera se afirma.
 - Los aperitivos de fórmula: «Let's dive in», «Let's get started», «Welcome to», «In this article we'll».
 
-**S3 — Qué no se toca.** Bloques de código (byte a byte), frontmatter, los títulos `##`/`###` existentes, los enlaces ya presentes, los nombres de API y de paquetes, y el orden de las secciones. **No se agregan hechos**: ni estadísticas, ni citas, ni fechas, ni anécdotas, ni ejemplos nuevos. La reescritura cambia cómo está dicho, nunca qué se dice.
+**S3 — Qué no se toca.** Bloques de código (byte a byte), los enlaces ya presentes, los nombres de API y de paquetes, el orden y el número de secciones, y las claves del frontmatter `title`, `pubDate`, `tags`. **Los `###` y la `description` sí se reescriben cuando contienen una expresión de S2**, porque también los lee el usuario en el índice, el RSS y el sumario. **No se agregan hechos**: ni estadísticas, ni citas, ni fechas, ni anécdotas, ni ejemplos nuevos. La reescritura cambia cómo está dicho, nunca qué se dice.
 
 **S4 — Cómo tiene que sonar.** Frases de longitud desigual, voz activa, segunda persona sólo donde el texto ya tutorializa, sin párrafo de cierre que resuma lo ya dicho, sin abrir con una promesa de lo que viene. El registro sigue siendo técnico y en inglés, igual que el original.
 
@@ -31,6 +31,29 @@ Rewrite the prose of the articles whose expressions read as machine-written, so 
 | T6 | `versioning-explained-semantic-versioning-in-npm-packages` (44.9) | S1 S2 S3 S4 S5 | worker | done |
 | T7 | `indexing-in-mongodb-speeding-up-your-searches` (42.2) | S1 S2 S3 S4 S5 | inline | done |
 
+| T8 | `exploring-npm-registries-a-guide-to-public-and-private-package-management` (38.4) | S1 S2 S3 S4 S5 | worker | pending |
+| T9 | `real-world-mongodb-case-studies-and-use-cases` (35.2) | S1 S2 S3 S4 S5 | worker | pending |
+| T10 | `navigating-team-dynamics-in-tech-projects` (34.4) | S1 S2 S3 S4 S5 | worker | pending |
+| T11 | `decision-making-in-tech-balancing-risk-and-innovation` (33.9) | S1 S2 S3 S4 S5 | worker | pending |
+| T12 | `setting-the-stage-installing-and-configuring-mongodb` (32.1) | S1 S2 S3 S4 S5 | worker | pending |
+| T13 | `installing-your-first-package-with-npm-a-step-by-step-tutorial` (31.8) | S1 S2 S3 S4 S5 | worker | pending |
+| T14 | `understanding-the-package-json-file` (29.7) | S1 S2 S3 S4 S5 | worker | pending |
+| T15 | `how-to-measure-satisfaction-in-space-metrics` (27.7) | S1 S2 S3 S4 S5 | worker | pending |
+| T16 | `what-are-space-metrics-and-why-do-they-matter` (25.7) | S1 S2 S3 S4 S5 | worker | pending |
+| T17 | `measuring-efficiency-in-space-metrics` (24.8) | S1 S2 S3 S4 S5 | worker | pending |
+| T18 | `securing-node-js-projects-an-introduction-to-npm-audit` (24.2) | S1 S2 S3 S4 S5 | worker | pending |
+| T19 | `npm-cli-mastering-command-line-interface-for-efficient-development` (24.0) | S1 S2 S3 S4 S5 | worker | pending |
+| T20 | `streamlining-your-code-best-practices-for-node-js-streams` (23.6) | S1 S2 S3 S4 S5 | worker | pending |
+| T21 | `integrating-mongodb-with-node-js` (23.0) | S1 S2 S3 S4 S5 | worker | pending |
+| T22 | `piping-hot-the-power-of-pipe-in-node-js-streams` (22.8) | S1 S2 S3 S4 S5 | worker | pending |
+| T23 | `advanced-npm-working-with-peer-dependencies` (22.5) | S1 S2 S3 S4 S5 | worker | pending |
+| T24 | `data-modeling-in-mongodb-best-practices` (22.1) | S1 S2 S3 S4 S5 | worker | pending |
+| T25 | `performance-considerations-with-node-js-threads` (21.6) | S1 S2 S3 S4 S5 | worker | pending |
+| T26 | `troubleshooting-common-npm-issues-tips-and-solutions` (21.6) | S1 S2 S3 S4 S5 | worker | pending |
+| T27 | `working-with-large-datasets-in-mongodb` (21.5) | S1 S2 S3 S4 S5 | worker | pending |
+| T28 | `aggregation-framework-advanced-data-analysis-in-mongodb` (20.9) | S1 S2 S3 S4 S5 | worker | pending |
+| T29 | `introduction-to-design-patterns-what-are-they-and-why-do-they-matter` (20.7) | S1 S2 S3 S4 S5 | worker | pending |
+
 ## Log
 
 **L1** — «no, allá donde parezca que lo ha escrito una IA, parafrasea para que no lo parezca»
@@ -44,3 +67,5 @@ Rewrite the prose of the articles whose expressions read as machine-written, so 
 **L5** — Desvío documentado de S3: además del cuerpo se tocaron los `###` y la `description` del frontmatter **cuando contenían una expresión de S2**, porque son texto que el lector ve en `/blog`, en el RSS y en el índice de secciones. Casos: `### Agility: Navigating the Rapids of Change` → `Changing Course Under Pressure`, `### Empowerment: Unlocking Potential` → `Letting the Team Decide`, `### Adaptability: Navigating the Flux` → `Working Without a Fixed Map`, `### Conclusion: Navigating the Versions with Confidence` → `Where Versioning Bites`, y las descripciones tipo «Ahoy, digital defenders» / «Greetings, database dynamos» / «Welcome back… where we delve». Se preservó el número y el orden de las secciones, y las claves del frontmatter (`title`, `pubDate`, `tags`) quedaron byte a byte.
 
 **L6** — Verificación S5 sobre los 7 archivos, re-medida por el padre: tells 0, «not just X but Y» 0, tríadas 0 en los siete; score 0.0 en los siete (antes: 88.4, 67.3, 55.0, 53.4, 49.0, 44.9, 42.2). Bloques de código comparados con `git show HEAD:` → idénticos en los seis archivos que tienen fences. `npm run build` verde (75 páginas), `npm test` 26 archivos / 158 tests, `npx eslint .` limpio. La banda media (22 artículos) sigue sin tocar, pendiente de decisión.
+
+**L7** — «dale»: autoriza reescribir también la banda media y entregar. Se extiende el alcance a T8–T29 (22 artículos, scores 20.7–38.4) y S3 se corrige para que los `###` y la `description` entren siempre que lleven una expresión de S2, porque el usuario ve ese texto en el índice, el RSS y el sumario.
