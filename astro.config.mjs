@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -11,7 +13,7 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 // config. Change both or neither.
 export default defineConfig({
   site: 'https://rualca.github.io',
-  integrations: [react()],
+  integrations: [react(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
     resolve: {

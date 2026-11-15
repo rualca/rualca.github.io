@@ -11,12 +11,14 @@ describe('crawler files', () => {
     const robots = read('../public/robots.txt')
     expect(robots).toMatch(/User-agent: \*/)
     expect(robots).not.toMatch(/^Disallow:\s*\/\s*$/m)
-    expect(robots).toContain('Sitemap: https://rualca.github.io/sitemap.xml')
+    expect(robots).toContain('Sitemap: https://rualca.github.io/sitemap-index.xml')
   })
 
-  it('sitemap.xml lists the site root', () => {
-    const sitemap = read('../public/sitemap.xml')
-    expect(sitemap).toContain('<loc>https://rualca.github.io/</loc>')
+  it('generates sitemap.xml at build time instead of keeping a hand-written copy', () => {
+    // S5: the hand-maintained file is gone; the sitemap integration writes it
+    // from the routes and the blog collection on every build.
+    expect(fs.existsSync(new URL('../public/sitemap.xml', import.meta.url))).toBe(false)
+    expect(read('../astro.config.mjs')).toMatch(/sitemap\(\)/)
   })
 
   it('the base layout carries a no-JavaScript summary for crawlers that do not run scripts', () => {

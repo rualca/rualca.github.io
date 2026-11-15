@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rualca.github.io/sitemap.xml
+Sitemap: https://rualca.github.io/sitemap-index.xml
