@@ -44,6 +44,19 @@ describe('descriptionFrom', () => {
     expect(description).not.toContain('  ')
   })
 
+  it('extends a very short opening sentence so the description says something', () => {
+    const markdown = "Hello, fellow Node enthusiasts! Today, we're going to take a plunge into Node.js streams."
+    expect(descriptionFrom(markdown)).toBe(
+      "Hello, fellow Node enthusiasts! Today, we're going to take a plunge into Node.js streams.",
+    )
+  })
+
+  it('keeps a single opening sentence when it already stands on its own', () => {
+    expect(descriptionFrom('Streams let you process data piece by piece. They also save memory.')).toBe(
+      'Streams let you process data piece by piece.',
+    )
+  })
+
   it('falls back to the first paragraph when there is no sentence break', () => {
     expect(descriptionFrom('No final period here at all')).toBe('No final period here at all')
   })

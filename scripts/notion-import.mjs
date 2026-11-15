@@ -12,7 +12,7 @@
  */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import { existsSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -158,7 +158,12 @@ async function main() {
   for (const page of pages) byTopic.get(page.topic).push(page)
   for (const list of byTopic.values()) list.sort((a, b) => a.createdTime.localeCompare(b.createdTime))
 
-  const taken = new Set(readdirSync(postsDir).map((file) => file.replace(/\.md$/, '')))
+  // Re-importing rewrites the same file; a different article keeps its own slug.
+  const isFreeSlug = (slug, title) => {
+    const file = join(postsDir, `${slug}.md`)
+    if (!existsSync(file)) return true
+    return readFileSync(file, 'utf8').startsWith(`---\ntitle: ${JSON.stringify(title)}\n`)
+  }
   const report = []
 
   for (const topic of wanted) {
@@ -177,8 +182,7 @@ async function main() {
 
       const baseSlug = slugify(page.title)
       let slug = baseSlug
-      for (let suffix = 2; taken.has(slug); suffix += 1) slug = `${baseSlug}-${suffix}`
-      taken.add(slug)
+      for (let suffix = 2; !isFreeSlug(slug, page.title); suffix += 1) slug = `${baseSlug}-${suffix}`
 
       const description = descriptionFrom(body)
       if (!description) throw new Error(`No description could be derived for ${page.title}`)

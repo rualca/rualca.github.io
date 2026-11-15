@@ -22,6 +22,7 @@ export const SERIES = {
 
 const MAX_SLUG_LENGTH = 80
 const MAX_DESCRIPTION_LENGTH = 200
+const MIN_OPENING_SENTENCE = 40
 const DAY_MS = 24 * 60 * 60 * 1000
 
 const seriesFor = (topic) => {
@@ -55,6 +56,20 @@ const stripInlineMarkdown = (text) =>
     .replace(/\s+/g, ' ')
     .trim()
 
+/** Splits on sentence ends, but not on the dots inside `foo.bar()` or `Node.js`. */
+const splitSentences = (text) => {
+  const parts = []
+  const boundary = /[.!?](?=\s+[A-Z"'“(]|$)/g
+  let start = 0
+  for (let match = boundary.exec(text); match; match = boundary.exec(text)) {
+    parts.push(text.slice(start, match.index + 1).trim())
+    start = match.index + 1
+  }
+  const tail = text.slice(start).trim()
+  if (tail) parts.push(tail)
+  return parts.filter(Boolean)
+}
+
 /** First real paragraph, first sentence: a plain-text `description`. */
 export function descriptionFrom(markdown) {
   const paragraph = []
@@ -70,8 +85,12 @@ export function descriptionFrom(markdown) {
   const text = stripInlineMarkdown(paragraph.join(' '))
   if (!text) return ''
 
-  const sentenceEnd = text.search(/[.!?](\s|$)/)
-  const sentence = sentenceEnd === -1 ? text : text.slice(0, sentenceEnd + 1)
+  const sentences = splitSentences(text)
+  let sentence = sentences[0] ?? text
+  if (sentence.length < MIN_OPENING_SENTENCE && sentences.length > 1) {
+    const combined = `${sentence} ${sentences[1]}`
+    if (combined.length <= MAX_DESCRIPTION_LENGTH) sentence = combined
+  }
   if (sentence.length <= MAX_DESCRIPTION_LENGTH) return sentence
 
   const cut = sentence.slice(0, MAX_DESCRIPTION_LENGTH)
