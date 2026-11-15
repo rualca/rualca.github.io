@@ -36,7 +36,15 @@ const ScrollReveal = ({
 
     const scroller = scrollContainerRef && scrollContainerRef.current ? scrollContainerRef.current : window;
 
-    gsap.fromTo(
+    // Only the triggers created below belong to this component: killing every
+    // ScrollTrigger on the page would tear down animations owned by others.
+    const triggers = [];
+    const track = (tween) => {
+      if (tween && tween.scrollTrigger) triggers.push(tween.scrollTrigger);
+      return tween;
+    };
+
+    track(gsap.fromTo(
       el,
       { transformOrigin: '0% 50%', rotate: baseRotation },
       {
@@ -50,11 +58,11 @@ const ScrollReveal = ({
           scrub: true
         }
       }
-    );
+    ));
 
     const wordElements = el.querySelectorAll('.word');
 
-    gsap.fromTo(
+    track(gsap.fromTo(
       wordElements,
       { opacity: baseOpacity, willChange: 'opacity' },
       {
@@ -69,10 +77,10 @@ const ScrollReveal = ({
           scrub: true
         }
       }
-    );
+    ));
 
     if (enableBlur) {
-      gsap.fromTo(
+      track(gsap.fromTo(
         wordElements,
         { filter: `blur(${blurStrength}px)` },
         {
@@ -87,11 +95,11 @@ const ScrollReveal = ({
             scrub: true
           }
         }
-      );
+      ));
     }
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      triggers.forEach(trigger => trigger.kill());
     };
   }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
 
