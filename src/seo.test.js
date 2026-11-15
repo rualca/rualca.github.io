@@ -19,8 +19,8 @@ describe('crawler files', () => {
     expect(sitemap).toContain('<loc>https://rualca.github.io/</loc>')
   })
 
-  it('index.html carries a no-JavaScript summary for crawlers that do not run scripts', () => {
-    const html = read('../index.html')
+  it('the base layout carries a no-JavaScript summary for crawlers that do not run scripts', () => {
+    const html = read('./layouts/Base.astro')
     const noscript = html.match(/<noscript>([\s\S]*?)<\/noscript>/)?.[1] ?? ''
     expect(noscript).toContain('Rubén Alapont')
     expect(noscript).toContain('/llms.txt')
