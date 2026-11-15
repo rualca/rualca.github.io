@@ -19,7 +19,7 @@ Here’s what we’ll be talking about:
 4. 🧹 **Clearing and Managing Your Cache** – Keeping your cache clean and efficient.
 5. 📝 **Best Practices for NPM Caching** – Tips to keep your caching strategy on point.
 
-Let’s dig in and see how we can put the "fast" back in "fast-paced development"! 🏃‍♂️💻
+Let’s dig in and see how we can put the "fast" back in "fast development"! 🏃‍♂️💻
 
 ## 💡 What is NPM Caching?
 

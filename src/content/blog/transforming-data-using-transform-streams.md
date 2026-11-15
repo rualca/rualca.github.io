@@ -78,4 +78,4 @@ Here, we're taking in JSON strings, parsing them, and pushing them down the stre
 
 Transform streams in Node.js are your toolkit for on-the-fly data transformation. They are powerful, versatile, and can make your data handling both efficient and elegant.
 
-Until next time, keep transforming your data streams into streams of possibilities, and may your code be as seamless as a perfectly executed data transformation! 🌊🔮🚀
+Until next time, keep transforming.

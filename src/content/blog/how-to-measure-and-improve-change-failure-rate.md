@@ -83,7 +83,7 @@ We stopped deploying everything all at once. Instead, we moved to gradual rollou
 
 ### 5. Continuous Integration and Deployment 🏗️
 
-By adopting CI/CD, we could deploy smaller, incremental changes more frequently. This not only reduced the complexity of each deployment but also made it easier to identify the root cause of any failures that did occur.
+By adopting CI/CD, we could deploy smaller, incremental changes more frequently. That made each deployment smaller, and the root cause easier to find when one failed.
 
 ## 🚀 Continuous Improvement
 

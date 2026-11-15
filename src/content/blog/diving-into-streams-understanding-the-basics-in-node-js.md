@@ -46,7 +46,7 @@ In this code, we're creating a readable stream from a large file. Each time a ch
 
 ### Mind the Backpressure!
 
-In the world of streams, backpressure is when the data comes in faster than you can handle it. It's like trying to drink from a firehose! To manage this, Node.js streams automatically pause and resume data flow to prevent overwhelming your application.
+Backpressure is what happens when data arrives faster than the consumer can take it. It's like trying to drink from a firehose! To manage this, Node.js streams automatically pause and resume data flow to prevent overwhelming your application.
 
 ### Conclusion: The Streamy Road Ahead
 

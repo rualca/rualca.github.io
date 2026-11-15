@@ -39,7 +39,7 @@ The Aggregation Framework is like a cauldron where you can mix various data tran
 
 The `$lookup` stage is akin to summoning data from parallel dimensions (collections). Yet, this powerful magic can be costly.
 
-- **Use Sparingly**: Only conjure `$lookup` when necessary, as merging realms (collections) can be a taxing ritual.
+- **Use Sparingly**: `$lookup` is the expensive stage. Reach for it only when the query needs documents from another collection.
 
 ### Enchantment #5: The Curse of Overfetching
 

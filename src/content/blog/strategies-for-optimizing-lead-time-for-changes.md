@@ -29,7 +29,7 @@ Here’s the roadmap for our journey today:
 
 Lead Time for Changes is one of the four key DORA Metrics, and it measures the time it takes for a code change to be committed and deployed to production. In other words, it’s the clock that starts ticking the moment a developer hits “commit” and stops only when the code is live in front of users.
 
-Why does this matter? Well, in today’s fast-paced world of software development, the ability to deliver new features and fixes quickly can be the difference between keeping customers happy or losing them to competitors. The shorter your Lead Time for Changes, the more agile and responsive your team can be.
+Why does this matter? Well, in software development, the ability to deliver new features and fixes quickly can be the difference between keeping customers happy or losing them to competitors. The shorter your Lead Time for Changes, the more agile and responsive your team can be.
 
 But let’s be honest—there’s nothing glamorous about optimizing Lead Time. It’s not as exciting as launching a new feature or squashing a high-severity bug. But it is critical, and once you start to see the results, you’ll wonder how you ever worked any other way.
 
@@ -71,7 +71,7 @@ One of our biggest bottlenecks was code reviews. We were spending too much time 
 
 Manual testing and deployment were eating up a significant portion of our Lead Time. We tackled this by:
 
-- **Implementing automated tests** that ran on every commit. This not only caught issues early but also sped up the entire process.
+- **Implementing automated tests** that ran on every commit. That caught issues early and sped the process up.
 - **Setting up continuous integration (CI) pipelines** to automatically build, test, and deploy our code. This removed a lot of the manual steps that were slowing us down.
 
 ### 3. Parallelize Workflows 🏎️

@@ -5,7 +5,7 @@ pubDate: 2024-01-30
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---
 
-Hello, tech enthusiasts and Node.js aficionados! In our unnamed yet irresistibly captivating series, we’re turning the spotlight on a game-changing feature in Node.js: "The Birth of Worker Threads." It’s time to roll out the red carpet and welcome this star-studded feature that’s revolutionizing the way we think about concurrency in Node.js!
+Hello, tech enthusiasts and Node.js aficionados! In our unnamed yet irresistibly captivating series, we’re turning the spotlight on a feature in Node.js: "The Birth of Worker Threads." It’s time to roll out the red carpet and welcome this star-studded feature and how it changes what concurrency means in Node.js!
 
 ## Once Upon a Time: Node.js and Its Single-Threaded Saga
 

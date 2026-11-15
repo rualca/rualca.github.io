@@ -64,7 +64,7 @@ Yarn also takes security seriously, and while it doesn’t have a direct equival
 
 ### The Verdict
 
-Both package managers offer robust security features, but if automated security scanning is a priority, NPM’s built-in audit tool might give it a slight edge. However, Yarn’s integrity checks are a strong feature for ensuring package authenticity.
+Both package managers offer security features, but if automated security scanning is a priority, NPM’s built-in audit tool might give it a slight edge. However, Yarn’s integrity checks are a strong feature for ensuring package authenticity.
 
 ## 💾 Dependency Management: Different Approaches
 

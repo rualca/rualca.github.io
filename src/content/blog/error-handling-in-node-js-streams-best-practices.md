@@ -9,7 +9,7 @@ Hello again, code wranglers and data streamers! Welcome back to our delightful d
 
 ## The Inevitability of Errors
 
-In the world of Node.js streams, errors are like uninvited party crashers – they're bound to show up at some point. But fear not! Just like a skilled party host, we can handle these unexpected guests with grace and efficiency.
+Errors happen in a stream. The question is what the chain does when one arrives. But fear not! Just like a skilled party host, we can handle these unexpected guests with grace and efficiency.
 
 ### The Art of Catching Errors
 

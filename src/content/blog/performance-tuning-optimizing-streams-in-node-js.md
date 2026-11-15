@@ -9,7 +9,7 @@ Welcome back, coding maestros and Node.js ninjas! In our unnamed yet increasingl
 
 ## The Need for Speed: Why Optimize Streams?
 
-In the world of Node.js, streams are like the interconnecting highways of data. And just like any highway, traffic jams (data bottlenecks) are a no-go. Optimizing streams ensures your data flows smoothly and efficiently, without any frustrating 'rush hour' delays.
+Streams are the interconnecting highways of data in Node.js. And just like any highway, traffic jams (data bottlenecks) are a no-go. Optimizing streams ensures your data flows smoothly and efficiently, without any frustrating 'rush hour' delays.
 
 ### Speed Boosters: Tips for Stream Optimization
 

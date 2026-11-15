@@ -7,7 +7,7 @@ tags: ["patterns", "design", "architecture", "javascript"]
 
 ![](/images/blog/singleton-pattern-ensuring-a-class-has-only-one-instance/image-1.jpg)
 
-Welcome, fellow code adventurers, to another thrilling installment of our "Gangs of Four" series! Today, we're diving deep into the mysterious world of the Singleton Pattern. Buckle up, because this tale of solitude and uniqueness is about to blow your mind! 🤯
+Welcome, fellow code adventurers, to another thrilling installment of our "Gangs of Four" series! Today, we're diving deep into the mysterious world of the Singleton Pattern. The Singleton is the smallest pattern in the catalogue, and the easiest to misuse.
 
 Before we embark on this epic journey, let's take a sneak peek at what's in store for you:
 
@@ -17,7 +17,7 @@ Before we embark on this epic journey, let's take a sneak peek at what's in stor
 - 🚀 Real-world quests: Practical applications of Singleton
 - 🧙‍♂️ Singleton wizardry: Advanced techniques and variations
 
-Once upon a time, in a codebase far, far away, there lived a peculiar class named Singleton. Unlike its numerous siblings scattered across the vast landscape of object-oriented programming, Singleton was destined to be forever alone. But don't feel sorry for our solitary hero just yet! This unique characteristic made Singleton incredibly powerful and sought after by developers across the realm.
+Once upon a time, in a codebase far, far away, there lived a peculiar class named Singleton. Unlike its siblings in the catalogue, Singleton exists in exactly one copy. But don't feel sorry for our solitary hero just yet! This unique characteristic made Singleton incredibly powerful and sought after by developers.
 
 Picture this: You're the ruler of a magical kingdom (let's call it JavaScriptLand), and you need to ensure that there's only one royal seal to authenticate important documents. You can't risk having multiple seals floating around, causing chaos and confusion. This, my friends, is where our protagonist, the Singleton pattern, comes to the rescue!
 
