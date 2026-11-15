@@ -31,28 +31,28 @@ Rewrite the prose of the articles whose expressions read as machine-written, so 
 | T6 | `versioning-explained-semantic-versioning-in-npm-packages` (44.9) | S1 S2 S3 S4 S5 | worker | done |
 | T7 | `indexing-in-mongodb-speeding-up-your-searches` (42.2) | S1 S2 S3 S4 S5 | inline | done |
 
-| T8 | `exploring-npm-registries-a-guide-to-public-and-private-package-management` (38.4) | S1 S2 S3 S4 S5 | worker | pending |
-| T9 | `real-world-mongodb-case-studies-and-use-cases` (35.2) | S1 S2 S3 S4 S5 | worker | pending |
-| T10 | `navigating-team-dynamics-in-tech-projects` (34.4) | S1 S2 S3 S4 S5 | worker | pending |
-| T11 | `decision-making-in-tech-balancing-risk-and-innovation` (33.9) | S1 S2 S3 S4 S5 | worker | pending |
-| T12 | `setting-the-stage-installing-and-configuring-mongodb` (32.1) | S1 S2 S3 S4 S5 | worker | pending |
-| T13 | `installing-your-first-package-with-npm-a-step-by-step-tutorial` (31.8) | S1 S2 S3 S4 S5 | worker | pending |
-| T14 | `understanding-the-package-json-file` (29.7) | S1 S2 S3 S4 S5 | worker | pending |
-| T15 | `how-to-measure-satisfaction-in-space-metrics` (27.7) | S1 S2 S3 S4 S5 | worker | pending |
-| T16 | `what-are-space-metrics-and-why-do-they-matter` (25.7) | S1 S2 S3 S4 S5 | worker | pending |
-| T17 | `measuring-efficiency-in-space-metrics` (24.8) | S1 S2 S3 S4 S5 | worker | pending |
-| T18 | `securing-node-js-projects-an-introduction-to-npm-audit` (24.2) | S1 S2 S3 S4 S5 | worker | pending |
-| T19 | `npm-cli-mastering-command-line-interface-for-efficient-development` (24.0) | S1 S2 S3 S4 S5 | worker | pending |
-| T20 | `streamlining-your-code-best-practices-for-node-js-streams` (23.6) | S1 S2 S3 S4 S5 | worker | pending |
-| T21 | `integrating-mongodb-with-node-js` (23.0) | S1 S2 S3 S4 S5 | worker | pending |
-| T22 | `piping-hot-the-power-of-pipe-in-node-js-streams` (22.8) | S1 S2 S3 S4 S5 | worker | pending |
-| T23 | `advanced-npm-working-with-peer-dependencies` (22.5) | S1 S2 S3 S4 S5 | worker | pending |
-| T24 | `data-modeling-in-mongodb-best-practices` (22.1) | S1 S2 S3 S4 S5 | worker | pending |
-| T25 | `performance-considerations-with-node-js-threads` (21.6) | S1 S2 S3 S4 S5 | worker | pending |
-| T26 | `troubleshooting-common-npm-issues-tips-and-solutions` (21.6) | S1 S2 S3 S4 S5 | worker | pending |
-| T27 | `working-with-large-datasets-in-mongodb` (21.5) | S1 S2 S3 S4 S5 | worker | pending |
-| T28 | `aggregation-framework-advanced-data-analysis-in-mongodb` (20.9) | S1 S2 S3 S4 S5 | worker | pending |
-| T29 | `introduction-to-design-patterns-what-are-they-and-why-do-they-matter` (20.7) | S1 S2 S3 S4 S5 | worker | pending |
+| T8 | `exploring-npm-registries-a-guide-to-public-and-private-package-management` (38.4) | S1 S2 S3 S4 S5 | worker | done |
+| T9 | `real-world-mongodb-case-studies-and-use-cases` (35.2) | S1 S2 S3 S4 S5 | worker | done |
+| T10 | `navigating-team-dynamics-in-tech-projects` (34.4) | S1 S2 S3 S4 S5 | worker | done |
+| T11 | `decision-making-in-tech-balancing-risk-and-innovation` (33.9) | S1 S2 S3 S4 S5 | worker | done |
+| T12 | `setting-the-stage-installing-and-configuring-mongodb` (32.1) | S1 S2 S3 S4 S5 | worker | done |
+| T13 | `installing-your-first-package-with-npm-a-step-by-step-tutorial` (31.8) | S1 S2 S3 S4 S5 | worker | done |
+| T14 | `understanding-the-package-json-file` (29.7) | S1 S2 S3 S4 S5 | worker | done |
+| T15 | `how-to-measure-satisfaction-in-space-metrics` (27.7) | S1 S2 S3 S4 S5 | worker | done |
+| T16 | `what-are-space-metrics-and-why-do-they-matter` (25.7) | S1 S2 S3 S4 S5 | worker | done |
+| T17 | `measuring-efficiency-in-space-metrics` (24.8) | S1 S2 S3 S4 S5 | worker | done |
+| T18 | `securing-node-js-projects-an-introduction-to-npm-audit` (24.2) | S1 S2 S3 S4 S5 | worker | done |
+| T19 | `npm-cli-mastering-command-line-interface-for-efficient-development` (24.0) | S1 S2 S3 S4 S5 | worker | done |
+| T20 | `streamlining-your-code-best-practices-for-node-js-streams` (23.6) | S1 S2 S3 S4 S5 | worker | done |
+| T21 | `integrating-mongodb-with-node-js` (23.0) | S1 S2 S3 S4 S5 | worker | done |
+| T22 | `piping-hot-the-power-of-pipe-in-node-js-streams` (22.8) | S1 S2 S3 S4 S5 | worker | done |
+| T23 | `advanced-npm-working-with-peer-dependencies` (22.5) | S1 S2 S3 S4 S5 | worker | done |
+| T24 | `data-modeling-in-mongodb-best-practices` (22.1) | S1 S2 S3 S4 S5 | worker | done |
+| T25 | `performance-considerations-with-node-js-threads` (21.6) | S1 S2 S3 S4 S5 | worker | done |
+| T26 | `troubleshooting-common-npm-issues-tips-and-solutions` (21.6) | S1 S2 S3 S4 S5 | worker | done |
+| T27 | `working-with-large-datasets-in-mongodb` (21.5) | S1 S2 S3 S4 S5 | worker | done |
+| T28 | `aggregation-framework-advanced-data-analysis-in-mongodb` (20.9) | S1 S2 S3 S4 S5 | worker | done |
+| T29 | `introduction-to-design-patterns-what-are-they-and-why-do-they-matter` (20.7) | S1 S2 S3 S4 S5 | worker | done |
 
 ## Log
 
@@ -69,3 +69,5 @@ Rewrite the prose of the articles whose expressions read as machine-written, so 
 **L6** — Verificación S5 sobre los 7 archivos, re-medida por el padre: tells 0, «not just X but Y» 0, tríadas 0 en los siete; score 0.0 en los siete (antes: 88.4, 67.3, 55.0, 53.4, 49.0, 44.9, 42.2). Bloques de código comparados con `git show HEAD:` → idénticos en los seis archivos que tienen fences. `npm run build` verde (75 páginas), `npm test` 26 archivos / 158 tests, `npx eslint .` limpio. La banda media (22 artículos) sigue sin tocar, pendiente de decisión.
 
 **L7** — «dale»: autoriza reescribir también la banda media y entregar. Se extiende el alcance a T8–T29 (22 artículos, scores 20.7–38.4) y S3 se corrige para que los `###` y la `description` entren siempre que lleven una expresión de S2, porque el usuario ve ese texto en el índice, el RSS y el sumario.
+
+**L8** — Banda media cerrada: T8–T18 y T28 por `gentle-ai-worker` (dos escritores completaron; dos murieron con error de cuota del provider y no se reintentan). T19–T29 los hizo el padre en línea, en dos pasadas. Medición final sobre los 22: tells 0, «not just X but Y» 0, score 0.0–7.6, muy por debajo del umbral 20. Verificado en los 22: fences idénticos a `HEAD` y `title`/`pubDate`/`tags` byte a byte; conteo de secciones intacto en los 29 artículos reescritos. Las 43 piezas de la banda baja (< 20) quedaron sin tocar.
