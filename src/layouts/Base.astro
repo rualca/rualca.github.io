@@ -1,4 +1,10 @@
 ---
+// The design layer belongs to the layout, not to one page: Tailwind, the theme
+// tokens and the dark palette are what every page in this site is styled by.
+// Leaving it in index.astro meant any page wrapped only in Base rendered its
+// utility classes against no stylesheet at all.
+import '../App.css';
+
 interface Props {
   title?: string
   description?: string
