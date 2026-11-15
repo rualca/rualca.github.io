@@ -1,46 +1,46 @@
 ---
 title: "MongoDB Security Essentials: Protecting Your Data"
-description: "Ahoy, digital defenders and MongoDB guardians!"
+description: "The five controls that keep a MongoDB deployment private: authentication, authorization, encryption, network exposure and auditing."
 pubDate: 2024-07-29
 tags: ["mongodb", "database", "backend", "nosql"]
 ---
 
-Ahoy, digital defenders and MongoDB guardians! Welcome to another crucial installment of our "MongoDB" series. Today's mission, should you choose to accept it, is "MongoDB Security Essentials: Protecting Your Data." Imagine MongoDB as a treasure trove filled with priceless jewels (your data), and you're the vigilant keeper, ensuring that no marauder makes off with the bounty. Let's fortify our defenses and keep those data jewels safe!
+A default MongoDB install is built to be reachable, not to be safe. If the port answers and no authentication is configured, anyone who finds it can read and write. The five controls below are the ones that matter, roughly in the order they close the biggest holes.
 
 ## The Bedrock of MongoDB Security
 
-In the realm of MongoDB, security isn't just an add-on; it's the fortress walls, the moat, and the drawbridge protecting your kingdom. Implementing robust security measures ensures that your data remains confidential, integral, and exclusively accessible to those with the royal decree (authorization).
+Security on MongoDB is not a flag you set at the end of a project. It is a set of independent controls — authentication, authorization, encryption, network limits and auditing — and each one closes a different hole. Leaving one at its default leaves that hole open.
 
-### 1. Authentication: The Royal Guard
+### 1. Authentication: Who Gets In
 
-Authentication is your first line of defense, determining whether someone is friend or foe. MongoDB supports various authentication mechanisms, including SCRAM, x.509 certificates, and LDAP. It's akin to having a royal guard who thoroughly checks the credentials of anyone seeking entry.
+Authentication decides whether a connection is allowed at all. MongoDB supports SCRAM, x.509 certificates and LDAP. Picking one and turning it on is the highest-value change available to a deployment.
 
-### 🚩 Enabling Authentication:
+### Enabling Authentication:
 
-In your MongoDB configuration file (`mongod.conf`), ensure you have the following lines to enable SCRAM authentication:
+In your MongoDB configuration file (`mongod.conf`), these lines enable SCRAM authentication:
 
 ```yaml
 security:
   authorization: enabled
 ```
 
-This simple decree ensures that all who wish to access the MongoDB kingdom must first identify themselves.
+Without them, every client that can reach the port is trusted by default.
 
-### 2. Authorization: The Royal Decrees
+### 2. Authorization: What Each User Can Do
 
-Once past the gates, authorization dictates what treasures (data) your visitors can gaze upon or interact with. MongoDB uses Role-Based Access Control (RBAC) to assign roles to users, carefully delineating who can do what within your data realm.
+Once a client is authenticated, authorization decides what it can read and write. MongoDB uses Role-Based Access Control (RBAC): roles are assigned to users, and the role carries the privileges.
 
-### 🚩 Crafting Roles:
+### Crafting Roles:
 
-Create roles that match the specific duties within your kingdom. For example, a scribe (application) might only need read access, while a royal advisor (admin) might require more comprehensive privileges.
+Write roles for the job rather than for convenience. An application needs read and write on its own database and nothing else. An administrator needs broader privileges, but it should not be the account the application runs as.
 
-### 3. Encryption: The Magical Shield
+### 3. Encryption: At Rest and in Transit
 
-Encryption serves as a magical shield, rendering your data indecipherable to prying eyes, both at rest and in transit. MongoDB supports TLS/SSL for encrypting data on the move and offers encrypted storage engines for data at rest.
+Encryption covers two separate problems. TLS protects data while it moves between the application and the server. An encrypted storage engine protects the files on disk.
 
-### 🚩 Enforcing TLS:
+### Enforcing TLS:
 
-Ensure your `mongod.conf` includes TLS settings, compelling all incoming connections to use this secure channel:
+Ensure your `mongod.conf` includes TLS settings, so every incoming connection has to use them:
 
 ```yaml
 net:
@@ -49,26 +49,26 @@ net:
     certificateKeyFile: /etc/ssl/mongodb.pem
 ```
 
-### 4. Network Exposure: The Castle Walls
+### 4. Network Exposure: Limit the Perimeter
 
-Limiting network exposure reduces the chances of an assault on your fortress. Bind MongoDB to a local network interface and use firewalls or security groups to restrict access.
+The cheapest way to protect a database is to make it hard to reach. Bind MongoDB to a local or internal network interface, and use a firewall or security group to decide who can connect.
 
-### 🚩 Binding to Local Interface:
+### Binding to Local Interface:
 
-In `mongod.conf`, set the `bindIp` option to `127.0.0.1` or an internal network interface to prevent exposure to the wilds of the internet:
+In `mongod.conf`, set the `bindIp` option to `127.0.0.1` or an internal network interface so the server is not listening on a public one:
 
 ```yaml
 net:
   bindIp: 127.0.0.1
 ```
 
-### 5. Regular Audits: The Royal Scouts
+### 5. Regular Audits: Track What Happens
 
-Regular audits are like sending out scouts to assess the integrity of your defenses. MongoDB's auditing capabilities allow you to track access and alterations to your data, ensuring you can retrace steps and strengthen security where needed.
+Auditing records who accessed what and what changed. Without it, an incident is guesswork: you can see that data is gone, but not who took it.
 
-### 🚩 Enabling Auditing:
+### Enabling Auditing:
 
-Configure auditing in your `mongod.conf` to keep a vigilant eye on activities within your realm:
+Configure auditing in your `mongod.conf` to record activity on the server:
 
 ```yaml
 auditLog:
@@ -77,8 +77,6 @@ auditLog:
   path: /var/log/mongodb/audit.bson
 ```
 
-### Conclusion: Your MongoDB Kingdom Secured
+### Where the Defaults Leave You
 
-With these security essentials in place, your MongoDB kingdom is well-fortified against invaders and ne'er-do-wells. Remember, the realm of data security is ever-evolving, requiring constant vigilance and adaptation.
-
-So, keep your MongoDB fortress secure, and may your data treasures remain safe and sound under your watchful eye! 🛡️💎🔒🚀
+With those five controls configured, a deployment is private by default instead of open by default. Keep the configuration in version control and diff it after an upgrade: a file copied forward keeps whatever it said, including the parts that were convenient at the time.
