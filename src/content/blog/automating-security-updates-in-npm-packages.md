@@ -1,6 +1,6 @@
 ---
 title: "Automating Security Updates in NPM Packages"
-description: "It was a typical Tuesday morning. I sat down with my coffee, ready to dive into the day’s work."
+description: "npm audit, Dependabot and Snyk wired into CI so security updates arrive as pull requests you review, with tests catching what an update breaks."
 pubDate: 2024-04-15
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

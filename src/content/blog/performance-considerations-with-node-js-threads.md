@@ -1,6 +1,6 @@
 ---
 title: "Performance Considerations with Node.js Threads"
-description: "Where Worker Threads actually help in Node.js, where they make things worse, and the five costs to check before you spawn another one."
+description: "Worker Threads in Node.js: how many to spawn, when they help and when they make things worse, message cost, memory overhead and synchronization."
 pubDate: 2024-02-15
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---

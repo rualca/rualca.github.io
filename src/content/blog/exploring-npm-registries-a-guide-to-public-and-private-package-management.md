@@ -1,6 +1,6 @@
 ---
 title: "Exploring NPM Registries: A Guide to Public and Private Package Management"
-description: "How public and private npm registries differ, what each one costs to run, and the practices that keep dependencies auditable."
+description: "Public and private npm registries compared: the reach and risk of npmjs.com against the control, cost and support a private registry brings."
 pubDate: 2024-02-11
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

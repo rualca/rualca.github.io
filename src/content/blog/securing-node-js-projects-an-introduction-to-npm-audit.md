@@ -1,6 +1,6 @@
 ---
 title: "Securing Node.js Projects: An Introduction to NPM Audit"
-description: "What npm audit checks, how to read its report by severity and dependency path, and when the automatic fix is not the fix."
+description: "npm audit: running it, reading the report by severity and dependency path, when the automatic fix is not the fix, and habits that keep it clean."
 pubDate: 2024-03-17
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "NPM Caching: Speeding Up Your Development Process"
-description: "Welcome back to the NPM Package Handler series! 🚀 Today, we're going to talk about something that every developer loves—speed!"
+description: "The npm cache: where it lives, what it stores, when an install reads it, and the commands that inspect, verify and clear it when it goes bad."
 pubDate: 2024-04-30
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

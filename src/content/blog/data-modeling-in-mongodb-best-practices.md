@@ -1,6 +1,6 @@
 ---
 title: "Data Modeling in MongoDB: Best Practices"
-description: "Embed or reference, when to duplicate data, how many indexes to carry, and how to enforce the shape of a document at the database level."
+description: "Embed or reference each relationship, duplicate data only where reads justify it, keep indexes few, and let document validation enforce the shape."
 pubDate: 2024-07-06
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

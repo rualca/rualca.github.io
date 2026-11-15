@@ -1,6 +1,6 @@
 ---
 title: "First Steps: Understanding MongoDB Collections and Documents"
-description: "Ahoy, data navigators and MongoDB explorers!"
+description: "MongoDB documents and collections explained: how BSON documents sit in schema-less collections, and the shell commands that create and list them."
 pubDate: 2024-07-17
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

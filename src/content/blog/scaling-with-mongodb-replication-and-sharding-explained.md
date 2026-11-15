@@ -1,6 +1,6 @@
 ---
 title: "Scaling with MongoDB: Replication and Sharding Explained"
-description: "Ahoy, digital navigators and MongoDB captains!"
+description: "MongoDB replication and sharding: the primary and its secondaries, how failover works, how a shard key maps data, and what each one costs you."
 pubDate: 2024-07-31
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

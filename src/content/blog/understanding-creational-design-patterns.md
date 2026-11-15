@@ -1,6 +1,6 @@
 ---
 title: "Understanding Creational Design Patterns"
-description: "Picture this: you're working on a new app, and the pressure is on."
+description: "Creational design patterns: factory method, singleton, builder, prototype and abstract factory, what each one solves and when adding one is a mistake."
 pubDate: 2024-10-03
 tags: ["patterns", "design", "architecture", "javascript"]
 ---

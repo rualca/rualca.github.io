@@ -1,6 +1,6 @@
 ---
 title: "Setting the Stage: Installing and Configuring MongoDB"
-description: "Installing MongoDB on Windows, macOS and Linux, creating its data directory, and turning on authentication before you put anything in it."
+description: "Installing MongoDB on Windows, macOS and Linux and then configuring it: the config file, data paths, network binding and the security defaults."
 pubDate: 2024-07-01
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

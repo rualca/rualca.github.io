@@ -1,6 +1,6 @@
 ---
 title: "How to Measure Performance in SPACE Metrics"
-description: "Imagine this: You’re a team lead. It’s Monday morning, and your coffee hasn’t even kicked in yet."
+description: "Performance in SPACE metrics: output against outcomes, value delivered, cycle time and lead time, and how to measure without counting commits."
 pubDate: 2024-05-31
 tags: ["productivity", "teams", "metrics", "engineering"]
 ---

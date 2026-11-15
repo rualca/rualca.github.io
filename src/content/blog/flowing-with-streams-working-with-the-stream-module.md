@@ -1,6 +1,6 @@
 ---
 title: "Flowing with Streams: Working with the Stream Module"
-description: "Welcome back, intrepid coders and Node.js aficionados!"
+description: "The Node.js stream module from require('stream'): building Readable and Writable streams by hand and connecting them with pipe() so data flows."
 pubDate: 2023-12-30
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

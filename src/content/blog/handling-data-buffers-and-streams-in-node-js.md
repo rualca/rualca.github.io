@@ -1,6 +1,6 @@
 ---
 title: "Handling Data: Buffers and Streams in Node.js"
-description: "Hey there, Node.js navigators!"
+description: "How a Buffer holds raw bytes and a stream moves them, why streams keep memory flat on a large file, and an example that reads, changes and writes one."
 pubDate: 2024-01-01
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

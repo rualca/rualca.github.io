@@ -1,6 +1,6 @@
 ---
 title: "The Birth of Worker Threads in Node.js"
-description: "Hello, tech enthusiasts and Node.js aficionados!"
+description: "Worker threads in Node.js: why the runtime that promised one thread added them, what parallel JavaScript buys on CPU-heavy work, and a first Worker example."
 pubDate: 2024-01-30
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---

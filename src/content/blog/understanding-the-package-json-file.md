@@ -1,6 +1,6 @@
 ---
 title: "Understanding the package.json file"
-description: "Every Node.js project has one at its root. The package.json file holds the project's name and version, its dependency ranges and the scripts NPM runs, and each field in it has a job."
+description: "Every field in package.json and the job it does: name and version, scripts, dependencies, repository, engines and private, and what NPM does with each."
 pubDate: 2024-03-02
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

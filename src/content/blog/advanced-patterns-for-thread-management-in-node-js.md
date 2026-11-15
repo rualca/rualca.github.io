@@ -1,6 +1,6 @@
 ---
 title: "Advanced Patterns for Thread Management in Node.js"
-description: "Hello again, tech enthusiasts and Node.js aficionados!"
+description: "Dynamic thread pools, load balancing across workers, graceful shutdown and error propagation, built into a Node.js image-processing example."
 pubDate: 2024-02-17
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---

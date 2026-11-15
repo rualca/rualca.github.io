@@ -1,6 +1,6 @@
 ---
 title: "Using NPM in Continuous Integration and Continuous Deployment (CI/CD) Pipelines"
-description: "Welcome back to the NPM Package Handler series! 🚀 Today, we’re diving into the world of Continuous Integration and Continuous Deployment—better known as CI/CD—and exploring how NPM fits into this…"
+description: "NPM inside a CI/CD pipeline: the config file, npm install and caching, tests as a gate, deploy scripts, and locked versions so CI matches local."
 pubDate: 2024-04-05
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

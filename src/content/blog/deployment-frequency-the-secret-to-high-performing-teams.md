@@ -1,6 +1,6 @@
 ---
 title: "Deployment Frequency: The Secret to High-Performing Teams"
-description: "It all started on a typical Monday morning, the kind where you’re still nursing your coffee and pretending the weekend isn’t really over."
+description: "Deployment Frequency as a DORA metric: the bottlenecks that held a team back, and the automation, approvals and CI/CD work that raised it again."
 pubDate: 2024-06-23
 tags: ["dora", "devops", "metrics", "engineering"]
 ---

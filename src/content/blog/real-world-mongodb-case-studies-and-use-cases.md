@@ -1,6 +1,6 @@
 ---
 title: "Real-World MongoDB: Case Studies and Use Cases"
-description: "Five production deployments of MongoDB — Shopify, The New York Times, Athenahealth, Twitter and Sega — and what each one needed from the database."
+description: "Five documented MongoDB deployments, from Shopify to the New York Times, Sega and Twitter, and the different job each one asks the database to do."
 pubDate: 2024-07-19
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

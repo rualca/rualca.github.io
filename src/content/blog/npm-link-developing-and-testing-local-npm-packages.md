@@ -1,6 +1,6 @@
 ---
 title: "NPM Link: Developing and Testing Local NPM Packages"
-description: "Welcome back to the NPM Package Handler series! 🎉 Today, we’re diving into a tool that’s often overlooked but incredibly handy for developers working with multiple local projects: npm link."
+description: "npm link for local packages: linking a package, linking it into a project, the instant feedback loop it creates, and how to unlink afterwards."
 pubDate: 2024-03-12
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

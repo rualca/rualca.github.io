@@ -1,6 +1,6 @@
 ---
 title: "Piping Hot: The Power of Pipe() in Node.js Streams"
-description: "How pipe() moves data from a readable stream to a writable one, what backpressure has to do with it, and how to add a transform step in the middle."
+description: "pipe() in Node.js: connecting a readable to a writable, the backpressure it handles for you, and a transform stream inserted in the middle of a chain."
 pubDate: 2024-01-06
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

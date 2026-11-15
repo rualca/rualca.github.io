@@ -1,6 +1,6 @@
 ---
 title: "NPM vs Yarn: Comparing Node.js Package Managers"
-description: "Hello, fellow developers! 👋 Welcome back to another installment of the NPM Package Handler series, where we dive into all things NPM-related and beyond."
+description: "npm against Yarn: install speed, lockfile behaviour, workspaces, audit and offline installs, and which of those differences still matter today."
 pubDate: 2024-04-10
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

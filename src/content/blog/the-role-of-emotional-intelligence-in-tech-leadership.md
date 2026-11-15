@@ -1,6 +1,6 @@
 ---
 title: "The Role of Emotional Intelligence in Tech Leadership"
-description: "What emotional intelligence adds to technical leadership, and the habits that build it."
+description: "Emotional intelligence for tech leads: self-awareness, self-regulation, empathy, social skills and motivation, plus one habit to start with this month."
 pubDate: 2024-09-08
 tags: ["leadership", "teams", "career", "management"]
 ---

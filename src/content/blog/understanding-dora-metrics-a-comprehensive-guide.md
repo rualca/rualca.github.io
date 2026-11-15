@@ -1,6 +1,6 @@
 ---
 title: "Understanding DORA Metrics: A Comprehensive Guide"
-description: "It all started on a Wednesday afternoon."
+description: "The four DORA metrics: deployment frequency, lead time for changes, change failure rate and MTTR, what each one measures and how to collect and act on them."
 pubDate: 2024-06-01
 tags: ["dora", "devops", "metrics", "engineering"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Aggregation Framework: Advanced Data Analysis in MongoDB"
-description: "How the MongoDB aggregation pipeline works: stages, the core operators, $lookup and $unwind, and a first pipeline you can run."
+description: "The MongoDB aggregation pipeline, from the first $match and $group to $lookup and $unwind, with a small example pipeline you can run yourself."
 pubDate: 2024-07-08
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

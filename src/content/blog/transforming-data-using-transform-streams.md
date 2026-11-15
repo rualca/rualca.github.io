@@ -1,6 +1,6 @@
 ---
 title: "Transforming Data: Using Transform Streams"
-description: "Welcome back, digital maestros and Node.js virtuosos!"
+description: "Transform streams in Node.js: changing each chunk as it flows past, from an uppercase filter to JSON parsing, and the error handling they need."
 pubDate: 2024-01-11
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Synchronizing Threads: Managing Concurrent Processes"
-description: "Hello again, fellow coders and Node.js enthusiasts!"
+description: "Synchronizing Node.js worker threads: Atomics, mutexes and event emitters, plus deadlock avoidance, with a locked database connection pool example."
 pubDate: 2024-02-10
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---

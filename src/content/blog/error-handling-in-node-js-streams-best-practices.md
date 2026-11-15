@@ -1,6 +1,6 @@
 ---
 title: "Error Handling in Node.js Streams: Best Practices"
-description: "Hello again, code wranglers and data streamers!"
+description: "Stream error events, pipeline for piping failures, resource cleanup and graceful shutdown, in an example that wires listeners and cleanup together."
 pubDate: 2024-01-09
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "MongoDB Security Essentials: Protecting Your Data"
-description: "The five controls that keep a MongoDB deployment private: authentication, authorization, encryption, network exposure and auditing."
+description: "Five MongoDB controls in the order that closes the biggest holes first: authentication, authorization, encryption, network exposure and auditing."
 pubDate: 2024-07-29
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

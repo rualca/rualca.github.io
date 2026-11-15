@@ -1,6 +1,6 @@
 ---
 title: "Understanding the Event Loop: Node.js's Single-Threaded Illusion"
-description: "Hey there, code wranglers and JavaScript jugglers!"
+description: "The event loop behind Node.js's single-threaded reputation: call stack, callback queue and background APIs, traced through a file read example."
 pubDate: 2024-01-27
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---

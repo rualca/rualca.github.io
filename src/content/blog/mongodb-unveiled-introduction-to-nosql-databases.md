@@ -1,6 +1,6 @@
 ---
 title: "MongoDB Unveiled: Introduction to NoSQL Databases"
-description: "Welcome, digital explorers and database aficionados, to the first chapter of our \"MongoDB\" series!"
+description: "What a document database changes against a relational one: the data model, scalability, flexible schema, and where that flexibility costs you."
 pubDate: 2024-07-03
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

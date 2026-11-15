@@ -1,6 +1,6 @@
 ---
 title: "Diving into Streams: Understanding the Basics in Node.js"
-description: "Hello, fellow Node enthusiasts! Today, we're going to take a plunge into the fascinating world of Node.js streams."
+description: "What a Node.js stream is, why chunks beat loading a file whole, the four stream types, a readable example, and how backpressure pauses and resumes the flow."
 pubDate: 2023-12-25
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

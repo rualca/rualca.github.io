@@ -1,6 +1,6 @@
 ---
 title: "Decision Making in Tech: Balancing Risk and Innovation"
-description: "How tech leaders weigh risk against innovation, running experiments under control and choosing a framework for the call."
+description: "Weighing risk against innovation in tech leadership: running experiments, naming what a decision can cost, and using SWOT or cost-benefit analysis."
 pubDate: 2024-09-16
 tags: ["leadership", "teams", "career", "management"]
 ---

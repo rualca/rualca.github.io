@@ -1,6 +1,6 @@
 ---
 title: "Installing Your First Package with NPM: A Step-by-Step Tutorial"
-description: "Installing a package takes a handful of commands. This installment of the \"NPM Package Handler\" series runs them end to end on a real project, from npm init to the first HTTP request."
+description: "Installing a package with npm from an empty folder: initialising the project, choosing one, installing it, verifying it landed and importing it."
 pubDate: 2024-02-01
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

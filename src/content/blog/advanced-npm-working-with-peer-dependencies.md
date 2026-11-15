@@ -1,6 +1,6 @@
 ---
 title: "Advanced NPM: Working with Peer Dependencies"
-description: "What a peer dependency actually asks for, why npm does not install it for you, and how to keep the warnings from turning into two copies of React."
+description: "A peer dependency asks the consuming project for a version npm will not install, so declare the range, install the peer and read the warning."
 pubDate: 2024-04-25
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Performance Tuning: Optimizing Streams in Node.js"
-description: "Welcome back, coding maestros and Node.js ninjas!"
+description: "Optimizing Node.js streams: backpressure, where transforms sit in the chain, chaining cost and monitoring, on a file-processing example tuned end to end."
 pubDate: 2024-01-13
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Strategies for Optimizing Lead Time for Changes"
-description: "It was a quiet Friday afternoon in the office—the kind where everyone was already halfway into the weekend in their minds."
+description: "Lead Time for Changes measured from commit to production, then cut: finding the bottleneck, smaller reviews, automated tests, parallel stages and retros."
 pubDate: 2024-06-08
 tags: ["dora", "devops", "metrics", "engineering"]
 ---

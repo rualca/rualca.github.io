@@ -1,6 +1,6 @@
 ---
 title: "Strategic Thinking in Tech Leadership"
-description: "Welcome, visionaries and strategists, to the latest exploration in our \"Real Leadership\" series."
+description: "Strategic thinking for tech leaders: vision under uncertainty, analysis, adaptability, deciding on incomplete data and getting people behind it."
 pubDate: 2024-09-30
 tags: ["leadership", "teams", "career", "management"]
 ---

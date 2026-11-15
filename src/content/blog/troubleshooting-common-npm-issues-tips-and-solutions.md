@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Common NPM Issues: Tips and Solutions"
-description: "Dependency conflicts, permission errors, a corrupt cache, version clashes and the full reinstall: what each NPM error means and what actually fixes it."
+description: "Five NPM failures and their fixes: dependency conflicts, permission errors, a corrupt cache, version clashes and the full node_modules reinstall."
 pubDate: 2024-03-07
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

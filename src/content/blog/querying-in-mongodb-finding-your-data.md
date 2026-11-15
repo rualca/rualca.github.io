@@ -1,6 +1,6 @@
 ---
 title: "Querying in MongoDB: Finding Your Data"
-description: "Ahoy, data seekers and MongoDB adventurers!"
+description: "Querying MongoDB: find with filters, comparison and logical operators, text search, and the point where the aggregation pipeline takes over."
 pubDate: 2024-07-13
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Implementing SPACE Metrics: Best Practices and Strategies"
-description: "Picture this: you’re a tech leader, excited to introduce the SPACE framework to your engineering team."
+description: "Rolling SPACE metrics out without alarming the team: how to introduce each dimension, what to measure first, and the mistakes that stall adoption."
 pubDate: 2024-05-11
 tags: ["productivity", "teams", "metrics", "engineering"]
 ---

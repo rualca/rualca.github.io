@@ -1,6 +1,6 @@
 ---
 title: "Global vs Local Packages in NPM: Best Practices and Use Cases"
-description: "Welcome to the NPM Package Handler series! 🎉 In today’s episode, we’re tackling one of the classic dilemmas every Node.js developer faces at some point: Should I install this package globally or…"
+description: "When a package belongs in the global install and when it belongs in node_modules: command-line tools versus project dependencies, plus npx for one-offs."
 pubDate: 2024-03-21
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

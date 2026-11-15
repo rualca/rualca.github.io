@@ -1,6 +1,6 @@
 ---
 title: "Error Handling and Debugging in Multi-Threaded Node.js"
-description: "Welcome back, coding comrades and Node.js navigators!"
+description: "Debugging multi-threaded Node.js with console logging, the inspector and async hooks, then catching worker errors without crashing the whole app."
 pubDate: 2024-02-12
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---
