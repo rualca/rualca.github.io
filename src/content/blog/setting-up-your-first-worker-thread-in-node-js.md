@@ -72,6 +72,4 @@ Execute `main.js` with Node.js. If all is well, you should see greetings exchang
 
 You've just taken your first step into the world of concurrency in Node.js. Worker Threads open up a new realm of possibilities for your applications, allowing you to tackle more complex, resource-intensive tasks with ease.
 
-And if you’re hungry for more Node.js knowledge and cutting-edge product development insights, don’t forget to visit [ProductThinkers.com](http://productthinkers.com/). It's a great place to connect with fellow developers and thinkers, share ideas, and keep growing in this ever-evolving tech landscape.
-
 So, go forth and conquer the parallel challenges with your new Worker Thread skills! Happy coding, and may your applications run smoother than ever! 🌐👨‍💻🎉🚀

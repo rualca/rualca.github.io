@@ -56,10 +56,13 @@ const stripInlineMarkdown = (text) =>
     .replace(/\s+/g, ' ')
     .trim()
 
-/** Splits on sentence ends, but not on the dots inside `foo.bar()` or `Node.js`. */
+/**
+ * Splits on sentence ends, but not on the dots inside `foo.bar()` or `Node.js`.
+ * A closing emoji starts a new sentence the same way a capital letter does.
+ */
 const splitSentences = (text) => {
   const parts = []
-  const boundary = /[.!?](?=\s+[A-Z"'“(]|$)/g
+  const boundary = /[.!?](?=\s+(?:[A-Z"'“(]|\p{Extended_Pictographic})|$)/gu
   let start = 0
   for (let match = boundary.exec(text); match; match = boundary.exec(text)) {
     parts.push(text.slice(start, match.index + 1).trim())
@@ -121,4 +124,32 @@ export function pubDateFor({ topic, publishDate, index, total }) {
   if (total <= 1) return from
   const offset = Math.round((index * (last - first)) / (total - 1) / DAY_MS) * DAY_MS
   return toIsoDate(new Date(first + offset))
+}
+
+/**
+ * Notion's articles close with a paragraph promoting productthinkers.com.
+ * That paragraph is not the article, so it does not travel to the site.
+ *
+ * Only the author's own lines survive from it — the support ask, a comment
+ * invitation, a sign-off, or an emoji — because those are about this site, not
+ * about the other one. A paragraph with nothing left is dropped whole.
+ */
+const PROMO_MENTION = /productthinkers/i
+const AUTHOR_LINES = [/\bbuymeacoffee\b/i, /\byour support\b/i, /\bhappy coding\b/i, /\bin the comments\b/i]
+
+const isAuthorLine = (sentence) => AUTHOR_LINES.some((pattern) => pattern.test(sentence)) || !/[a-z]/i.test(sentence)
+
+export function stripThirdPartyPromos(markdown) {
+  const kept = []
+  for (const paragraph of markdown.split(/\n{2,}/)) {
+    const text = paragraph.trim()
+    if (!text) continue
+    if (!PROMO_MENTION.test(text)) {
+      kept.push(text)
+      continue
+    }
+    const survivors = splitSentences(text).filter((sentence) => !PROMO_MENTION.test(sentence) && isAuthorLine(sentence))
+    if (survivors.length > 0) kept.push(survivors.join(' '))
+  }
+  return kept.length === 0 ? '' : `${kept.join('\n\n')}\n`
 }

@@ -118,8 +118,6 @@ Measuring performance in the SPACE framework isn’t about counting commits or f
 
 Performance isn’t a sprint—it’s a marathon, and the goal is to cross the finish line with a smile on your face, not crawl over it exhausted.
 
-Want more insights like this? Head over to [productthinkers.com](http://productthinkers.com/) for tips on building high-performing teams and mastering the art of metrics that matter.
-
 ---
 
 _If you enjoyed this post, consider supporting me by buying me a coffee! Your support helps me keep sharing more helpful content like this. Find me at: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_._ ☕

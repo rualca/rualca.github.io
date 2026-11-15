@@ -56,6 +56,4 @@ In this script, the main thread spawns a new worker and passes a message. The wo
 
 Worker Threads mark a new era in Node.js’s evolution, offering developers the tools to build more powerful, efficient applications. It’s like giving Node.js a new superpower!
 
-And if you're thrilled by the possibilities of Worker Threads and crave more insights into the ever-evolving world of technology, be sure to swing by [ProductThinkers.com](http://productthinkers.com/). It's a treasure trove for those passionate about product development and innovation.
-
 So, here’s to the birth of Worker Threads in Node.js – may your applications run faster, your CPU work smarter, and your coding journey be more exciting than ever! 🌟💻🧵🚀

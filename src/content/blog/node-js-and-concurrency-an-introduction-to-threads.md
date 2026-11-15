@@ -52,6 +52,4 @@ In this script, if it's the main thread, it spawns a worker. The worker then sen
 
 Worker Threads bring a new dimension to Node.js, opening doors to more efficient handling of CPU-intensive tasks. As you venture into this territory, remember to tread wisely – with great power comes great responsibility!
 
-And for those hungry for more Node.js adventures and product development insights, make sure to visit [ProductThinkers.com](http://productthinkers.com/). It's a vibrant community for tech enthusiasts and professionals to share, learn, and grow.
-
 Until our next coding escapade, happy threading, and may your Node.js journeys be concurrent and your threads be ever in harmony! 🧵✨💻🚀

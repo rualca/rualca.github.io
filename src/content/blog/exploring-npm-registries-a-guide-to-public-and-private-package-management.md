@@ -54,6 +54,6 @@ Regardless of the type of registry you choose, adhering to best practices can en
 
 Understanding the landscape of NPM registries is vital for developers looking to optimize their workflow and ensure the security of their projects. Whether you lean toward the openness of public registries or prefer the control of private registries, both options can significantly enhance your development experience when used effectively.
 
-If you have any thoughts or experiences regarding NPM registries, feel free to share them in the comments below. For more insightful articles and resources on product management, be sure to visit [productthinkers.com](https://productthinkers.com/).
+If you have any thoughts or experiences regarding NPM registries, feel free to share them in the comments below.
 
 Happy coding!

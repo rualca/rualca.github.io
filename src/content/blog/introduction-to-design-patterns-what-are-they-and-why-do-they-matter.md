@@ -101,6 +101,4 @@ So next time you’re working on a project, and you find yourself rewriting code
 
 I promise you, there probably is!
 
-If you want to learn more about design patterns and other ways to elevate your development skills, head over to [productthinkers.com](http://productthinkers.com/) for more insights and resources!
-
 _If you enjoyed this article and want to support my work, feel free to buy me a coffee! You can find me here: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_._ ☕

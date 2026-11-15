@@ -160,4 +160,4 @@ npm config list
 
 Mastering the NPM CLI is essential for efficient JavaScript development. By leveraging its powerful commands and features, developers can streamline their workflows, improve productivity, and maintain better control over their project environments. As you continue to work with NPM, these skills will serve you well in managing dependencies and automating tasks.
 
-For more insights and resources on product management, be sure to visit [productthinkers.com](https://productthinkers.com/). If you have any questions or tips to share about using the NPM CLI, feel free to leave them in the comments below. Happy coding!
+If you have any questions or tips to share about using the NPM CLI, feel free to leave them in the comments below. Happy coding!

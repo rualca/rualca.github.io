@@ -97,6 +97,4 @@ By continuously monitoring and improving your DORA Metrics, you’ll build a str
 
 DORA Metrics have been a game-changer for our team, offering us clarity and direction in our development journey. They’re not just numbers—they’re a powerful tool to help you understand and improve your software delivery performance. By focusing on Deployment Frequency, Lead Time for Changes, Change Failure Rate, and Mean Time to Recovery, you can transform the way your team works.
 
-If you found this guide helpful and want to dive deeper into more topics like this, be sure to visit [ProductThinkers.com](https://productthinkers.com/) for more insights and resources to elevate your development game.
-
 _If you enjoyed this article and would like to support my work, consider buying me a coffee at _[_buymeacoffee.com/rubenalap_](https://buymeacoffee.com/rubenalap)_. Your support helps me create more content like this—thank you!_ ☕️

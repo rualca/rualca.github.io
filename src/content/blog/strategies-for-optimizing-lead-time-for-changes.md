@@ -99,4 +99,4 @@ Optimizing Lead Time for Changes isn’t just about shipping code faster—it’
 
 If you’re ready to take your Lead Time for Changes to the next level, start by identifying your bottlenecks, experimenting with new strategies, and committing to continuous improvement. Trust me, the results will speak for themselves.
 
-For more tips, resources, and insights into optimizing your development process, be sure to visit [ProductThinkers.com](https://productthinkers.com/). And if you found this article helpful and want to support my work, consider buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️
+And if you found this article helpful and want to support my work, consider buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️

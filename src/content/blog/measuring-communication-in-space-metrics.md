@@ -131,8 +131,6 @@ By measuring communication in a meaningful way—through feedback loops, collabo
 
 So next time you’re looking at your team’s metrics, don’t forget to ask yourself: _Are we communicating well?_ Because in the end, the best-performing teams are the ones that communicate clearly and effectively.
 
-Want more insights on how to measure and improve your team’s performance? Check out [productthinkers.com](http://productthinkers.com/) for more on SPACE metrics and other frameworks to keep your team on track!
-
 ---
 
 _If you enjoyed this post, consider supporting me by buying me a coffee! Your support helps me continue sharing more helpful content like this. You can find me at: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_._ ☕

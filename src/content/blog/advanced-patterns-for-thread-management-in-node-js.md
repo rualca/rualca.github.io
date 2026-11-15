@@ -85,25 +85,25 @@ function startWorker(task) {
   const worker = new Worker('./worker.js', { workerData: task });
   activeThreads++;
 
-  worker.on('message', (message) => {
+worker.on('message', (message) => {
     console.log(message);
     activeThreads--;
     checkQueue();
   });
 
-  worker.on('error', (error) => {
+worker.on('error', (error) => {
     console.error('Worker error:', error);
     activeThreads--;
     checkQueue();
   });
 
-  worker.on('exit', (code) => {
+worker.on('exit', (code) => {
     if (code !== 0) {
       console.error(`Worker stopped with exit code ${code}`);
     }
   });
 
-  worker.postMessage(task);
+worker.postMessage(task);
 }
 
 function enqueueTask(task) {
@@ -152,7 +152,5 @@ In this extended example:
 ### Conclusion: Advanced Thread Management in Action
 
 This comprehensive example demonstrates managing a dynamic thread pool in a Node.js application, balancing the workload across multiple threads while maintaining performance efficiency.
-
-For more in-depth discussions and innovative strategies in the world of Node.js and product development, don't forget to visit [ProductThinkers.com](http://productthinkers.com/). It's a great platform for tech enthusiasts to explore, learn, and connect with like-minded professionals.
 
 Embrace these advanced thread management patterns, and watch as your Node.js applications perform with the precision and efficiency of a well-tuned orchestra! 🌐🎻👩‍💻🚀

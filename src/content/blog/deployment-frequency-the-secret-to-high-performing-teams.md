@@ -85,4 +85,4 @@ Optimizing Deployment Frequency isn’t just about moving fast—it’s about bu
 
 So, if you’re looking to take your team’s deployment process to the next level, start by identifying your bottlenecks, implementing automation, and fostering a culture of experimentation. The results might just surprise you.
 
-For more insights into optimizing your development process and mastering DORA Metrics, be sure to visit [ProductThinkers.com](https://productthinkers.com/). And if you found this article helpful and want to support my work, consider buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️
+And if you found this article helpful and want to support my work, consider buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️

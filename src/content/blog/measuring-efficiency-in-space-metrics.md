@@ -111,6 +111,4 @@ At the end of the day, **efficiency** is all about creating value in the most st
 
 The SPACE metrics give us a framework for measuring efficiency in a way that’s data-driven but also human-centered. By focusing on cycle time, flow efficiency, and the impact of your team’s work, you can ensure that your team isn’t just busy—they’re efficient and effective.
 
-Want to learn more about how to use SPACE metrics to level up your engineering team? Check out [productthinkers.com](http://productthinkers.com/) for more insights and resources!
-
 _If you enjoyed this post, consider supporting me by buying me a coffee! Your support helps me continue to share more valuable content. You can find me at: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_._ ☕

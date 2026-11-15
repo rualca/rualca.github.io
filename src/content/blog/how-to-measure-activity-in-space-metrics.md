@@ -118,8 +118,6 @@ So, what’s the secret to measuring activity in SPACE metrics? It’s all about
 
 Measuring activity is just one piece of the puzzle. When done right, it can help you identify trends, spot bottlenecks, and understand how your team is really performing. But don’t fall into the trap of focusing on **how much** is being done—focus on **what** is being done and **why**.
 
-Want more insights on how to drive meaningful metrics? Check out [productthinkers.com](http://productthinkers.com/) for more on SPACE metrics and other frameworks that can take your team to the next level!
-
 ---
 
 _If you enjoyed this post, consider supporting me by buying me a coffee! Your support helps me keep sharing more helpful content like this. Find me at: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_._ ☕

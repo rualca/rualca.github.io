@@ -82,8 +82,6 @@ And there you have it! SPACE metrics offer a balanced and insightful way to meas
 
 By adopting this framework, you can transform your team from good to great. So the next time you’re stuck in the usual numbers game, remember there’s a whole universe of metrics out there waiting to be explored.
 
-Ready to dive deeper into more productivity hacks and frameworks like SPACE metrics? Head over to [**productthinkers.com**](http://productthinkers.com/) for more insights!
-
 ---
 
 _If you enjoyed this post, consider supporting me by buying me a coffee! Your support helps me keep sharing more helpful content like this. Find me at: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap) ☕

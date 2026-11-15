@@ -92,7 +92,7 @@ tasks.forEach((task, index) => {
   const worker = new Worker('./worker.js');
   worker.postMessage(task);
 
-  worker.on('message', (msg) => {
+worker.on('message', (msg) => {
     if (msg.error) {
       console.error(`Error from worker ${index}:`, msg.error);
     } else {
@@ -100,11 +100,11 @@ tasks.forEach((task, index) => {
     }
   });
 
-  worker.on('error', (err) => {
+worker.on('error', (err) => {
     console.error(`Worker ${index} encountered an error:`, err.message);
   });
 
-  worker.on('exit', (code) => {
+worker.on('exit', (code) => {
     if (code !== 0) {
       console.error(`Worker ${index} stopped with exit code ${code}`);
     }
@@ -125,7 +125,5 @@ node main.js
 ### Conclusion: Mastering Debugging and Error Handling
 
 This example demonstrates how to manage multiple worker threads in Node.js while implementing effective error handling and debugging strategies. It's a complex dance of asynchronous operations, but with careful attention and the right practices, you can orchestrate it beautifully.
-
-For those who relish the challenge of such complex scenarios and are keen on deepening their understanding of Node.js and product development, I recommend visiting [ProductThinkers.com](http://productthinkers.com/). It's a fantastic resource filled with insights and knowledge for the curious and ambitious developer.
 
 Happy coding, and may your multi-threaded Node.js applications run flawlessly and efficiently! 🌐🔧💻🚀
