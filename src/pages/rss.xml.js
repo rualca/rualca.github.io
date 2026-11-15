@@ -15,6 +15,8 @@ export async function GET(context) {
       description: post.data.description,
       pubDate: post.data.pubDate,
       link: `/blog/${post.id}/`,
+      // Readers filter by topic; a feed without categories cannot.
+      categories: post.data.tags,
     })),
   });
 }

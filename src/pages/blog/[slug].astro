@@ -3,16 +3,71 @@ import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+  // Publication order, newest first, matching /blog. Collected here because
+  // Astro compiles this function apart from the template below.
+  const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      // In date order the older article is "previous", the newer one "next".
+      older: posts[index + 1] && { id: posts[index + 1].id, title: posts[index + 1].data.title },
+      newer: posts[index - 1] && { id: posts[index - 1].id, title: posts[index - 1].data.title },
+    },
+  }));
 }
 
-const { post } = Astro.props;
+const { post, older, newer } = Astro.props;
 const { Content } = await render(post);
+
+const site = (Astro.site?.href ?? 'https://rualca.github.io/').replace(/\/$/, '');
 const canonical = post.data.canonical ?? new URL(`/blog/${post.id}/`, Astro.site).href;
+
+// The article's own first image when it has one, so the card matches the page.
+// It is omitted rather than invented when the article has no image.
+const firstImage = post.body?.match(/!\[[^\]]*\]\(([^)\s]+)\)/)?.[1];
+const image = firstImage ? new URL(firstImage, site).href : undefined;
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  inLanguage: 'en',
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  author: { '@type': 'Person', name: 'Rubén Alapont', url: `${site}/` },
+  publisher: { '@type': 'Person', name: 'Rubén Alapont', url: `${site}/` },
+  isPartOf: { '@type': 'Blog', '@id': `${site}/blog/`, name: 'Writing — Rubén Alapont' },
+  ...(image && { image }),
+  ...(post.data.tags.length > 0 && { keywords: post.data.tags.join(', ') }),
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Writing', item: `${site}/blog/` },
+    { '@type': 'ListItem', position: 3, name: post.data.title, item: canonical },
+  ],
+};
 ---
 
-<Base title={`${post.data.title} — Rubén Alapont`} description={post.data.description} canonical={canonical}>
+<Base
+  title={`${post.data.title} — Rubén Alapont`}
+  description={post.data.description}
+  canonical={canonical}
+  ogType="article"
+  publishedTime={post.data.pubDate.toISOString()}
+  tags={post.data.tags}
+  image={image}
+  jsonLd={[articleLd, breadcrumbLd]}
+>
   <main class="mx-auto max-w-3xl px-6 py-24">
     <p class="mb-6 text-sm opacity-60">
       <a href="/blog/" class="underline">Writing</a>
@@ -31,6 +86,23 @@ const canonical = post.data.canonical ?? new URL(`/blog/${post.id}/`, Astro.site
           <li class="rounded-full border border-current/20 px-3 py-0.5 opacity-70">{tag}</li>
         ))}
       </ul>
+    )}
+
+    {(older || newer) && (
+      <nav class="mt-16 grid gap-6 border-t border-border pt-8 sm:grid-cols-2" aria-label="More articles">
+        {older && (
+          <a href={`/blog/${older.id}/`} class="group">
+            <span class="block text-xs text-muted-foreground">Previous</span>
+            <span class="mt-1 block font-medium group-hover:underline">{older.title}</span>
+          </a>
+        )}
+        {newer && (
+          <a href={`/blog/${newer.id}/`} class="group sm:text-right">
+            <span class="block text-xs text-muted-foreground">Next</span>
+            <span class="mt-1 block font-medium group-hover:underline">{newer.title}</span>
+          </a>
+        )}
+      </nav>
     )}
   </main>
 </Base>

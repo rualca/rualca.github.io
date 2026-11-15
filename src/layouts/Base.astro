@@ -9,12 +9,24 @@ interface Props {
   title?: string
   description?: string
   canonical?: string
+  // An article page says so; everything else is a website.
+  ogType?: 'website' | 'article'
+  publishedTime?: string
+  tags?: string[]
+  image?: string
+  // Page-specific structured data, appended after the Person object below.
+  jsonLd?: unknown[]
 }
 
 const {
   title = 'Rubén Alapont — CTO & Fractional CTO | Valencia, Spain · Remote EU',
   description = 'CTO with 12 years scaling engineering teams and shipping production AI and regulated software. Open to fractional CTO engagements and technical advisory in Spain and the EU.',
   canonical = 'https://rualca.github.io/',
+  ogType = 'website',
+  publishedTime,
+  tags = [],
+  image = 'https://rualca.github.io/og-image.png',
+  jsonLd = [],
 } = Astro.props
 ---
 
@@ -31,17 +43,22 @@ const {
     <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Rubén Alapont" />
+    <meta property="og:locale" content="en" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://rualca.github.io/og-image.png" />
+    <meta property="og:image" content={image} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    <meta property="article:author" content="https://rualca.github.io/" />
+    {tags.map((tag) => <meta property="article:tag" content={tag} />)}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://rualca.github.io/og-image.png" />
+    <meta name="twitter:image" content={image} />
 
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
@@ -76,6 +93,9 @@ const {
         "sameAs": ["https://www.linkedin.com/in/rubenalapont", "https://github.com/rualca", "https://medium.com/@ruben.alapont"]
       }
     </script>
+    {jsonLd.map((entry) => (
+      <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+    ))}
   </head>
   <body>
     <noscript>
