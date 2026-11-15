@@ -1,6 +1,6 @@
 ---
 title: "Advanced Query Optimization in MongoDB"
-description: "Welcome back, code wizards and MongoDB maestros!"
+description: "Compound indexes, projections, an early $match and sparing $lookup cut MongoDB query work, with explain() showing where the query spends its time."
 pubDate: 2024-07-24
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

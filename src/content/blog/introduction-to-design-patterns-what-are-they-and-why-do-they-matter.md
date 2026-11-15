@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Design Patterns: What Are They and Why Do They Matter?"
-description: "What a design pattern actually is, where the Gang of Four catalogue came from, and how to tell when a pattern earns its place in your code."
+description: "What a design pattern is, where the Gang of Four catalogue came from, and how to tell when a pattern earns its indirection and when it does not."
 pubDate: 2024-10-01
 tags: ["patterns", "design", "architecture", "javascript"]
 ---

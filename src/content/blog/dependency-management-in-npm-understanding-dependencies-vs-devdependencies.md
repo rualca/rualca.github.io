@@ -1,6 +1,6 @@
 ---
 title: "Dependency Management in NPM: Understanding 'dependencies' vs 'devDependencies'"
-description: "Effective dependency management decides what a project installs, at which version, and how much of it reaches production."
+description: "Dependencies versus devDependencies in package.json: what ships to production, what stays a build tool, and how to keep that split honest and lean."
 pubDate: 2024-02-26
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

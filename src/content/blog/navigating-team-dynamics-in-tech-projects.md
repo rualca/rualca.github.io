@@ -1,6 +1,6 @@
 ---
 title: "Navigating Team Dynamics in Tech Projects"
-description: "What shapes a tech team's dynamics, from open communication through conflict, and the example the lead sets."
+description: "Team dynamics: communication, inclusion, collaboration over competition, conflict that changes something, and what a team copies from its lead."
 pubDate: 2024-09-23
 tags: ["leadership", "teams", "career", "management"]
 ---

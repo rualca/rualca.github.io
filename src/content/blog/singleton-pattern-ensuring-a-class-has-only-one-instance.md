@@ -1,6 +1,6 @@
 ---
 title: "Singleton Pattern: Ensuring a Class Has Only One Instance"
-description: "Welcome, fellow code adventurers, to another thrilling installment of our \"Gangs of Four\" series!"
+description: "The Singleton pattern in JavaScript: implementing it, its pros and cons, where it earns a place, and the variations that avoid its usual traps."
 pubDate: 2024-10-18
 tags: ["patterns", "design", "architecture", "javascript"]
 ---

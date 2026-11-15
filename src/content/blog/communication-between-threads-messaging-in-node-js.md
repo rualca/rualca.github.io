@@ -1,6 +1,6 @@
 ---
 title: "Communication Between Threads: Messaging in Node.js"
-description: "Hey there, code wranglers and Node.js enthusiasts!"
+description: "postMessage and parentPort carry messages between the main thread and Node.js workers, with two-way replies and a small chat example to copy."
 pubDate: 2024-02-06
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---

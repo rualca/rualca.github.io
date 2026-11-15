@@ -1,6 +1,6 @@
 ---
 title: "NPM Config: Customizing Your NPM Environment"
-description: "Welcome back to the NPM Package Handler series! 🎉 Today, we’re going to dive into something that every developer should know: customizing your NPM environment using npm config."
+description: "npm config: setting, reading and deleting values, which file each level writes to, and what belongs in a project rather than in your home directory."
 pubDate: 2024-03-31
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

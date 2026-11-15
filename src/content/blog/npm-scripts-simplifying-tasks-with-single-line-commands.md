@@ -1,6 +1,6 @@
 ---
 title: "NPM Scripts: Simplifying Tasks with Single-Line Commands"
-description: "In our journey through the \"NPM Package Handler\" series, we've explored various facets of NPM and its pivotal role in modern web development."
+description: "npm scripts: defining them, the pre and post hooks that run around them, passing arguments through, and the conventions that keep them readable."
 pubDate: 2024-02-16
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

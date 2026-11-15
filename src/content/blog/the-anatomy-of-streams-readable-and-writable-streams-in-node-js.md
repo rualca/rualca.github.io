@@ -1,6 +1,6 @@
 ---
 title: "The Anatomy of Streams: Readable and Writable Streams in Node.js"
-description: "Welcome back to our delightful dive into the world of Node.js!"
+description: "Readable and writable streams in Node.js from the ground up: what each one does, and createReadStream and createWriteStream in two short examples."
 pubDate: 2023-12-27
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

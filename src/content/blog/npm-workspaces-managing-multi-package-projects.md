@@ -1,6 +1,6 @@
 ---
 title: "NPM Workspaces: Managing Multi-Package Projects"
-description: "Welcome back to the NPM Package Handler series! 🎉 Today, we’re tackling a topic that’s especially useful for developers working on larger projects with multiple packages—NPM Workspaces."
+description: "npm workspaces: the folder layout, the package.json field that declares them, adding packages, and running one script across the whole repository."
 pubDate: 2024-04-20
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

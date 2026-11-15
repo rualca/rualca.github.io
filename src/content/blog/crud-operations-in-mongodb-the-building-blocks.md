@@ -1,6 +1,6 @@
 ---
 title: "CRUD Operations in MongoDB: The Building Blocks"
-description: "Welcome back, intrepid database adventurers and MongoDB mavericks!"
+description: "MongoDB CRUD from insertOne and insertMany through find, updateOne and deleteMany, the four document operations the rest of the driver builds on."
 pubDate: 2024-07-15
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

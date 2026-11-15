@@ -1,6 +1,6 @@
 ---
 title: "Leadership in Tech: An Introduction"
-description: "Welcome, esteemed leaders and aspiring visionaries, to the inaugural piece of our \"Real Leadership\" series."
+description: "Leadership in tech: a vision built on incomplete information, collaboration, agility, delegation and ethics, and what a lead actually owes the team."
 pubDate: 2024-09-01
 tags: ["leadership", "teams", "career", "management"]
 ---

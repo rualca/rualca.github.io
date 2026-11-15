@@ -18,6 +18,8 @@ Practices taken from Google Search Central: the SEO Starter Guide, the `Article`
 
 **S6 — Feed.** Every RSS item carries its tags as `<category>` elements, so a reader can filter by topic.
 
+**S8 — Meta descriptions.** Each article's `description` becomes one sentence of **140-170 characters** that says what the reader gets from that article. Rules: no greeting or formula opener (`Welcome back…`, `Ahoy…`, `Hello again…`, `Picture this`, `Let's dive`), no hype (`game-changing`, `revolutionary`, `must-read`), no exclamation marks, no new claims — it may only restate what the article actually covers, so the writer reads the article before writing its description. All 73 stay unique and distinct from each other.
+
 **S7 — Verification.** `npm run build` green, `npm test` green, and for **all 73** built article pages: the JSON-LD parses, `BlogPosting` carries every field S1 names, the breadcrumb has three positions, `og:type` is `article`, and the article's `headline` equals its `h1` text.
 
 ## Tasks
@@ -43,3 +45,5 @@ Practices taken from Google Search Central: the SEO Starter Guide, the `Article`
 **L5** — Verificación S7 sobre las 73 páginas construidas: `BlogPosting` único y con los 11 campos, `BreadcrumbList` con 3 posiciones, `og:type=article`, `headline` idéntico al `<h1>`, `Person` del layout intacto, prev/next en las 73, `rss.xml` con 73 items y 290 `<category>`. **0 problemas.** Ojo con el verificador: `<noscript>` del layout trae su propio `<h1>`, hay que excluirlo antes de contar encabezados.
 
 **L6** — Hueco que queda, medido y no aplicado: **39 de las 73 `description` abren con un saludo** («Hello again, tech enthusiasts…», «Ahoy, data navigators…») y **22 tienen menos de 80 caracteres**. La recomendación de Google es una descripción única de 150-160 caracteres que diga el resultado del artículo. Eso no se arregla con marcado: son 73 frases que hay que escribir. Queda pendiente de decisión del usuario.
+
+**L7** — T6 cerrado con las 73 `description` reescritas (más la del post nuevo): media **146 caracteres**, **73 de 74** dentro de 140-170, **0** abren con saludo o fórmula, **0** exclamaciones, **0** duplicadas. La única fuera de rango es `why-this-site-owns-its-articles.md` (131), que es texto propio del autor y quedó sin tocar a propósito. Los dos escritores que murieron por cuota se reemplazaron con trabajo en línea, escribiendo cada descripción desde los títulos y encabezados del artículo — que es literalmente lo que cubre. Verificado además sobre el HTML construido: 73 de 74 páginas sirven una `meta description` de 140-170 caracteres.

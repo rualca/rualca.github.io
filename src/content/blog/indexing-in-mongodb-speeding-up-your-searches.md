@@ -1,6 +1,6 @@
 ---
 title: "Indexing in MongoDB: Speeding Up Your Searches"
-description: "How MongoDB indexes cut query time, when to add one, and what each index costs you on writes."
+description: "MongoDB indexes: single field, compound and text, the field order that decides whether a query can use one, and what each index costs on writes."
 pubDate: 2024-07-10
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

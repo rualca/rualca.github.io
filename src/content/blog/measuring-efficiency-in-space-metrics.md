@@ -1,6 +1,6 @@
 ---
 title: "Measuring Efficiency in SPACE Metrics"
-description: "A well-oiled team still misses targets when the effort goes into waiting and rework. Efficiency is the SPACE dimension that measures what a team gets back for what it spends."
+description: "Efficiency in SPACE metrics: cycle time, flow efficiency and rework, and why the busiest team in the building can be the least efficient one."
 pubDate: 2024-05-16
 tags: ["productivity", "teams", "metrics", "engineering"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Integrating MongoDB with Node.js"
-description: "Installing the driver, opening a connection once, and running your first insert from a Node.js application."
+description: "The MongoDB Node.js driver in four steps: install it, open one connection, export the database object and run a first insert from a small script."
 pubDate: 2024-07-26
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

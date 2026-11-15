@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with NPM: An Introductory Guide"
-description: "Welcome to the inaugural article of our \"NPM Package Handler\" series, where we embark on a journey to unravel the intricacies of Node Package Manager (NPM), the backbone of Node.js and JavaScript…"
+description: "Installing npm with Node.js, checking both versions, running npm init and npm install, and wiring a start script into package.json so app.js runs."
 pubDate: 2024-02-06
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Measuring Communication in SPACE Metrics"
-description: "Picture this: Your engineering team is working on a huge new feature."
+description: "Communication in SPACE metrics: feedback loops, cross-team collaboration and documentation, and the measures that show talk turning into work."
 pubDate: 2024-05-21
 tags: ["productivity", "teams", "metrics", "engineering"]
 ---

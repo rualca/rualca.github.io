@@ -1,6 +1,6 @@
 ---
 title: "How to Measure Satisfaction in SPACE Metrics"
-description: "A team can hit every sprint deadline and still be running on empty. Satisfaction is the SPACE dimension that catches that before the delivery numbers do, and reading it takes instruments rather than intuition."
+description: "Satisfaction in SPACE metrics: pulse surveys, one-on-ones and workload signals, and how to act on the answers instead of filing them away unread."
 pubDate: 2024-05-06
 tags: ["productivity", "teams", "metrics", "engineering"]
 ---

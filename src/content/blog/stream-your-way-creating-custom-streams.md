@@ -1,6 +1,6 @@
 ---
 title: "Stream Your Way: Creating Custom Streams"
-description: "Hey there, intrepid Node.js explorers! Welcome back to our much-loved series, \"Streaming Through Node.js: From Basics to Mastery.\" Today, we're stepping into the exciting world of custom streams."
+description: "Custom Node.js streams written by hand: a Readable whose _read pushes chunks, a Writable whose _write logs what it receives, and when built-ins fall short."
 pubDate: 2024-01-03
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

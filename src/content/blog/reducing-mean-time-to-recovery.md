@@ -1,6 +1,6 @@
 ---
 title: "Reducing Mean Time to Recovery"
-description: "It was a Monday like any other. Our team had just finished deploying a long-awaited feature that was sure to blow our users' minds."
+description: "Mean Time to Recovery: what it measures, and how detection, runbooks and communication shorten it, with the practices that kept ours falling."
 pubDate: 2024-06-30
 tags: ["dora", "devops", "metrics", "engineering"]
 ---

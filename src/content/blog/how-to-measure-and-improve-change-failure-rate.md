@@ -1,6 +1,6 @@
 ---
 title: "How to Measure and Improve Change Failure Rate"
-description: "It was a typical Monday morning, and the coffee machine was already working overtime."
+description: "Change Failure Rate: what counts as a failure, which tools and dashboards record it, and the deployment practices that brought the number down."
 pubDate: 2024-06-16
 tags: ["dora", "devops", "metrics", "engineering"]
 ---

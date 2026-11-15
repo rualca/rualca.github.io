@@ -1,6 +1,6 @@
 ---
 title: "What are SPACE Metrics and Why Do They Matter?"
-description: "SPACE is an acronym for five dimensions an engineering team can measure itself on, and it exists because velocity answers a narrower question than the one a team actually faces."
+description: "The five SPACE dimensions (satisfaction, performance, activity, collaboration, efficiency), how to baseline them, set goals and what velocity hides."
 pubDate: 2024-05-01
 tags: ["productivity", "teams", "metrics", "engineering"]
 ---

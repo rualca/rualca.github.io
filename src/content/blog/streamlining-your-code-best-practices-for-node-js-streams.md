@@ -1,6 +1,6 @@
 ---
 title: "Streamlining Your Code: Best Practices for Node.js Streams"
-description: "Chaining stream types, keeping backpressure working in a pipeline, and handling errors that start at one end of a chain and surface at the other."
+description: "Long Node.js stream chains: pipeline() for wiring and errors, write() return values for backpressure, stage order for cost, shown on a log pipeline."
 pubDate: 2024-01-23
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---

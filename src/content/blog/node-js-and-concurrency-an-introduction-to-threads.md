@@ -1,6 +1,6 @@
 ---
 title: "Node.js and Concurrency: An Introduction to Threads"
-description: "Hello, Node.js adventurers and asynchronous aficionados!"
+description: "Worker Threads in Node.js: why a single-threaded runtime added them, what real parallelism buys on CPU-bound work, and a first worker example."
 pubDate: 2024-01-25
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---

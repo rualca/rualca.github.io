@@ -1,6 +1,6 @@
 ---
 title: "NPM CLI: Mastering Command Line Interface for Efficient Development"
-description: "The npm commands worth knowing by heart: install, uninstall, update, scripts, listing, init, dependency flags, npx and config."
+description: "The npm commands worth knowing by heart: install, uninstall, update, scripts, list and init, plus the flags that decide what gets saved where."
 pubDate: 2024-03-26
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

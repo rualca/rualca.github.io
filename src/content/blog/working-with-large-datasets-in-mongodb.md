@@ -1,6 +1,6 @@
 ---
 title: "Working with Large Datasets in MongoDB"
-description: "What actually limits a large MongoDB collection — indexes, the order of an aggregation, sharding and monitoring — and what each one buys you."
+description: "Large MongoDB collections: which indexes pay off, the order of aggregation stages, choosing a shard key and reading the query plan once data outgrows memory."
 pubDate: 2024-07-22
 tags: ["mongodb", "database", "backend", "nosql"]
 ---

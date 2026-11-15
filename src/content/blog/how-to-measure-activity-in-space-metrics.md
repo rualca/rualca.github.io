@@ -1,6 +1,6 @@
 ---
 title: "How to Measure Activity in SPACE Metrics"
-description: "Imagine this: You’re leading a software engineering team, and on the surface, everything looks great."
+description: "Activity in SPACE metrics: why busy work inflates it, how to count contextual contributions, and the counts that survive a comparison between teams."
 pubDate: 2024-05-26
 tags: ["productivity", "teams", "metrics", "engineering"]
 ---

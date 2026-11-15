@@ -1,6 +1,6 @@
 ---
 title: "Versioning Explained: Semantic Versioning in NPM Packages"
-description: "In this installment of our \"NPM Package Handler\" series, we tackle a fundamental yet often misunderstood aspect of software development—versioning."
+description: "Semantic versioning in NPM: what MAJOR, MINOR and PATCH signal, how the ^ and ~ ranges allow automatic updates, and locking versions with package-lock.json."
 pubDate: 2024-02-21
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---

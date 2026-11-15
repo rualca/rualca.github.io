@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Your First Worker Thread in Node.js"
-description: "Hey there, Node.js explorers and coding trailblazers!"
+description: "A first Worker Thread in Node.js: checking the Node version, the file layout, writing the worker itself, and spawning it from the main script."
 pubDate: 2024-02-03
 tags: ["nodejs", "concurrency", "backend", "javascript"]
 ---
