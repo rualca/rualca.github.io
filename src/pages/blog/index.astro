@@ -5,6 +5,29 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+// Every row opens with a square marker instead of a cover image: no article
+// carries one, and an empty slot where an image belongs reads as a broken page.
+const STOPWORDS = new Set([
+  'a', 'an', 'and', 'are', 'be', 'for', 'in', 'is', 'it', 'its', 'my', 'not', 'now',
+  'of', 'on', 'our', 'that', 'the', 'this', 'to', 'we', 'why', 'with', 'you', 'your',
+]);
+
+const marker = (title) => {
+  const words = title
+    .split(/[^A-Za-z0-9]+/)
+    .filter((word) => word && !STOPWORDS.has(word.toLowerCase()));
+  return words
+    .slice(0, 2)
+    .map((word) => word[0].toUpperCase())
+    .join('');
+};
+
+const pad = (value) => String(value).padStart(2, '0');
+
+// Day first, the way the listing reads.
+const day = (value) =>
+  `${pad(value.getUTCDate())}/${pad(value.getUTCMonth() + 1)}/${value.getUTCFullYear()}`;
 ---
 
 <Base
@@ -14,29 +37,44 @@ const posts = (await getCollection('blog')).sort(
 >
   <main class="mx-auto max-w-3xl px-6 py-24">
     <h1 class="mb-2 text-4xl font-semibold tracking-tight">Writing</h1>
-    <p class="mb-12 text-lg opacity-70">
+    <p class="text-lg opacity-70">
       Articles on engineering leadership, architecture and shipping software.
     </p>
+    <p class="mt-1 mb-12 text-sm text-muted-foreground">{posts.length} articles</p>
 
     {posts.length === 0 && <p class="opacity-70">Nothing published yet.</p>}
 
-    <ul class="space-y-10">
+    <ul>
       {posts.map((post) => (
         <li>
-          <a href={`/blog/${post.id}/`} class="group block">
-            <h2 class="text-2xl font-medium group-hover:underline">{post.data.title}</h2>
-            <p class="mt-1 opacity-70">{post.data.description}</p>
+          <a
+            href={`/blog/${post.id}/`}
+            class="group -mx-3 flex gap-4 rounded-lg px-3 py-4 hover:bg-muted/50"
+          >
+            <span
+              aria-hidden="true"
+              class="mt-1 flex size-11 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-[0.7rem] font-medium tracking-wider text-muted-foreground"
+            >
+              {marker(post.data.title)}
+            </span>
+            <div class="min-w-0">
+              <h2 class="text-xl font-medium leading-snug group-hover:underline">
+                {post.data.title}
+              </h2>
+              <time
+                datetime={post.data.pubDate.toISOString()}
+                class="mt-0.5 block text-xs tabular-nums text-muted-foreground"
+              >
+                {day(post.data.pubDate)}
+              </time>
+              <p class="mt-1 line-clamp-2 opacity-70">{post.data.description}</p>
+              {post.data.tags.length > 0 && (
+                <p class="mt-1.5 text-sm text-muted-foreground">
+                  {post.data.tags.map((tag) => `#${tag}`).join(' ')}
+                </p>
+              )}
+            </div>
           </a>
-          <time datetime={post.data.pubDate.toISOString()} class="mt-2 block text-sm opacity-60">
-            {post.data.pubDate.toISOString().slice(0, 10)}
-          </time>
-          {post.data.tags.length > 0 && (
-            <ul class="mt-3 flex flex-wrap gap-2 text-sm">
-              {post.data.tags.map((tag) => (
-                <li class="rounded-full border border-current/20 px-3 py-0.5 opacity-70">{tag}</li>
-              ))}
-            </ul>
-          )}
         </li>
       ))}
     </ul>
