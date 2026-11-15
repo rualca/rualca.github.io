@@ -1,17 +1,15 @@
 ---
 title: "Advanced NPM: Working with Peer Dependencies"
-description: "Welcome back to the NPM Package Handler series! 🎉 If you’ve been following along, you’re probably already a pro at managing your Node.js projects with NPM."
+description: "What a peer dependency actually asks for, why npm does not install it for you, and how to keep the warnings from turning into two copies of React."
 pubDate: 2024-04-25
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---
 
-Welcome back to the **NPM Package Handler** series! 🎉 If you’ve been following along, you’re probably already a pro at managing your Node.js projects with NPM. But today, we’re diving into something a bit more advanced—**peer dependencies**. Whether you’ve encountered them before or you’re just hearing about them now, understanding how to work with peer dependencies can be a game-changer in your development workflow.
+A regular dependency says "install this for me". A peer dependency says "the project using me must already have this, and in a version I can work with". The difference explains both the warnings and the failures around them.
 
-In this article, I’ll walk you through what peer dependencies are, why they matter, and how to manage them effectively in your projects. By the end, you’ll have the tools you need to avoid common pitfalls and ensure smooth sailing when dealing with these sometimes tricky but crucial dependencies. Ready to become a peer dependency master? Let’s dive in! 💪
+## The Five Things to Get Straight
 
-## What We’ll Cover Today
-
-Here’s what we’ll explore:
+What follows, in order:
 
 1. 📚 **What Are Peer Dependencies?** – Understanding the basics.
 2. 🤔 **When and Why to Use Them** – Knowing when peer dependencies are your best friend.
@@ -19,15 +17,11 @@ Here’s what we’ll explore:
 4. 🚨 **Common Pitfalls and How to Avoid Them** – Keeping your projects error-free.
 5. 📝 **Best Practices for Using Peer Dependencies** – Tips to maintain a healthy codebase.
 
-Let’s get started and demystify the world of peer dependencies! 🧙‍♂️
-
 ## 📚 What Are Peer Dependencies?
 
-Before we jump into the why and how, let’s clarify what peer dependencies actually are. In simple terms, a peer dependency is a way for a package to specify that it relies on a certain version of another package, which should be installed alongside it.
+A peer dependency is how a package states that it needs another package to be present, without shipping a copy of it. In `package.json`, a dependency goes in `dependencies` and is installed for you; a peer dependency goes in `peerDependencies` and is expected to come from the project.
 
-Imagine you’re building a library that works with `React`. Your library needs `React` to function, but it doesn’t want to dictate which version of `React` the end-user should use. This is where peer dependencies come in. You can specify in your `package.json` that your library is compatible with certain versions of `React`, but you leave it up to the end-user to ensure they have `React` installed.
-
-Here’s how you might define a peer dependency in your `package.json`:
+Take a library that works with `React`. It needs `React` to run, but it should not decide which version the project uses, because the project already has one and two copies of `React` in one page do not coexist. The library declares the range it supports:
 
 ```json
 {
@@ -37,11 +31,9 @@ Here’s how you might define a peer dependency in your `package.json`:
 }
 ```
 
-This tells anyone who installs your package that they need to have `React` version 17 or higher (but not 18) installed for your package to work correctly.
+That tells anyone installing the package that `React` 17 is required for it to work.
 
 ## 🤔 When and Why to Use Them
-
-Now that we know what peer dependencies are, let’s talk about when and why you’d want to use them.
 
 ### When to Use Peer Dependencies
 
@@ -57,11 +49,9 @@ Now that we know what peer dependencies are, let’s talk about when and why you
 
 ## 🛠️ Managing Peer Dependencies in Your Projects
 
-Working with peer dependencies involves a few extra steps compared to regular dependencies, but it’s not too complicated once you get the hang of it.
-
 ### Adding Peer Dependencies
 
-To add a peer dependency, you manually include it in your `package.json` file under the `"peerDependencies"` section. For example:
+Peers are declared by hand in the `"peerDependencies"` section:
 
 ```json
 {
@@ -74,53 +64,45 @@ To add a peer dependency, you manually include it in your `package.json` file un
 
 ### Installing Peer Dependencies
 
-NPM doesn’t automatically install peer dependencies, so if you’re consuming a package with peer dependencies, you’ll need to install them yourself. You can do this by running:
+NPM does not install peer dependencies automatically. If the package you just installed lists peers, you install them in the project yourself:
 
 ```bash
 npm install react react-dom
 ```
 
-This is important to avoid errors that may arise if peer dependencies are not satisfied.
-
 ### Dealing with Peer Dependency Warnings
 
-You’ve probably seen those yellow peer dependency warnings pop up during installation. These warnings are NPM’s way of telling you that a package you’re installing relies on a peer dependency that’s either not installed or doesn’t match the required version.
-
-While they’re just warnings (and not errors), they’re worth paying attention to, especially in a production environment.
+The yellow warnings during installation mean a peer is missing or outside the declared range. They are warnings, not errors, and they are worth reading in production because the package was built against a version the project does not have.
 
 ### Using `-legacy-peer-deps`
 
-If you’re working in a situation where you need to bypass peer dependency issues temporarily, you can use the `--legacy-peer-deps` flag with NPM 7 and above:
+NPM 7 and later resolve peers during installation. The `--legacy-peer-deps` flag restores the old behaviour and skips peer resolution:
 
 ```bash
 npm install --legacy-peer-deps
 ```
 
-This tells NPM to install the package without considering peer dependencies, which can be helpful in certain scenarios but should be used with caution.
+It unblocks an install, and it also hides the mismatch that the warning was reporting.
 
 ## 🚨 Common Pitfalls and How to Avoid Them
 
-Peer dependencies can be powerful, but they can also introduce some challenges. Let’s look at a few common pitfalls and how to avoid them.
-
 ### Pitfall 1: Ignoring Peer Dependency Warnings
 
-It’s easy to ignore peer dependency warnings, but doing so can lead to issues down the line. If you see a warning, take the time to investigate it and make sure your project’s dependencies are aligned.
+A warning left alone becomes a runtime error later, usually in a place that does not name the dependency. Read it when it appears, while the install is still fresh.
 
 ### Pitfall 2: Multiple Versions of a Peer Dependency
 
-If you end up with multiple versions of a peer dependency in your project (like two different versions of `React`), you might encounter bugs or unexpected behavior. To avoid this, carefully manage your dependencies and use tools like `npm ls` to inspect what’s installed.
+Two copies of `React` in one build produce bugs that look like anything except a duplicate dependency. `npm ls` shows what is actually installed and where each copy came from.
 
 ### Pitfall 3: Incompatible Peer Dependencies
 
-Sometimes, two packages you want to use might require different, incompatible versions of the same peer dependency. This is where things get tricky, and you might need to choose one package over the other, or find alternative packages that are compatible.
+Sometimes two packages require ranges of the same peer that do not overlap. At that point the choice is which package to keep, or finding an alternative for one of them; no flag resolves it cleanly.
 
 ### Pitfall 4: Not Specifying Peer Dependencies Properly
 
-Make sure you’re clear about which versions of a dependency your package supports. Be specific enough to avoid issues but flexible enough to support minor updates.
+A peer range that is too narrow breaks installs on valid versions; one that is too wide promises compatibility you have not tested. Cover the majors you actually support.
 
 ## 📝 Best Practices for Using Peer Dependencies
-
-To wrap things up, here are some best practices to keep in mind when working with peer dependencies:
 
 1. **Document Everything**: Make sure your documentation clearly states which peer dependencies are required and why.
 2. **Stay Up-to-Date**: Keep an eye on the packages you use as peer dependencies and update your supported versions as new releases come out.
@@ -140,6 +122,4 @@ To wrap things up, here are some best practices to keep in mind when working wit
 
 ## Wrapping It All Up
 
-Peer dependencies are a crucial part of building robust and flexible packages in the Node.js ecosystem. By understanding how to use them effectively, you can avoid common pitfalls and create packages that play nicely with others in the ever-evolving world of JavaScript.
-
-Happy coding, and may your peer dependencies always resolve peacefully! 🧑‍💻✨
+Peer dependencies put the version decision where it belongs: with the project that consumes the package. Declare the range you support, install the peer in the project, and read the warning when npm raises it, because the flag that silences it also silences the information.
