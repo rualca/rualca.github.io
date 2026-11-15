@@ -86,4 +86,4 @@ Reducing Mean Time to Recovery transformed the way our team handled incidents. I
 
 If your team is struggling with high MTTR, I hope this story inspires you to take action. Start with small changes, like automating detection or creating a runbook, and build from there. The impact on your team and your users will be well worth the effort.
 
-For more insights on optimizing your development process, be sure to visit [ProductThinkers.com](https://productthinkers.com/). And if you enjoyed this article, consider supporting my work by buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️
+And if you enjoyed this article, consider supporting my work by buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️

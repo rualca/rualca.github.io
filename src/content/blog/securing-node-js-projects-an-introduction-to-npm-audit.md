@@ -115,6 +115,4 @@ And there you have it—your introduction to `npm audit` and securing your Node.
 
 Security might not always be top of mind, but it’s one of those things that, if neglected, can cause serious issues down the line. So take the time to run those audits, fix those vulnerabilities, and keep your code safe.
 
-If you found this article helpful and want to learn more about best practices in software development, be sure to check out [ProductThinkers.com](https://productthinkers.com/). We’ve got plenty more insights and tips to keep you ahead of the game.
-
 Happy coding, and stay secure! 🛡️

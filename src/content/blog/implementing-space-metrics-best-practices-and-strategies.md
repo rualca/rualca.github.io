@@ -102,6 +102,4 @@ Involve your team in these discussions. Let them know what you’re measuring, w
 
 Implementing the SPACE metrics isn’t just about tracking more data. It’s about gaining insights into how your team operates, how they feel, and how you can help them grow into the most efficient and effective team possible. By focusing on **satisfaction, performance, activity, collaboration, and efficiency**, you’re not just improving processes—you’re building a stronger, healthier, and more motivated team.
 
-If you want to dive deeper into SPACE metrics and other ways to level up your engineering team, head over to [productthinkers.com](http://productthinkers.com/) for more resources and tips!
-
 _If you enjoyed this article and found it useful, consider buying me a coffee to keep me fueled for more! You can find me at: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_._ ☕

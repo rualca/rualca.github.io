@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { slugify, descriptionFrom, tagsFor, pubDateFor } from './notion-import-plan'
+import { slugify, descriptionFrom, tagsFor, pubDateFor, stripThirdPartyPromos } from './notion-import-plan'
 
 describe('slugify', () => {
   it('turns a title into a kebab-case slug', () => {
@@ -110,5 +110,45 @@ describe('pubDateFor', () => {
 
   it('handles a single-article series', () => {
     expect(pubDateFor({ topic: 'GoF', index: 0, total: 1 })).toBe('2024-10-01')
+  })
+})
+
+describe('stripThirdPartyPromos', () => {
+  const closing = 'Streams let you process data piece by piece.'
+
+  it('drops a closing paragraph that only promotes another site', () => {
+    const markdown = `${closing}\n\nIf you want to dive deeper, head over to [ProductThinkers.com](https://productthinkers.com/) for more insights and resources.\n`
+    expect(stripThirdPartyPromos(markdown)).toBe(`${closing}\n`)
+  })
+
+  it('keeps the author own support line from the same paragraph', () => {
+    const markdown = [
+      closing,
+      '',
+      'For more insights, be sure to visit [ProductThinkers.com](https://productthinkers.com/). And if you found this article helpful, consider buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️',
+      '',
+    ].join('\n')
+    expect(stripThirdPartyPromos(markdown)).toBe(
+      `${closing}\n\nAnd if you found this article helpful, consider buying me a coffee at [buymeacoffee.com/rubenalap](https://buymeacoffee.com/rubenalap). Your support helps me continue creating content like this—thank you! ☕️\n`,
+    )
+  })
+
+  it('keeps a sign-off and a comment invitation, drops the dangling pitch', () => {
+    const markdown = `${closing}\n\nHappy coding! ☕ And if you’re thirsty for more insights like this, head over to [ProductThinkers.com](https://productthinkers.com/). We’ve got plenty more where this came from!\n`
+    expect(stripThirdPartyPromos(markdown)).toBe(`${closing}\n\nHappy coding!\n`)
+  })
+
+  it('leaves paragraphs that never mention the site untouched', () => {
+    const markdown = `${closing}\n\nHappy coding!\n\nSee you in the next one.\n`
+    expect(stripThirdPartyPromos(markdown)).toBe(markdown)
+  })
+
+  it('returns an empty body when every paragraph was a promotion', () => {
+    expect(stripThirdPartyPromos('Visit [productthinkers.com](http://productthinkers.com/) for more.\n')).toBe('')
+  })
+
+  it('never leaves a run of blank lines behind', () => {
+    const markdown = `${closing}\n\nVisit [productthinkers.com](http://productthinkers.com/).\n\nanother paragraph\n`
+    expect(stripThirdPartyPromos(markdown)).toBe(`${closing}\n\nanother paragraph\n`)
   })
 })

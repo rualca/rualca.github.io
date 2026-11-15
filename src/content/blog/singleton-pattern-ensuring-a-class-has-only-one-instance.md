@@ -41,7 +41,7 @@ class Singleton {
     this.data = "I am the one and only!";
   }
 
-  getData() {
+getData() {
     return this.data;
   }
 }
@@ -105,7 +105,7 @@ class LazySingleton {
     LazySingleton.instance = this;
   }
 
-  static getInstance() {
+static getInstance() {
     if (!LazySingleton.instance) {
       LazySingleton.instance = new LazySingleton();
     }
@@ -119,7 +119,5 @@ const lazyInstance = LazySingleton.getInstance();
 And there you have it, folks! We've journeyed through the land of Singleton, battled the dragons of multiple instances, and emerged victorious with the power of unique objects at our fingertips.
 
 Remember, the Singleton pattern is a powerful tool in your programming arsenal, but like any tool, it should be used judiciously. Don't go around turning every class into a Singleton just because you can. That would be like trying to eat soup with a fork – technically possible, but not always the best approach.
-
-For more mind-bending adventures in the world of product development and software design, don't forget to visit [productthinkers.com](http://productthinkers.com/). We've got more patterns, practices, and programming puns than you can shake a stick at!
 
 _If you enjoyed this article and would like to support more content like this, consider buying me a coffee at _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_. Your support helps keep the coding caffeine flowing and the tutorials coming!_

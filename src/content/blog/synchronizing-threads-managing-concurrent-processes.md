@@ -29,7 +29,7 @@ if (isMainThread) {
   const sharedArray = new Int32Array(sharedBuffer);
   const worker = new Worker(__filename, { workerData: sharedBuffer });
 
-  Atomics.wait(sharedArray, 0, 0);
+Atomics.wait(sharedArray, 0, 0);
   console.log('The worker has finished!');
 } else {
   const sharedArray = new Int32Array(workerData);
@@ -78,7 +78,5 @@ Here, the mutex ensures that only one thread accesses the connection pool at a t
 ### Conclusion: The Art of Thread Synchronization
 
 Mastering thread synchronization in Node.js is like learning to conduct an orchestra – it requires practice, patience, and precision. But once you get it right, the result is a harmonious application that performs efficiently under concurrent loads.
-
-And if you're keen on orchestrating more Node.js masterpieces or diving deeper into the world of product development, do check out [ProductThinkers.com](http://productthinkers.com/). It’s a fantastic resource for tech enthusiasts looking to fine-tune their skills and knowledge.
 
 So, go forth and synchronize those threads, and may your concurrent processes run as smoothly as a well-rehearsed symphony! 🎼👨‍💻🚀

@@ -99,6 +99,4 @@ Our journey with Change Failure Rate was more than just a technical exercise—i
 
 If you’re ready to take your development process to the next level, start by measuring your CFR, analyze the data, and make incremental improvements. The journey might not always be smooth, but I promise it will be worth it.
 
-For more insights and resources to help you master DORA Metrics and beyond, be sure to visit [ProductThinkers.com](https://productthinkers.com/). Together, we can build better, more reliable software.
-
 _If you enjoyed this article and would like to support my work, consider buying me a coffee at _[_buymeacoffee.com/rubenalap_](https://buymeacoffee.com/rubenalap)_. Your support helps me create more content like this—thank you!_ ☕️

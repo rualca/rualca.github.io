@@ -79,6 +79,4 @@ node index.js
 
 Congratulations! You've successfully installed your first NPM package and integrated it into your project. This foundational skill unlocks a world of possibilities, allowing you to tap into the vast ecosystem of JavaScript libraries and frameworks to build robust, feature-rich applications.
 
-For those who are keen to dive deeper into the world of NPM and beyond, [ProductThinkers.com](http://productthinkers.com/) offers a platform to explore, learn, and connect with a community of innovative developers and product thinkers.
-
 Stay tuned for more tutorials in our "NPM Package Handler" series, and continue to enhance your development prowess with the power of NPM. 🚀📦👩‍💻

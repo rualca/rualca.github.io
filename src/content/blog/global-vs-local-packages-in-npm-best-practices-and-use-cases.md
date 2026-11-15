@@ -109,7 +109,7 @@ Whether you’re going global or staying local, the key is to understand your us
 
 So, next time you’re reaching for that NPM package, ask yourself: Is this a sit-down coffee moment, or should I take it to go?
 
-Happy coding! ☕ And if you’re thirsty for more insights like this, head over to [ProductThinkers.com](https://productthinkers.com/). We’ve got plenty more where this came from!
+Happy coding!
 
 ---
 

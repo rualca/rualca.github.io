@@ -44,6 +44,4 @@ A leader’s motivation, particularly their intrinsic motivation, is contagious.
 
 In summary, emotional intelligence is not just a nice-to-have attribute but a critical component of effective leadership in the tech industry. It complements technical expertise and drives leaders to create environments where creativity, collaboration, and resilience thrive.
 
-For those keen on delving deeper into the nuances of leadership, especially in the dynamic world of technology, we invite you to join the conversation and explore further at [ProductThinkers.com](http://productthinkers.com/). It's a platform for leaders and aspiring leaders to share insights, experiences, and strategies for thriving in today’s fast-paced tech landscape.
-
 Embrace the journey of enhancing your emotional intelligence, and let it be the beacon that guides you to become a more effective, empathetic, and inspiring tech leader. 🌟💼👥

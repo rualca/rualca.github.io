@@ -69,14 +69,14 @@ const connectToMongoDB = require('./database');
 async function performDatabaseOperations() {
   const db = await connectToMongoDB();
 
-  // Example: Insert a document into the 'wizards' collection
+// Example: Insert a document into the 'wizards' collection
   const wizardsCollection = db.collection('wizards');
   const result = await wizardsCollection.insertOne({
     name: 'Merlin',
     power: 'Time Manipulation',
   });
 
-  console.log(`New wizard summoned: ${result.insertedId}`);
+console.log(`New wizard summoned: ${result.insertedId}`);
 }
 
 performDatabaseOperations().catch(console.error);
@@ -87,7 +87,5 @@ In this example, we're summoning a new wizard named Merlin into our `wizards` co
 ### Conclusion: Unleashing the Power of Integration
 
 With MongoDB and Node.js harmoniously integrated, you're now equipped to build applications that are as scalable and flexible as they are powerful. This dynamic duo stands ready to back your most ambitious projects, from simple APIs to complex, real-time data-driven applications.
-
-For those eager to continue their journey through the realms of MongoDB, Node.js, and beyond, the treasure trove of knowledge at [ProductThinkers.com](http://productthinkers.com/) awaits. It's a sanctuary for tech enthusiasts seeking to blend the art of development with the science of product thinking.
 
 So, arm yourself with the power of integration, and may your applications thrive on the combined strengths of MongoDB and Node.js! 🌟💻📚🚀

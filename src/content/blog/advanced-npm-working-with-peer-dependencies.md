@@ -142,6 +142,4 @@ To wrap things up, here are some best practices to keep in mind when working wit
 
 Peer dependencies are a crucial part of building robust and flexible packages in the Node.js ecosystem. By understanding how to use them effectively, you can avoid common pitfalls and create packages that play nicely with others in the ever-evolving world of JavaScript.
 
-If you found this guide helpful and want to dive deeper into NPM and JavaScript best practices, be sure to check out more articles at [ProductThinkers.com](https://productthinkers.com/). There, you’ll find plenty of resources to help you elevate your development game.
-
 Happy coding, and may your peer dependencies always resolve peacefully! 🧑‍💻✨

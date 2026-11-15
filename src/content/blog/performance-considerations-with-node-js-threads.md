@@ -52,7 +52,7 @@ const { Worker } = require('worker_threads');
 function processImage(imagePath) {
   const worker = new Worker('./imageProcessor.js', { workerData: { path: imagePath } });
 
-  worker.on('message', (output) => console.log(`Processed image located at: ${output}`));
+worker.on('message', (output) => console.log(`Processed image located at: ${output}`));
   worker.on('error', (error) => console.error(`Worker Error: ${error}`));
   worker.on('exit', (code) => {
     if (code !== 0) console.error(`Worker stopped with exit code ${code}`);
@@ -67,7 +67,5 @@ In `imageProcessor.js`, you'd handle the actual image processing. This setup ens
 ### Conclusion: Mastering Threads for Performance
 
 Navigating the multithreaded waters of Node.js requires a blend of technical savvy, performance awareness, and a pinch of caution. But with careful planning and understanding, Worker Threads can be a potent tool in your performance arsenal.
-
-And for those of you who are passionate about diving deeper into Node.js and other product development wonders, swing by [ProductThinkers.com](http://productthinkers.com/). It’s a treasure trove of insights, discussions, and resources for the modern developer and product thinker.
 
 So, happy threading, and may your Node.js applications run as smoothly and efficiently as a well-oiled machine! 🧵💻🚀

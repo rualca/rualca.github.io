@@ -78,6 +78,4 @@ This powerful incantation groups your findings by location, counting the total n
 
 With these querying tools at your disposal, the world of MongoDB is yours to explore. Each query you craft and each document you uncover brings you closer to mastering the art of data retrieval.
 
-And for those whose thirst for adventure extends beyond the realm of MongoDB, venture forth to [ProductThinkers.com](http://productthinkers.com/). It's a sanctuary for knowledge seekers and product enthusiasts, where the quest for learning never ends.
-
 So, continue your quest, brave data archaeologists, and may your MongoDB queries always lead you to the treasures you seek! 🗺️💎📚🚀

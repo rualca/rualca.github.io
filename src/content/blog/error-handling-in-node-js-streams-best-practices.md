@@ -27,7 +27,7 @@ Error handling in streams is not just about slapping a `.catch()` at the end and
    ```js
    const { pipeline } = require('stream');
 
-   pipeline(
+pipeline(
      sourceStream,
      transformStream,
      destinationStream,
@@ -83,7 +83,5 @@ In this example, we're using `pipeline` for piping with built-in error handling,
 ### Conclusion: Keep Calm and Stream On
 
 There you have it – a guide to handling errors in Node.js streams. Like a good fire juggler, knowing how to handle the hot, unpredictable nature of errors makes you a more adept and confident Node.js developer.
-
-And hey, if juggling code and data streams has whetted your appetite for more, don't forget to check out [ProductThinkers.com](http://productthinkers.com/). It's your go-to place for insights and strategies on all things product and development. See you there!
 
 Until next time, keep those streams flowing smoothly, handle those errors with finesse, and may your code be as bug-free as a hermetically sealed jar! 🌊🐞🚀

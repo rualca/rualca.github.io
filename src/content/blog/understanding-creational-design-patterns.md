@@ -105,6 +105,4 @@ By now, you should have a solid understanding of what **creational design patter
 
 Next time you’re knee-deep in code and wondering if there’s a better way to manage all those objects, ask yourself: _Could a creational design pattern make my life easier?_ Chances are, it probably could.
 
-If you want to keep learning about design patterns and other coding best practices, head over to [productthinkers.com](http://productthinkers.com/) for more resources and insights!
-
 _Enjoyed this article? If you'd like to support my work, consider buying me a coffee! You can do that right here: _[_buymeacoffee.com/rubenalap_](http://buymeacoffee.com/rubenalap)_._ ☕

@@ -41,22 +41,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+- name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
 
-      - name: Install dependencies
+- name: Install dependencies
         run: npm install
 
-      - name: Run tests
+- name: Run tests
         run: npm test
 
-      - name: Deploy
+- name: Deploy
         run: npm run deploy
 ```
 
@@ -158,7 +158,5 @@ Before we wrap up, here are some best practices to keep in mind when using NPM i
 ## Wrapping It All Up
 
 Using NPM in your CI/CD pipelines can greatly enhance your development workflow, making it more efficient, reliable, and automated. By integrating NPM into your CI/CD process, you can ensure that your code is tested, dependencies are managed, and deployments are smooth and error-free.
-
-If you found this guide helpful and want to keep up with more insights on NPM and development workflows, head over to [ProductThinkers.com](https://productthinkers.com/). There, you’ll find plenty of resources to help you build, deploy, and scale your projects with confidence.
 
 Happy coding, and may your CI/CD pipelines always be green! ✅

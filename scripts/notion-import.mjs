@@ -17,7 +17,7 @@ import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { blocksToMarkdown } from '../src/lib/notion-blocks.js'
-import { descriptionFrom, pubDateFor, slugify, tagsFor, SERIES } from '../src/lib/notion-import-plan.js'
+import { descriptionFrom, pubDateFor, slugify, stripThirdPartyPromos, tagsFor, SERIES } from '../src/lib/notion-import-plan.js'
 
 const DATABASE_ID = '46bc2084-3de7-4297-9ab7-fb4128a3b333'
 const NOTION_VERSION = '2022-06-28'
@@ -174,11 +174,13 @@ async function main() {
 
     for (const [index, page] of list.entries()) {
       const tree = await blockTree(auth, page.id)
-      const body = blocksToMarkdown(tree)
-      if (body.replace(/\s+/g, '').length < MIN_BODY_CHARS) {
+      const raw = blocksToMarkdown(tree)
+      if (raw.replace(/\s+/g, '').length < MIN_BODY_CHARS) {
         skipped += 1
         continue
       }
+      // The closing paragraph promotes another site; it is not part of the article.
+      const body = stripThirdPartyPromos(raw)
 
       const baseSlug = slugify(page.title)
       let slug = baseSlug
