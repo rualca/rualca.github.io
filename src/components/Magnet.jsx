@@ -15,11 +15,16 @@ const Magnet = ({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const magnetRef = useRef(null);
 
+  // Reset when the magnet is disabled. Adjusting state during render is the
+  // pattern React recommends for "reset state when a prop changes"; doing it
+  // inside the effect below causes the cascading render that
+  // react-hooks/set-state-in-effect forbids.
+  if (disabled && (position.x !== 0 || position.y !== 0)) {
+    setPosition({ x: 0, y: 0 });
+  }
+
   useEffect(() => {
-    if (disabled) {
-      setPosition({ x: 0, y: 0 });
-      return;
-    }
+    if (disabled) return;
 
     const handleMouseMove = e => {
       if (!magnetRef.current) return;
