@@ -13,6 +13,12 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 // config. Change both or neither.
 export default defineConfig({
   site: 'https://rualca.github.io',
+  // The post was removed after it had been indexed. A static host cannot send
+  // a 301, so Astro emits a meta-refresh page here and the old URL keeps
+  // working instead of answering 404.
+  redirects: {
+    '/blog/why-this-site-owns-its-articles/': '/blog/',
+  },
   integrations: [react(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
