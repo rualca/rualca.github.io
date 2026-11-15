@@ -5,26 +5,26 @@ pubDate: 2024-02-06
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---
 
-Welcome to the inaugural article of our "NPM Package Handler" series, where we embark on a journey to unravel the intricacies of Node Package Manager (NPM), the backbone of Node.js and JavaScript development. Today's guide, "Getting Started with NPM: An Introductory Guide," is crafted to lay the foundation for beginners and seasoned developers alike, aiming to navigate the essentials of NPM efficiently. Let's dive into the world of package management and discover how NPM facilitates the development of modern web applications.
+Node Package Manager is the backbone of Node.js and JavaScript development, and it is the subject of this first article in the "NPM Package Handler" series. The guide lays the foundation for beginners and seasoned developers alike, and keeps to the essentials. NPM exists so that a modern web application can be assembled from code other people have already written, with the tool keeping the books on which package came from where.
 
 ## What is NPM?
 
-NPM, or Node Package Manager, is the default package manager for the JavaScript runtime environment Node.js. It consists of a command-line client (npm) and an online database of public and private packages, known as the NPM registry. NPM simplifies the process of sharing and reusing code for developers, providing an extensive repository of software libraries and tools that can be easily integrated into projects.
+NPM stands for Node Package Manager, and it is the default package manager for the Node.js runtime environment. It has two parts: a command-line client (`npm`) and an online database of public and private packages called the NPM registry. Sharing and reusing code gets simpler with it, because the registry holds a wide repository of software libraries and tools that projects integrate directly.
 
 ### Setting Up NPM
 
-To begin your journey with NPM, you first need to install Node.js, which automatically includes npm. Visit the [official Node.js website](https://nodejs.org/) and download the version suitable for your operating system. Once installed, you can verify the installation by opening your terminal or command prompt and typing:
+Node.js is what you install first, and npm comes with it. Visit the [official Node.js website](https://nodejs.org/) and download the version that matches your operating system. Then open a terminal or command prompt and check that both arrived:
 
 ```bash
 node -v
 npm -v
 ```
 
-These commands will display the versions of Node.js and npm installed on your system, confirming a successful setup.
+Each command prints a version number. Two numbers mean the setup worked.
 
 ### Your First NPM Command
 
-With NPM installed, it's time to execute your first command. The terminal or command prompt is your gateway to harnessing the power of NPM. Let's start by creating a new project:
+With npm installed, the terminal or command prompt is where you work. Start a project:
 
 ```bash
 mkdir my-first-npm-project
@@ -32,21 +32,21 @@ cd my-first-npm-project
 npm init -y
 ```
 
-This sequence of commands creates a new directory for your project, navigates into it, and initializes a new NPM project with a default `package.json` file. This file is crucial as it holds metadata relevant to the project and manages the project's dependencies.
+The first command creates a directory for the project, and `cd` moves into it. `npm init -y` then writes a default `package.json`, the file that holds the project metadata and manages its dependencies.
 
 ### Installing Packages
 
-NPM boasts a vast registry of packages that can be seamlessly added to your projects. To install a package, such as Express (a popular web application framework for Node.js), use the following command:
+The registry is large, and adding one of its packages to a project takes a single command. Express, a web application framework for Node.js, is the example here:
 
 ```bash
 npm install express
 ```
 
-This command fetches the Express package from the NPM registry and adds it to your project's `node_modules` directory, also listing it as a dependency in your `package.json` file.
+That command fetches Express from the NPM registry into the project's `node_modules` directory, and `package.json` gains Express as a dependency.
 
 ### Exploring NPM Scripts
 
-NPM scripts are a powerful feature that allows you to automate repetitive tasks such as testing, building, and deploying your application. You can define scripts in your `package.json` file under the "scripts" property. For instance, to create a start script for your application, you might add:
+Scripts automate the repetitive parts of a project, from running the test suite to building and deploying the application. They live in the `package.json` file under the "scripts" property. A start script for the application looks like this:
 
 ```json
 "scripts": {
@@ -54,10 +54,8 @@ NPM scripts are a powerful feature that allows you to automate repetitive tasks 
 }
 ```
 
-You can then run this script using `npm start`, which will execute the `node app.js` command, starting your application.
+`npm start` runs that script, so the command it holds, `node app.js`, starts the application.
 
 ### Conclusion: Embarking on the NPM Journey
 
-This introductory guide marks the beginning of your explorations into NPM, the cornerstone of Node.js development. As you delve deeper into subsequent articles, you'll uncover the vast capabilities and features that NPM offers, from advanced package management to customizing your build processes.
-
-Stay tuned for more insights in our "NPM Package Handler" series, and let's harness the power of NPM to create, innovate, and elevate the world of web development. 🚀📦💻
+The next articles in the "NPM Package Handler" series go past the basics, into advanced package management and custom build processes.
