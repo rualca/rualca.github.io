@@ -1,12 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, waitFor, fireEvent } from '@testing-library/react'
-
-vi.mock('@splinetool/react-spline', () => ({ default: () => null }))
-vi.mock('./components/ui/smooth-cursor', () => ({ SmoothCursor: () => null }))
-// ScrollReveal owns and kills its own ScrollTriggers on unmount (correctly).
-// Stub it here so this file's ScrollTrigger assertions isolate App's own
-// effect cleanup instead of also observing ScrollReveal's legitimate calls.
-vi.mock('./components/ScrollReveal', () => ({ default: () => null }))
+import { render, waitFor } from '@testing-library/react'
 
 const lenisConstructor = vi.fn()
 vi.mock('lenis', () => ({
@@ -70,7 +63,7 @@ function stubInnerWidth(width) {
   })
 }
 
-describe('App', () => {
+describe('SmoothScroll', () => {
   beforeEach(() => {
     lenisConstructor.mockClear()
     tickerAdd.mockClear()
@@ -85,8 +78,8 @@ describe('App', () => {
 
   it('does not construct Lenis when reduced motion is preferred', async () => {
     stubMatchMedia(true)
-    const { default: App } = await import('./App')
-    render(<App />)
+    const { default: SmoothScroll } = await import('./SmoothScroll')
+    render(<SmoothScroll />)
     await flushImports()
     expect(lenisConstructor).not.toHaveBeenCalled()
   })
@@ -95,8 +88,8 @@ describe('App', () => {
     stubMatchMedia(false)
     const mockTrigger = { kill: vi.fn() }
     scrollTriggerGetAll.mockReturnValue([mockTrigger])
-    const { default: App } = await import('./App')
-    const { unmount } = render(<App />)
+    const { default: SmoothScroll } = await import('./SmoothScroll')
+    const { unmount } = render(<SmoothScroll />)
     await waitFor(() => expect(lenisConstructor).toHaveBeenCalledTimes(1))
     unmount()
     expect(scrollTriggerRefresh).toHaveBeenCalled()
@@ -105,8 +98,8 @@ describe('App', () => {
 
   it('removes the exact ticker callback reference it registered', async () => {
     stubMatchMedia(false)
-    const { default: App } = await import('./App')
-    const { unmount } = render(<App />)
+    const { default: SmoothScroll } = await import('./SmoothScroll')
+    const { unmount } = render(<SmoothScroll />)
     await waitFor(() => expect(tickerAdd).toHaveBeenCalledTimes(1))
     const registeredCallback = tickerAdd.mock.calls[0][0]
     unmount()
@@ -116,8 +109,8 @@ describe('App', () => {
   it('does not construct Lenis/GSAP/ScrollTrigger on mobile viewports', async () => {
     stubMatchMedia(false)
     stubInnerWidth(375)
-    const { default: App } = await import('./App')
-    render(<App />)
+    const { default: SmoothScroll } = await import('./SmoothScroll')
+    render(<SmoothScroll />)
     await flushImports()
     expect(lenisConstructor).not.toHaveBeenCalled()
     expect(tickerAdd).not.toHaveBeenCalled()
@@ -126,8 +119,8 @@ describe('App', () => {
   it('still constructs Lenis/GSAP/ScrollTrigger on desktop when motion is allowed', async () => {
     stubMatchMedia(false)
     stubInnerWidth(1280)
-    const { default: App } = await import('./App')
-    render(<App />)
+    const { default: SmoothScroll } = await import('./SmoothScroll')
+    render(<SmoothScroll />)
     await waitFor(() => expect(lenisConstructor).toHaveBeenCalledTimes(1))
     expect(tickerAdd).toHaveBeenCalledTimes(1)
   })
@@ -135,8 +128,8 @@ describe('App', () => {
   it('never constructs Lenis if the page unmounts before the libraries finish loading', async () => {
     stubMatchMedia(false)
     stubInnerWidth(1280)
-    const { default: App } = await import('./App')
-    const { unmount } = render(<App />)
+    const { default: SmoothScroll } = await import('./SmoothScroll')
+    const { unmount } = render(<SmoothScroll />)
     unmount()
     await flushImports()
     expect(lenisConstructor).not.toHaveBeenCalled()
@@ -146,29 +139,10 @@ describe('App', () => {
   it('still skips motion libraries when reduced motion is preferred regardless of viewport', async () => {
     stubMatchMedia(true)
     stubInnerWidth(1280)
-    const { default: App } = await import('./App')
-    render(<App />)
+    const { default: SmoothScroll } = await import('./SmoothScroll')
+    render(<SmoothScroll />)
     await flushImports()
     expect(lenisConstructor).not.toHaveBeenCalled()
     expect(tickerAdd).not.toHaveBeenCalled()
-  })
-
-  it('loads the sections below the first screen straight away on desktop', async () => {
-    stubMatchMedia(false)
-    stubInnerWidth(1280)
-    const { default: App } = await import('./App')
-    const { container } = render(<App />)
-    await waitFor(() => expect(container.querySelector('#about')).not.toBeNull())
-  })
-
-  it('holds the sections below the first screen on phones until the first interaction', async () => {
-    stubMatchMedia(false)
-    stubInnerWidth(375)
-    const { default: App } = await import('./App')
-    const { container } = render(<App />)
-    await flushImports()
-    expect(container.querySelector('#about')).toBeNull()
-    fireEvent.pointerDown(window)
-    await waitFor(() => expect(container.querySelector('#about')).not.toBeNull())
   })
 })

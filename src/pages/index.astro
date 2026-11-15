@@ -1,16 +1,26 @@
 ---
 import '../index.css';
+import '../App.css';
 import Base from '../layouts/Base.astro';
-import App from '../App.jsx';
+import Navbar from '../components/Navbar.jsx';
+import Hero from '../components/hero';
+import Experience from '../components/Experience.jsx';
+import BelowFold from '../BelowFold.jsx';
+import SmoothScroll from '../components/SmoothScroll.jsx';
 ---
 
 <Base>
-  {/*
-    The whole island is client-only: the site is still the same React app in
-    this slice, and rendering it on the server would duplicate the DOM that the
-    app already produces on mount. The <noscript> block in Base.astro is what
-    crawlers and no-JS clients read for now; P3 replaces this with static
-    article pages.
-  */}
-  <App client:only="react" />
+  <Navbar client:load />
+  <main>
+    <Hero client:load />
+    <Experience client:load />
+    {/*
+      The below-fold sections are their own island. client:visible hands the
+      "wait until it is needed" job to Astro, which replaces the hand-rolled
+      timer and interaction listeners the single island needed: hydration
+      starts when the section scrolls into view, on every viewport.
+    */}
+    <BelowFold client:visible />
+  </main>
+  <SmoothScroll client:idle />
 </Base>

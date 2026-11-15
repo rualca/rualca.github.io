@@ -35,6 +35,15 @@ export function InteractiveGridPattern({
 }: InteractiveGridPatternProps) {
   const [horizontal, vertical] = squares
   const [hoveredSquare, setHoveredSquare] = useState<number | null>(null)
+  // The grid is decoration: one <rect> per cell, thousands in total. Rendering
+  // it during server rendering serialized ~19k rects into every page load
+  // (3.3 MB of HTML). The <svg> still reserves the space on the server, so
+  // there is no layout shift; the cells appear on hydration.
+  const [mounted, setMounted] = useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <svg
@@ -46,7 +55,7 @@ export function InteractiveGridPattern({
       )}
       {...props}
     >
-      {Array.from({ length: horizontal * vertical }).map((_, index) => {
+      {mounted && Array.from({ length: horizontal * vertical }).map((_, index) => {
         const x = (index % horizontal) * width
         const y = Math.floor(index / horizontal) * height
         return (
