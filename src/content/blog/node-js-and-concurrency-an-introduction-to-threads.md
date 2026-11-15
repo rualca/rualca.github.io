@@ -9,7 +9,7 @@ Hello, Node.js adventurers and asynchronous aficionados! In our thrilling and un
 
 ## The Conundrum of Concurrency
 
-In the realm of Node.js, concurrency has always been a topic hotter than a freshly baked pizza. While Node.js excels in handling asynchronous operations, traditional threading, like in other back-end languages, was a bit of a party trick it couldn't perform. But wait, there's a twist in our tale!
+Concurrency in Node.js has always been contentious. While Node.js excels in handling asynchronous operations, traditional threading, like in other back-end languages, was a bit of a party trick it couldn't perform. But wait, there's a twist in our tale!
 
 ### Enter the World of Worker Threads
 

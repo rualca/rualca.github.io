@@ -9,7 +9,7 @@ Ahoy, data navigators and MongoDB explorers! Welcome to another thrilling instal
 
 ## The Heart of MongoDB: Documents and Collections
 
-In the realm of MongoDB, our treasures are not gold or jewels but Documents and Collections. Think of MongoDB as a grand library where each book (document) is unique, and the shelves (collections) are organized not by genre, but by the adventures within.
+In MongoDB, the two things that matter are documents and collections. Think of MongoDB as a grand library where each book (document) is unique, and the shelves (collections) are organized not by genre, but by the adventures within.
 
 ### Documents: The Parchments of Data
 

@@ -57,7 +57,7 @@ Now that you’re linked up, let’s talk about how to use this setup effectivel
 
 ### Instant Feedback Loop
 
-One of the biggest advantages of using `npm link` is the instant feedback loop it creates. You can make changes in your package and immediately see the effects in your project without having to re-install or rebuild. This is a game-changer when you’re iterating quickly and need to see how your changes impact the overall project.
+One of the biggest advantages of using `npm link` is the instant feedback loop it creates. You can make changes in your package and immediately see the effects in your project without having to re-install or rebuild. That matters when you are iterating quickly and need to see how your changes impact the overall project.
 
 ### Debugging
 

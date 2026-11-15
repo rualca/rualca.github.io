@@ -27,7 +27,7 @@ Here’s the roadmap for our journey:
 
 Deployment Frequency, as the name suggests, measures how often your team is deploying code to production. It’s one of the four key DORA Metrics, alongside Lead Time for Changes, Change Failure Rate, and Mean Time to Recovery (MTTR). Essentially, it answers the question: how quickly can you get new features, bug fixes, and improvements into the hands of your users?
 
-In the world of DevOps, higher Deployment Frequency is usually a good thing. It indicates that your team is agile, adaptable, and able to respond quickly to changes. But achieving a high Deployment Frequency isn’t just about speed—it’s about building a reliable process that doesn’t compromise quality.
+In DevOps, a higher Deployment Frequency is a good thing. It indicates that your team is agile, adaptable, and able to respond quickly to changes. But achieving a high Deployment Frequency isn’t just about speed—it’s about building a reliable process that doesn’t compromise quality.
 
 ## 🧩 Why Deployment Frequency is Crucial
 
@@ -65,7 +65,7 @@ Next, we streamlined our approval process. We reduced the number of stakeholders
 
 ### 3. Embrace Continuous Integration and Continuous Delivery (CI/CD) 🔄
 
-We fully embraced CI/CD practices, ensuring that every change was automatically tested and ready to be deployed at a moment’s notice. This not only increased our Deployment Frequency but also improved the overall quality and reliability of our releases.
+We fully embraced CI/CD practices, ensuring that every change was automatically tested and ready to be deployed at a moment’s notice. It raised our Deployment Frequency, and the quality of the releases along with it.
 
 ### 4. Foster a Culture of Experimentation 🧪
 

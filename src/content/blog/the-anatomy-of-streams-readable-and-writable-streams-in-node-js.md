@@ -5,7 +5,7 @@ pubDate: 2023-12-27
 tags: ["nodejs", "streams", "backend", "javascript"]
 ---
 
-Welcome back to our delightful dive into the world of Node.js! Today, in our series, we're dissecting a topic that's as essential as your morning coffee – the anatomy of streams in Node.js. Buckle up; it's time to slice and dice through Readable and Writable streams. No scrubs needed, just your coding cap!
+Welcome back to our delightful dive into the world of Node.js! Today, in our series, we're dissecting a topic that's as essential as your morning coffee – the anatomy of streams in Node.js. This is the anatomy of Readable and Writable streams. No scrubs needed, just your coding cap!
 
 ## The Heartbeat of Node.js: What Are Streams?
 

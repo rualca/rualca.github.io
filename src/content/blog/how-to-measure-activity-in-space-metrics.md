@@ -13,7 +13,7 @@ Imagine this: You’re leading a software engineering team, and on the surface, 
 
 But then… 🚨 A major bug slips into production. Features aren’t performing as expected. Customers are confused. Suddenly, you realize all that **activity** hasn’t translated into meaningful **progress**.
 
-In the world of software development, it’s easy to mistake **being busy** for **being productive**. That’s where the **SPACE framework** comes in, and today, we’re tackling **Activity**—one of the most misunderstood metrics.
+In software development it is easy to mistake **being busy** for **being productive**. That’s where the **SPACE framework** comes in, and today, we’re tackling **Activity**—one of the most misunderstood metrics.
 
 ### 🚀 Here’s What We’ll Cover Today:
 
@@ -105,7 +105,7 @@ Activity isn’t just about individual performance. It’s also about how your t
 - **Code reviews across teams**: Is your team working in silos, or are they contributing to other areas of the project?
 - **Inter-team pull requests**: How often does your team collaborate with other teams? The more they do, the more aligned the entire organization becomes.
 
-Encouraging collaboration not only improves the quality of work but also keeps activity aligned with broader business goals.
+Encouraging collaboration improves the quality of the work and keeps activity aligned with the wider goals.
 
 ### 🌟 Turning Activity Into Results: The Key Takeaways
 

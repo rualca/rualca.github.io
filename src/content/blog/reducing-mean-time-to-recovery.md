@@ -20,13 +20,13 @@ Here's a sneak peek at what’s coming up in this story:
 3. 🛠️ **Strategies to Reduce MTTR** – Practical tips and tricks that worked for us.
 4. 💡 **Continuous Learning and Improvement** – How to keep getting better at recovering quickly.
 
-So, buckle up, and let’s dive into the tale of how we went from firefighting to a well-oiled recovery machine.
+Here is how we went from firefighting to a recovery process that ran itself.
 
 ## 🔍 Understanding MTTR
 
 First things first—what exactly is Mean Time to Recovery? Simply put, MTTR measures the average time it takes to recover from a failure or incident. It's calculated from the moment the issue is detected until the system is fully operational again.
 
-In the world of DORA Metrics, MTTR is a critical indicator of your team’s ability to respond to problems. It’s not just about fixing the immediate issue; it’s about minimizing downtime and ensuring that your users experience as little disruption as possible.
+MTTR measures how fast a team responds to a problem. It’s not just about fixing the immediate issue; it’s about minimizing downtime and ensuring that your users experience as little disruption as possible.
 
 Our journey with MTTR began when we realized that our reaction to incidents was more of a chaotic scramble than a coordinated effort. Every minute that ticked by felt like an hour, and we knew something had to change.
 

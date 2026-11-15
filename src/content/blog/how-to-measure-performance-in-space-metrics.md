@@ -47,7 +47,7 @@ Meet **Team A** and **Team B**.
 
 **Team B**, on the other hand, focuses on the value of what they ship. They write fewer lines of code, but they’re delivering polished features that users love. Their performance is measured by the **impact** they make, not the amount of code they crank out.
 
-In the world of SPACE metrics, **Team B** is crushing it. They’re not just working hard—they’re working smart. 🚀
+By SPACE metrics, **Team B** is ahead. They’re not just working hard—they’re working smart. 🚀
 
 ### 🚀 How to Measure Performance in SPACE Metrics
 
@@ -114,7 +114,7 @@ Lastly, performance is not sustainable without well-being. Ensure your team has 
 
 ### 🚀 Wrapping Up: It’s All About the Outcomes
 
-Measuring performance in the SPACE framework isn’t about counting commits or focusing on velocity—it’s about ensuring your team is delivering value. By focusing on outcomes, efficiency, and quality, you’ll not only improve performance but also foster a happier, healthier engineering culture.
+Measuring performance in the SPACE framework isn’t about counting commits or focusing on velocity—it’s about ensuring your team is delivering value. By focusing on outcomes, efficiency, and quality, you improve performance and the engineering culture at the same time.
 
 Performance isn’t a sprint—it’s a marathon, and the goal is to cross the finish line with a smile on your face, not crawl over it exhausted.
 
