@@ -1,61 +1,61 @@
 ---
 title: "Installing Your First Package with NPM: A Step-by-Step Tutorial"
-description: "Welcome back to our \"NPM Package Handler\" series, where we delve into the practical aspects of using Node Package Manager (NPM) to elevate your development workflow."
+description: "Installing a package takes a handful of commands. This installment of the \"NPM Package Handler\" series runs them end to end on a real project, from npm init to the first HTTP request."
 pubDate: 2024-02-01
 tags: ["nodejs", "npm", "tooling", "javascript"]
 ---
 
-Welcome back to our "NPM Package Handler" series, where we delve into the practical aspects of using Node Package Manager (NPM) to elevate your development workflow. In this installment, "Installing Your First Package with NPM: A Step-by-Step Tutorial," we guide you through the process of adding external libraries to your project, enhancing its functionality and efficiency. Whether you're a budding developer or looking to brush up on your NPM skills, this tutorial is tailored to provide you with a clear, actionable approach to package installation.
+Adding a library to a Node project takes a handful of commands, and the commands do not change between the first package and the fortieth. This installment of the "NPM Package Handler" series runs the sequence end to end: an empty directory, `npm init`, `npm install axios`, and a script that uses it. The steps are the same whether you are installing your first package or refreshing what you already know.
 
 ## Understanding NPM Packages
 
-Before we dive into the installation process, it's essential to understand what NPM packages are. In essence, packages are reusable code modules that you can include in your projects. They range from utility libraries like Lodash to frameworks like React, offering a wide array of functionalities that you can leverage without having to reinvent the wheel.
+Packages are reusable code modules you add to a project. They range from utility libraries like Lodash to frameworks like React, and they give you functionality you would otherwise have to write yourself. Installing one is how that code becomes available to your project.
 
 ### Step 1: Setting Up Your Project
 
-If you haven't already set up an NPM project, start by creating a directory for your project and navigate into it:
+If the project does not exist yet, create a directory for it and move into it:
 
 ```bash
 mkdir my-npm-project
 cd my-npm-project
 ```
 
-Initialize your project with NPM to create a `package.json` file, which will keep track of your installed packages and project metadata:
+`npm init` writes the `package.json` file that tracks the installed packages and the project metadata:
 
 ```bash
 npm init -y
 ```
 
-The `-y` flag automatically fills in the default values for your `package.json` file, streamlining the setup process.
+The `-y` flag accepts the default answer for every prompt, so the command writes `package.json` without asking questions.
 
 ### Step 2: Choosing Your First Package
 
-For this tutorial, let's install `axios`, a popular HTTP client for making requests to external services. Axios is widely used for its simple API and promise-based architecture, making it an excellent choice for your first package installation.
+The package used here is `axios`, an HTTP client for making requests to external services. It is widely used for its small API and promise-based architecture, which makes it a good fit for a first installation.
 
 ### Step 3: Installing the Package
 
-To install `axios`, run the following command in your project directory:
+Install `axios` from the project directory:
 
 ```bash
 npm install axios
 ```
 
-This command performs several actions behind the scenes:
+The command does three things:
 
 - Fetches the `axios` package from the NPM registry.
-- Adds it to the `node_modules` directory in your project, where all your installed packages reside.
-- Updates your `package.json` file to include `axios` as a dependency, ensuring that anyone else working with your project can install the same dependencies.
+- Puts it in the `node_modules` directory, where the installed packages live.
+- Records it in `package.json` as a dependency, so anyone else working on the project installs the same package.
 
 ### Step 4: Verifying the Installation
 
-Once the installation completes, you can verify it by checking the `node_modules` directory and the `package.json` file:
+After the install finishes, two checks confirm it worked:
 
-- Ensure that the `node_modules/axios` directory exists.
-- Check your `package.json` file to see if `axios` is listed under the `dependencies` section.
+- The `node_modules/axios` directory exists.
+- `package.json` lists `axios` under `dependencies`.
 
 ### Step 5: Using the Installed Package
 
-With `axios` installed, you can now use it in your project. Create a new JavaScript file (e.g., `index.js`) and add the following code to make a simple HTTP GET request:
+Create a JavaScript file (for example `index.js`) and add this code to send a GET request:
 
 ```js
 const axios = require('axios');
@@ -69,7 +69,7 @@ axios.get('<https://jsonplaceholder.typicode.com/posts/1>')
   });
 ```
 
-Run your script with Node.js to see `axios` in action:
+Run the script with Node.js:
 
 ```bash
 node index.js
@@ -77,6 +77,4 @@ node index.js
 
 ### Conclusion: Empowering Your Projects with NPM
 
-Congratulations! You've successfully installed your first NPM package and integrated it into your project. This foundational skill unlocks a world of possibilities, allowing you to tap into the vast ecosystem of JavaScript libraries and frameworks to build robust, feature-rich applications.
-
-Stay tuned for more tutorials in our "NPM Package Handler" series, and continue to enhance your development prowess with the power of NPM. 🚀📦👩‍💻
+The commands do not change as the project grows: one `npm install` per package, one entry per package in `package.json`. What changes is how many of them you keep track of.
