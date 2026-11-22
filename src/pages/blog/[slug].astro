@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import { tagUrl } from '../../lib/tags';
 
 export async function getStaticPaths() {
   // Publication order, newest first, matching /blog. Collected here because
@@ -9,6 +10,24 @@ export async function getStaticPaths() {
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
 
+  // Shared tags, then recency. Related links are how a reader moves sideways
+  // through the archive instead of only forward and back in time.
+  const relatedFor = (post) =>
+    posts
+      .filter((other) => other.id !== post.id)
+      .map((other) => ({
+        other,
+        shared: other.data.tags.filter((tag) => post.data.tags.includes(tag)).length,
+      }))
+      .filter((entry) => entry.shared > 0)
+      .sort(
+        (a, b) =>
+          b.shared - a.shared ||
+          b.other.data.pubDate.valueOf() - a.other.data.pubDate.valueOf(),
+      )
+      .slice(0, 3)
+      .map((entry) => entry.other);
+
   return posts.map((post, index) => ({
     params: { slug: post.id },
     props: {
@@ -16,11 +35,12 @@ export async function getStaticPaths() {
       // In date order the older article is "previous", the newer one "next".
       older: posts[index + 1] && { id: posts[index + 1].id, title: posts[index + 1].data.title },
       newer: posts[index - 1] && { id: posts[index - 1].id, title: posts[index - 1].data.title },
+      related: relatedFor(post),
     },
   }));
 }
 
-const { post, older, newer } = Astro.props;
+const { post, older, newer, related } = Astro.props;
 const { Content } = await render(post);
 
 const site = (Astro.site?.href ?? 'https://rualca.github.io/').replace(/\/$/, '');
@@ -83,9 +103,34 @@ const breadcrumbLd = {
     {post.data.tags.length > 0 && (
       <ul class="mt-12 flex flex-wrap gap-2 text-sm">
         {post.data.tags.map((tag) => (
-          <li class="rounded-full border border-current/20 px-3 py-0.5 opacity-70">{tag}</li>
+          <li>
+            <a
+              href={tagUrl(tag)}
+              class="block rounded-full border border-current/20 px-3 py-0.5 opacity-70 hover:opacity-100"
+            >
+              #{tag}
+            </a>
+          </li>
         ))}
       </ul>
+    )}
+
+    {related.length > 0 && (
+      <section class="mt-16 border-t border-border pt-8" aria-labelledby="related-heading">
+        <h2 id="related-heading" class="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+          Related reading
+        </h2>
+        <ul class="mt-4 space-y-2">
+          {related.map((entry) => (
+            <li>
+              <a href={`/blog/${entry.id}/`} class="group flex items-baseline gap-2">
+                <span class="font-medium group-hover:underline">{entry.data.title}</span>
+                <span aria-hidden="true" class="text-muted-foreground">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     )}
 
     {(older || newer) && (

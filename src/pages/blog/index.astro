@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { tagUrl } from '../../lib/tags';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -46,10 +47,10 @@ const day = (value) =>
 
     <ul>
       {posts.map((post) => (
-        <li>
+        <li class="py-4">
           <a
             href={`/blog/${post.id}/`}
-            class="group -mx-3 flex gap-4 rounded-lg px-3 py-4 hover:bg-muted/50"
+            class="group -mx-3 flex gap-4 rounded-lg px-3 focus-visible:outline focus-visible:outline-2"
           >
             <span
               aria-hidden="true"
@@ -68,13 +69,19 @@ const day = (value) =>
                 {day(post.data.pubDate)}
               </time>
               <p class="mt-1 line-clamp-2 opacity-70">{post.data.description}</p>
-              {post.data.tags.length > 0 && (
-                <p class="mt-1.5 text-sm text-muted-foreground">
-                  {post.data.tags.map((tag) => `#${tag}`).join(' ')}
-                </p>
-              )}
             </div>
           </a>
+          {/*
+            Tags sit outside the row link: a link inside a link is invalid HTML
+            and swallows the tag click.
+          */}
+          {post.data.tags.length > 0 && (
+            <p class="mt-1.5 pl-15 text-sm text-muted-foreground">
+              {post.data.tags.map((tag) => (
+                <a href={tagUrl(tag)} class="mr-2 hover:underline">#{tag}</a>
+              ))}
+            </p>
+          )}
         </li>
       ))}
     </ul>

@@ -1,0 +1,115 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { tagSlug } from '../../../lib/tags';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const byTag = new Map();
+
+  for (const post of posts) {
+    for (const tag of post.data.tags) {
+      const slug = tagSlug(tag);
+      if (!byTag.has(slug)) byTag.set(slug, { tag, posts: [] });
+      byTag.get(slug).posts.push(post);
+    }
+  }
+
+  return [...byTag.entries()].map(([slug, entry]) => ({
+    params: { tag: slug },
+    props: {
+      tag: entry.tag,
+      posts: entry.posts.sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+      ),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const site = (Astro.site?.href ?? 'https://rualca.github.io/').replace(/\/$/, '');
+const tagCanonical = `${site}/blog/tag/${tagSlug(tag)}/`;
+
+// A tag with one article is a near-duplicate of that article. Pointing the
+// canonical at the article consolidates them, which keeps the page out of the
+// index without the sitemap and the robots meta contradicting each other.
+const canonical =
+  posts.length === 1 ? `${site}/blog/${posts[0].id}/` : tagCanonical;
+
+const date = (value) => {
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${pad(value.getUTCDate())}/${pad(value.getUTCMonth() + 1)}/${value.getUTCFullYear()}`;
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Writing', item: `${site}/blog/` },
+    { '@type': 'ListItem', position: 3, name: tag, item: canonical },
+  ],
+};
+
+const collectionLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${tag} — Writing`,
+  url: canonical,
+  isPartOf: { '@type': 'Blog', '@id': `${site}/blog/`, name: 'Writing — Rubén Alapont' },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: posts.length,
+    itemListElement: posts.slice(0, 20).map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `${site}/blog/${post.id}/`,
+      name: post.data.title,
+    })),
+  },
+};
+---
+
+<Base
+  title={`${tag} — Writing — Rubén Alapont`}
+  description={`${posts.length} ${posts.length === 1 ? 'article' : 'articles'} tagged ${tag}, on engineering leadership, architecture and shipping software.`}
+  canonical={canonical}
+  jsonLd={[breadcrumbLd, collectionLd]}
+>
+  <main class="mx-auto max-w-3xl px-6 py-24">
+    <p class="mb-6 text-sm opacity-60">
+      <a href="/blog/" class="underline">Writing</a>
+      <span aria-hidden="true"> / </span>
+      <span>#{tag}</span>
+    </p>
+
+    <h1 class="mb-2 text-4xl font-semibold tracking-tight">#{tag}</h1>
+    <p class="mt-1 mb-12 text-sm text-muted-foreground">
+      {posts.length} {posts.length === 1 ? 'article' : 'articles'}
+    </p>
+
+    <ul>
+      {posts.map((post) => (
+        <li>
+          <a
+            href={`/blog/${post.id}/`}
+            class="group -mx-3 block rounded-lg px-3 py-4 hover:bg-muted/50"
+          >
+            <h2 class="text-xl font-medium leading-snug group-hover:underline">
+              {post.data.title}
+            </h2>
+            <time
+              datetime={post.data.pubDate.toISOString()}
+              class="mt-0.5 block text-xs tabular-nums text-muted-foreground"
+            >
+              {date(post.data.pubDate)}
+            </time>
+            <p class="mt-1 line-clamp-2 opacity-70">{post.data.description}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <p class="mt-16"><a href="/blog/" class="underline">← All writing</a></p>
+  </main>
+</Base>
