@@ -9,7 +9,7 @@ tags:
 linkedinText: AI is making average work free. The scarce thing is no longer execution, it is having a point of view worth executing. And most of us were trained out of having one.
 ---
 
-Talking to a friend in the industry recently, there was one thing they said I could not shake: AI is making average work free.
+Talking to a friend in the industry recently, there was one thing he said I could not shake: AI is making average work free.
 
 Every team I know can now produce a decent first draft of almost anything. A service skeleton, a migration plan, a design document, the deck for the board. What used to take an afternoon takes twenty minutes and a review.
 
